@@ -1,0 +1,91 @@
+Tools used : ICU64 with Winvice 2.3, Infiltrator Disassembler, Charpad.
+
+Map :$4000 - $77ff
+Character set : $0800-$0fff
+Width : 256 characters, Height : 56 characters
+First line : $4000 - $40ff
+second  		 $4100 - $41ff
+
+MAZE :
+
+Maze start : 503a
+
+8EC0 jsr 28DE -> C854 -> create schema of the maze
+8EC5 jsr CA9D -> create the graphics's maze
+8EC8 jst CB4E -> add ladders
+
+Four different cell types :
+$61 : vertical
+$7e : turn left
+$e2 : horizontal
+$ec : 236
+
+1130 : column number
+1131,1132 : position of the current cell
+1135 : Value of the current cell
+1133 : direction of the next cell
+0-> Down
+1-> Left
+2-> Top
+3-> Right
+1133: first direction
+1136,1137 : position of the next cell
+1138 : Value of the new cell
+113A : number of cells filled
+
+C88E: with the new direction (1133), test if an adjacent cell is empty. If it's empty, fill it.
+C99F: goto to next cell (increase 1131,1132). if we are beyond 0567 (9th row), reset to 0400.
+C9CB: Get another direction (1133: 0->1, 1->2, 2->3, 3->0)
+CA2C: We filled a cell. Increase 113A, 113B. If the number is bigger or equal to $167 (359), stop the maze generation.
+
+Introduction :
+
+8ECB jsr 8FCD -> Prepare introduction (display introduction panel)
+8ECE jmp 8EDD -> jsr 906B -> Introduction
+
+Game :
+
+FA : x position in the map
+FB : y position in the map
+
+Characters around the player:
+
+ 642  643   644
+ 66a player 66c
+ 692 player 694
+ 6ba  6bb   6bc
+
+1000 : offset horizontal scrolling (d016)
+1001 : offset vertical scrolling (d011)
+1002 : Direction of the player
+109a : counter used for sprite animation of the player
+109b : fall length
+109c : offset left slope
+109d : offset right slope
+109f : 1 -> jumping
+10a0 : jump's step
+10a1 : 4 -> jump left
+       0 -> jump above
+       8 -> jump right
+1144 : current level
+
+8EE0 : Start
+C000 : Test joystick and put direction into $1002
+c4F0 : left slope
+c50D : right slope
+c5A4, CB9E : test collision when player is going to the left
+C5B9, CBB3 : test collision when player is going to the right
+C4CB : test collision when player is going up
+C591 : test collision when player is going down
+C7C6 : elevator going up
+C7DC : elevator going down
+
+C615 : process jump
+CD77 : test collision with crushers
+CD4c : test collision with bridges
+
+314-315 (interrupt) -> 1b7b
+
+1e93 : test collision with worms box. If true 1074 = 80, then goto 1ed5 -> fill up health bar.
+1ef8 : test collision with enemies. If true goto 23ee -> if more than 4 hits (3 level hard), goto 23fe (ldx #$1d) and goto 1eae -> decrease health bar.
+Player sprite 0 : 7f8(c0) -> 3000

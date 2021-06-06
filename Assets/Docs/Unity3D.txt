@@ -1,0 +1,21 @@
+The anti-aliasing must be disabled :
+
+Edit-> Project settings-> Quality-> Anti-aliasing Disabled
+
+For sprites, no filter and Pixels per unit :
+Sprites -> filter Mode -> Point (no filter)
+					 Pixels Per Unit -> 1
+
+Collisions:
+
+With RigidBody2D
+1) Attach 2d colliders to game objects (usually BoxCollider2d). It is possible in the editor to define collider size. Attach also RigidBody2D to the player. By defaults the rigidBody's type is Dynamic. Unity will simulate automatically physics and collisions. When physics is simulated, we should use FixedUpdate instead of Update. It's possible to disable gravity (property Gravity scale to 0) and rotation when there is a collision : Constraints : freeze rotation Z. Use only 'addForce' method to move objects. Problems of this solution : it simulates physics with acceleration and the object bounces when it hits a wall. Not always neede.
+
+2) Same solution as above but with RigidBody's type Kinematic. Physics is no more simulated. If we want to detect collisions, in the colliders we have to switch on the property 'Is Trigger'. Then we can use the method OnTriggerEnter(). With this method it's possible to use transform.position (or translate) to move objects. It's usefull for example if we want to detect a collision with a monster and kill the player, but what if we want to block the player if he encounters a wall ?
+
+Without RigidBody2d:
+Attach 2d colliders to game objects (usually BoxCollider2d).
+1) Use Physics2D.linecast. Linecast defines a starting and enpoint and . If the starting point is inside a collider (it could the player collider), it will return only that collider.
+2) Use Physics2D.raycast.
+
+To instantiate prefabs, declare public Tranform objects in a script. In the editor, drag prefabs to the properties of the game object.
