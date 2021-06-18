@@ -551,13 +551,16 @@ public class Player : MonoBehaviour
 
     int xLeverPosition = levelManager.leversPosition[level, 0];
     int yLeverPosition = levelManager.leversPosition[level, 1];
+    int leverType = levelManager.leversPosition[level, 2];
 
     // If the player is crossing a lever, increase level
     if (xPos == xLeverPosition && yPos == yLeverPosition)
     {
-      Debug.Log("tileNumber:" + tilesMap.tiles[yPos + 1, xPos]);
-      //if (level == 0 && tilesMap.tiles[yPos + 1, xPos) =
-      levelManager.level++;
+      if (level == 0 && tilesMap.tiles[yPos + 1, xPos] == 110)
+        ;
+      else
+        levelManager.level++;
+
       Debug.Log(level + "," + xLeverPosition + "," + yLeverPosition);
     }
   }

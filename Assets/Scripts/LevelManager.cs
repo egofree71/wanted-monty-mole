@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
-  private enum LeverType { Right, Left };
+  private enum LeverType { Right, Left,  };
   // Current level
   public int level = 0;
 
