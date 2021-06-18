@@ -2,18 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DebugPlayerMovement : MonoBehaviour
+public class DebugPlayer : MonoBehaviour
 {
   // Animator component for the player
   private Animator playerAnim;
-  PlayerMovement characterMovement;
+  Player characterMovement;
 
   // Use this for initialization
   void Awake()
   {
     playerAnim = (Animator)GetComponent(typeof(Animator));
     // Get object's script
-    characterMovement = GameObject.Find("Player").GetComponent<PlayerMovement>();
+    characterMovement = GameObject.Find("Player").GetComponent<Player>();
   }
 
   // Update is called once per frame

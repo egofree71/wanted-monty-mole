@@ -6,7 +6,7 @@ using UnityEngine;
 /// <summary>
 ///  This class is used to modify the manage the player's movement
 /// </summary>
-public class PlayerMovement : MonoBehaviour
+public class Player : MonoBehaviour
 {
   [Header("Player position in the map according to tiles")]
   public int xPos;
