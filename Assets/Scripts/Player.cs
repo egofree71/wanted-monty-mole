@@ -24,6 +24,8 @@ public class Player : MonoBehaviour
   private MovingObject bridge;
   // The gameobject Bridge manages the crusher's size
   private MovingObject crusher;
+  // The gameobject LevelManager manages the levels
+  private LevelManager levelManager;
   // Animator component for the player
   private Animator playerAnim;
   private enum horizontalDirection { Left, Right, None };
@@ -66,6 +68,8 @@ public class Player : MonoBehaviour
     tilesMap = GameObject.Find("TilesMap").GetComponent<TilesMap>();
     bridge = GameObject.Find("Bridge").GetComponent<MovingObject>();
     crusher = GameObject.Find("Crusher").GetComponent<MovingObject>();
+    tilesMap = GameObject.Find("TilesMap").GetComponent<TilesMap>();
+    levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
     playerState = state.Idle;
   }
 
@@ -129,6 +133,10 @@ public class Player : MonoBehaviour
             // If the player is on a bucket conveyor going down
             if (tilesMap.tiles[yPos, xPos] == 93)
               playerVerticalDirection = verticalDirection.Down;
+
+            // If the player moves horizontally, check if he is moving through a lever
+            if (leftArrow || rightArrow)
+              checkLevers();
 
             // If the player wants to go left
             if (leftArrow)
@@ -536,6 +544,20 @@ public class Player : MonoBehaviour
       return false;
   }
 
+  // Check if the player is crossing a lever
+  void checkLevers()
+  {
+    int level = levelManager.level;
+
+    int xLeverPosition = levelManager.leversPosition[level, 0];
+    int yLeverPosition = levelManager.leversPosition[level, 1];
+
+    if (xPos == xLeverPosition && yPos == yLeverPosition)
+    {
+      levelManager.level++;
+      Debug.Log(level + "," + xLeverPosition + "," + yLeverPosition);
+    }
+  }
 }
 
 
