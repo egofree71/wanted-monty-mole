@@ -1,9 +1,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum LeverType { Right, Left };
+
 public class LevelManager : MonoBehaviour
 {
-  private enum LeverType { Right, Left,  };
+
   // Current level
   public int level = 0;
 

@@ -1,8 +1,8 @@
 ﻿using System;
 using System.IO;
 using UnityEditor;
-using UnityEngine;
 using UnityEditor.SceneManagement;
+using UnityEngine;
 
 public class MyTools
 {
@@ -22,11 +22,14 @@ public class MyTools
   {
     int rows = 56;
     int columns = 256;
+
     // The one dimensional array which contains the binary file
     byte[] binArray;
     // The two dimensional array which stores the tiles containted in the binary file
     int[,] tilesArray = new int[rows, columns];
-
+    // The gameobject LevelManager manages the levels
+    LevelManager levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
+    int[,] leversPosition = levelManager.leversPosition;
     // The number of the current tile
     int tileNumber;
     // Used to place special tiles to a different column or row
@@ -91,8 +94,29 @@ public class MyTools
           }
 
           // Create a prefab with the offset stored in the binary file and add it to the scene
-          instantiatePrefab(tileNumber, row - rowOffset, column + columnOffset, backgrounds);
+          GameObject prefab = instantiatePrefab(tileNumber, row - rowOffset, column + columnOffset, backgrounds);
 
+          int arrayLength = leversPosition.GetLength(0); ;
+
+          // If we are dealing with a lever, tag the prefab
+          for (int level = 0; level < arrayLength; level += 1)
+          {
+            int xLeverPosition = leversPosition[level, 0];
+            int yLeverPosition = leversPosition[level, 1];
+            int leverType = leversPosition[level, 2];
+
+            int xOffset;
+
+            // Tag also the prefab nearby
+            if (leverType == (int)LeverType.Right)
+              xOffset = -1;
+            else
+              xOffset = 1;
+
+            if ((xLeverPosition == column && yLeverPosition == row) ||
+                (xLeverPosition + xOffset == column && yLeverPosition == row))
+              prefab.tag = "lever_" + level;
+          }
         }
         else
         {
