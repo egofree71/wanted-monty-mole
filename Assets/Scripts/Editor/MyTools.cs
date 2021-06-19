@@ -109,9 +109,9 @@ public class MyTools
 
             // Tag also the prefab nearby
             if (leverType == (int)LeverType.Right)
-              xOffset = -1;
-            else
               xOffset = 1;
+            else
+              xOffset = -1;
 
             if ((xLeverPosition == column && yLeverPosition == row) ||
                 (xLeverPosition + xOffset == column && yLeverPosition == row))

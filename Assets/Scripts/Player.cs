@@ -556,10 +556,14 @@ public class Player : MonoBehaviour
     // If the player is crossing a lever, increase level
     if (xPos == xLeverPosition && yPos == yLeverPosition)
     {
-      if (level == 0 && tilesMap.tiles[yPos + 1, xPos] == 110)
-        ;
-      else
-        levelManager.level++;
+      // Get lever for current level
+      GameObject[] levers = GameObject.FindGameObjectsWithTag("lever_" + level);
+
+      // Switch the lever
+      foreach (GameObject lever in levers)
+        lever.GetComponent<LeverTile>().activate();
+
+      levelManager.level++;
 
       Debug.Log(level + "," + xLeverPosition + "," + yLeverPosition);
     }
