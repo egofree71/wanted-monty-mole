@@ -107,7 +107,7 @@ public class MyTools
 
             int xOffset;
 
-            // Tag also the prefab nearby
+            // Tag also the lever prefab nearby
             if (leverType == (int)LeverType.Right)
               xOffset = 1;
             else

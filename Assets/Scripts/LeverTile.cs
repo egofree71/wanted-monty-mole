@@ -8,6 +8,7 @@ using UnityEngine;
 public class LeverTile : MonoBehaviour
 {
 
+  // The sprite when the lever is activated
   public Sprite activated;
   // Reference to the graphics sprite
   SpriteRenderer spriteRenderer;
@@ -18,6 +19,7 @@ public class LeverTile : MonoBehaviour
     spriteRenderer = GetComponent<SpriteRenderer>();
   }
 
+  // Display the activated sprite
   public void activate()
   {
     spriteRenderer.sprite = activated;
