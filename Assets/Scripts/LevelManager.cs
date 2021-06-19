@@ -31,10 +31,4 @@ public class LevelManager : MonoBehaviour
     { 55, 12, (int) LeverType.Right }
   };
 
-  // Start is called before the first frame update
-  void Start()
-  {
-
-  }
-
 }

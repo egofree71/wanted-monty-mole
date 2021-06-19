@@ -134,10 +134,6 @@ public class Player : MonoBehaviour
             if (tilesMap.tiles[yPos, xPos] == 93)
               playerVerticalDirection = verticalDirection.Down;
 
-            // If the player moves horizontally, check if he is moving through a lever
-            if (leftArrow || rightArrow)
-              checkLevers();
-
             // If the player wants to go left
             if (leftArrow)
             {
@@ -323,6 +319,9 @@ public class Player : MonoBehaviour
 
         if (jumpStep == 5)
           stopJump();
+
+        if (playerHorizontalDirection != horizontalDirection.None)
+          checkLevers();
       }
     }
 
@@ -556,7 +555,7 @@ public class Player : MonoBehaviour
     // If the player is crossing a lever, increase level
     if (xPos == xLeverPosition && yPos == yLeverPosition)
     {
-      // Get lever for current level
+      // Get current lever (two game objects) for current level
       GameObject[] levers = GameObject.FindGameObjectsWithTag("lever_" + level);
 
       // Switch the lever
