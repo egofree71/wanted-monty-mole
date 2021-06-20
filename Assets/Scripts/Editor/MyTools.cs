@@ -3,6 +3,7 @@ using System.IO;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class MyTools
 {
@@ -16,8 +17,29 @@ public class MyTools
     EditorApplication.isPlaying = true;
   }
 
-  // Import the map into the main scene
-  [MenuItem("MyTools/Import map")]
+  // Import the tile map into the main scene
+  [MenuItem("MyTools/Import tile map")]
+  public static void importTileMap()
+  {
+    Tilemap tileMap = GameObject.Find("Tilemap").GetComponent<Tilemap>();
+    tileMap.ClearAllTiles();
+    var pos = new Vector3Int(0, 0, 0);
+    TileBase tile = tileMap.GetTile(pos);
+    Debug.Log("Tile:" + tile);
+
+    //var tileAsset = Resources.Load<Tile>("MyTileAssetName");
+    Tile tileAsset = (Tile) AssetDatabase.LoadAssetAtPath("Assets/Tiles/background_1.asset", typeof(Tile));
+    Debug.Log("Tile name:" + tileAsset.ToString());
+
+
+    tileMap.SetTile(new Vector3Int(0, 0, 0), tileAsset);
+    tileMap.SetTile(new Vector3Int(10, 0, 0), tileAsset);
+    tileMap.SetTile(new Vector3Int(20, 0, 0), tileAsset);
+    tileMap.SetTile(new Vector3Int(30, 0, 0), tileAsset);
+    Debug.Log("Ok");
+  }
+    // Import the map into the main scene
+    [MenuItem("MyTools/Import map")]
   public static void importMap()
   {
     int rows = 56;
