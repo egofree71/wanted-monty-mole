@@ -3,14 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - lever_0
-  - lever_1
-  - lever_2
-  - lever_3
-  - lever_4
-  - lever_5
-  - lever_6
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -20,10 +13,10 @@ TagManager:
   - UI
   - 
   - 
-  - Player
-  - Solid
-  - Ladder
-  - Crusher
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 
