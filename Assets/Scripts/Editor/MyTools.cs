@@ -16,13 +16,14 @@ public class MyTools
     EditorSceneManager.OpenScene("Assets/Scenes/Maze.unity");
     EditorApplication.isPlaying = true;
   }
-    // Import the map into the main scene
-    [MenuItem("MyTools/Import map")]
+  // Import the map into the main scene
+  [MenuItem("MyTools/Import map")]
   public static void importMap()
   {
     int rows = 56;
     int columns = 256;
-
+    // The list of tiles used in the map
+    UnityEngine.Object[] tiles = new UnityEngine.Object[254];
     // The one dimensional array which contains the binary file
     byte[] binArray;
     // The two dimensional array which stores the tiles containted in the binary file
@@ -44,6 +45,14 @@ public class MyTools
     {
       Debug.Log(e.Message + "\n Cannot open file.");
       return;
+    }
+
+    // Store tiles into memory
+    for (int i = 0; i < 254; i++)
+    {
+      UnityEngine.Object tile = AssetDatabase.LoadAssetAtPath("Assets/Prefabs/Environment/background_" + i + ".prefab", typeof(GameObject));
+      if (tile != null)
+        tiles[i] = tile;
     }
 
     // The root object (folder) which contains all background objects
@@ -94,7 +103,7 @@ public class MyTools
           }
 
           // Create a prefab with the offset stored in the binary file and add it to the scene
-          GameObject prefab = instantiatePrefab(tileNumber, row - rowOffset, column + columnOffset, backgrounds);
+          GameObject prefab = instantiatePrefab(tiles, tileNumber, row - rowOffset, column + columnOffset, backgrounds);
 
           int arrayLength = leversPosition.GetLength(0); ;
 
@@ -131,11 +140,9 @@ public class MyTools
   }
 
   // Instantiate a prefab with for a given row and column
-  private static GameObject instantiatePrefab(int tileNumber, int row, int column, GameObject backgrounds)
+  private static GameObject instantiatePrefab(UnityEngine.Object[] tiles, int tileNumber, int row, int column, GameObject backgrounds)
   {
-    UnityEngine.Object prefab = AssetDatabase.LoadAssetAtPath("Assets/Prefabs/Environment/background_" + tileNumber + ".prefab", typeof(GameObject));
-
-    GameObject childObject = GameObject.Instantiate(prefab, new Vector2(column * pixelsPerTile, -row * pixelsPerTile), Quaternion.identity) as GameObject;
+    GameObject childObject = GameObject.Instantiate(tiles[tileNumber], new Vector2(column * pixelsPerTile, -row * pixelsPerTile), Quaternion.identity) as GameObject;
 
     // Add the prefab into the Backgrounds object
     childObject.transform.parent = backgrounds.transform;
