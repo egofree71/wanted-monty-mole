@@ -3,7 +3,21 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - lever_3
+  - lever_2
+  - lever_1
+  - lever_0
+  - lever_4
+  - lever_6
+  - lever_5
+  - lever_7
+  - lever_8
+  - lever_9
+  - lever_10
+  - lever_11
+  - lever_12
+  - lever_13
   layers:
   - Default
   - TransparentFX
