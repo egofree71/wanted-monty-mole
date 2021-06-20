@@ -28,7 +28,21 @@ public class LevelManager : MonoBehaviour
     // Level 5
     { 137, 46, (int) LeverType.Left },
     // Level 6
-    { 55, 12, (int) LeverType.Right }
+    { 55, 12, (int) LeverType.Right },
+    // Level 7
+    { 141, 14, (int) LeverType.Right },
+    // Level 8
+    { 205, 48, (int) LeverType.Left },
+    // Level 9
+    { 199, 36, (int) LeverType.Left },
+    // Level 10
+    { 194, 30, (int) LeverType.Right },
+    // Level 11
+    { 153, 6, (int) LeverType.Right },
+    // Level 12
+    { 188, 27, (int) LeverType.Right },
+    // Level 13
+    { 221, 29, (int) LeverType.Left }
   };
 
 }
