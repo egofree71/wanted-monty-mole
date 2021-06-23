@@ -1,52 +1,116 @@
 {
-	"levels": [
-		{
-			"number": 0,
-			"levers": {
-				"x": 42,
-				"y": 12,
-				"type": "left"
-			}
-		},
-		{
-			"number": 1,
-			"levers": {
-				"x": 40,
-				"y": 22,
-				"type": "right"
-			}
-		},
-		{
-			"number": 2,
-			"levers": {
-				"x": 41,
-				"y": 29,
-				"type": "left"
-			}
-		},
-		{
-			"number": 3,
-			"levers": {
-				"x": 39,
-				"y": 35,
-				"type": "right"
-			}
-		},
-		{
-			"number": 4,
-			"levers": {
-				"x": 47,
-				"y": 34,
-				"type": "left"
-			}
-		},
-		{
-			"number": 5,
-			"levers": {
-				"x": 137,
-				"y": 46,
-				"type": "left"
-			}
-		}
-	]
+    "list": [
+        {
+            "number": 0,
+            "lever": {
+                "x": 42,
+                "y": 12,
+                "type": "left"
+            }
+        },
+        {
+            "number": 1,
+            "lever": {
+                "x": 40,
+                "y": 22,
+                "type": "right"
+            }
+        },
+        {
+            "number": 2,
+            "lever": {
+                "x": 41,
+                "y": 29,
+                "type": "left"
+            }
+        },
+        {
+            "number": 3,
+            "lever": {
+                "x": 39,
+                "y": 35,
+                "type": "right"
+            }
+        },
+        {
+            "number": 4,
+            "lever": {
+                "x": 47,
+                "y": 34,
+                "type": "left"
+            }
+        },
+        {
+            "number": 5,
+            "lever": {
+                "x": 137,
+                "y": 46,
+                "type": "left"
+            }
+        },
+        {
+            "number": 6,
+            "lever": {
+                "x": 55,
+                "y": 12,
+                "type": "right"
+            }
+        },
+        {
+            "number": 7,
+            "lever": {
+                "x": 141,
+                "y": 14,
+                "type": "right"
+            }
+        },
+        {
+            "number": 8,
+            "lever": {
+                "x": 205,
+                "y": 48,
+                "type": "left"
+            }
+        },
+        {
+            "number": 9,
+            "lever": {
+                "x": 199,
+                "y": 36,
+                "type": "left"
+            }
+        },
+        {
+            "number": 10,
+            "lever": {
+                "x": 194,
+                "y": 30,
+                "type": "right"
+            }
+        },
+        {
+            "number": 11,
+            "lever": {
+                "x": 153,
+                "y": 6,
+                "type": "right"
+            }
+        },
+        {
+            "number": 12,
+            "lever": {
+                "x": 188,
+                "y": 27,
+                "type": "right"
+            }
+        },
+        {
+            "number": 13,
+            "lever": {
+                "x": 221,
+                "y": 29,
+                "type": "left"
+            }
+        }
+    ]
 }

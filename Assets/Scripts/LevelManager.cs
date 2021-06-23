@@ -12,14 +12,16 @@ public class LevelManager : MonoBehaviour
 
   // Current level
   public int level = 0;
+  // Contains the levels objects
+  public Levels levels;
 
-  void Start()
+  public void LoadJson()
   {
-    //read the json
+    //read and parse the json
     try
     {
       string jsonString = Resources.Load<TextAsset>("Levels").ToString();
-      Debug.Log("ok");
+      levels = JsonUtility.FromJson<Levels>(jsonString);
     }
     catch (IOException e)
     {
@@ -28,37 +30,8 @@ public class LevelManager : MonoBehaviour
     }
   }
 
-  // Contains the levers position (x,y) in the map with their type
-  public int[,] leversPosition =
+  void Start()
   {
-    // Level 0
-    { 42, 12, (int) LeverType.Left },
-    // Level 1
-    { 40, 22, (int) LeverType.Right },
-    // Level 2
-    { 41, 29, (int) LeverType.Left },
-    // Level 3
-    { 39, 35, (int) LeverType.Right },
-    // Level 4
-    { 47, 34, (int) LeverType.Left },
-    // Level 5
-    { 137, 46, (int) LeverType.Left },
-    // Level 6
-    { 55, 12, (int) LeverType.Right },
-    // Level 7
-    { 141, 14, (int) LeverType.Right },
-    // Level 8
-    { 205, 48, (int) LeverType.Left },
-    // Level 9
-    { 199, 36, (int) LeverType.Left },
-    // Level 10
-    { 194, 30, (int) LeverType.Right },
-    // Level 11
-    { 153, 6, (int) LeverType.Right },
-    // Level 12
-    { 188, 27, (int) LeverType.Right },
-    // Level 13
-    { 221, 29, (int) LeverType.Left }
-  };
-
+    LoadJson();
+  }
 }

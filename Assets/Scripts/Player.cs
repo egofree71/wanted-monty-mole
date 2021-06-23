@@ -548,9 +548,12 @@ public class Player : MonoBehaviour
   {
     int level = levelManager.level;
 
-    int xLeverPosition = levelManager.leversPosition[level, 0];
-    int yLeverPosition = levelManager.leversPosition[level, 1];
-    int leverType = levelManager.leversPosition[level, 2];
+    // Get the level index in the json
+    List<LevelData> levelList = levelManager.levels.list;
+    int index = levelList.FindIndex(a => a.number == level);
+   
+    int xLeverPosition = levelList[index].lever.x;
+    int yLeverPosition = levelList[index].lever.y;
 
     // If the player is crossing a lever, increase level
     if (xPos == xLeverPosition && yPos == yLeverPosition)
