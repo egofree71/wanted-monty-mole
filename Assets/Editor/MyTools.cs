@@ -5,6 +5,9 @@ using UnityEditor.SceneManagement;
 using UnityEngine;
 using System.Collections.Generic;
 
+/// <summary>
+///  This class is used to import the binary map into the main scene
+/// </summary>
 public class MyTools
 {
   private const int pixelsPerTile = 32;

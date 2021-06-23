@@ -5,7 +5,7 @@ using UnityEngine;
 public enum LeverType { Right, Left };
 
 /// <summary>
-///  This class is used to manager levels
+///  This class is used to manage levels
 /// </summary>
 public class LevelManager : MonoBehaviour
 {

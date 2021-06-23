@@ -1,5 +1,8 @@
 using System.Collections.Generic;
 
+/// <summary>
+///  This class is used to deserializa a json into classes
+/// </summary>
 [System.Serializable]
 public class Levels
 {
