@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using SimpleJSON;
+using System.IO;
 using UnityEngine;
 
 public enum LeverType { Right, Left };
@@ -11,6 +13,22 @@ public class LevelManager : MonoBehaviour
 
   // Current level
   public int level = 0;
+
+  void Start()
+  {
+    //read the json
+    try
+    {
+      string jsonString = File.ReadAllText("./Assets/Data/Levels.json");
+      var node = JSON.Parse(jsonString);
+      Debug.Log("ok");
+    }
+    catch (IOException e)
+    {
+      Debug.Log(e.Message + "\n Cannot open file.");
+      return;
+    }
+  }
 
   // Contains the levers position (x,y) in the map with their type
   public int[,] leversPosition =

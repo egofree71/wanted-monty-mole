@@ -1,0 +1,52 @@
+{
+	"levels": [
+		{
+			"number": 0,
+			"levers": {
+				"x": 42,
+				"y": 12,
+				"type": "left"
+			}
+		},
+		{
+			"number": 1,
+			"levers": {
+				"x": 40,
+				"y": 22,
+				"type": "right"
+			}
+		},
+		{
+			"number": 2,
+			"levers": {
+				"x": 41,
+				"y": 29,
+				"type": "left"
+			}
+		},
+		{
+			"number": 3,
+			"levers": {
+				"x": 39,
+				"y": 35,
+				"type": "right"
+			}
+		},
+		{
+			"number": 4,
+			"levers": {
+				"x": 47,
+				"y": 34,
+				"type": "left"
+			}
+		},
+		{
+			"number": 5,
+			"levers": {
+				"x": 137,
+				"y": 46,
+				"type": "left"
+			}
+		}
+	]
+}
