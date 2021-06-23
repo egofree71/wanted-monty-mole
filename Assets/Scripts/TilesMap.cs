@@ -22,7 +22,7 @@ public class TilesMap : MonoBehaviour
     //read the binary file which contains the map
     try
     {
-      binArray = File.ReadAllBytes("./Assets/Map/Map.bin");
+      binArray = Resources.Load<TextAsset>("Map").bytes;
     }
     catch (IOException e)
     {
