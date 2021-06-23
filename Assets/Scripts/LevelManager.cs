@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using SimpleJSON;
 using System.IO;
 using UnityEngine;
 
@@ -19,8 +18,7 @@ public class LevelManager : MonoBehaviour
     //read the json
     try
     {
-      string jsonString = File.ReadAllText("./Assets/Data/Levels.json");
-      var node = JSON.Parse(jsonString);
+      string jsonString = Resources.Load<TextAsset>("Levels").ToString();
       Debug.Log("ok");
     }
     catch (IOException e)
