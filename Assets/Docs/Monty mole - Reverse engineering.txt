@@ -58,6 +58,10 @@ Characters around the player:
 1000 : offset horizontal scrolling (d016)
 1001 : offset vertical scrolling (d011)
 1002 : Direction of the player
+1068-106e : sprite X
+1076-107c : sprite y
+1084-108a : sprite pointers
+1092-1098 : sprite colors
 109a : counter used for sprite animation of the player
 109b : fall length
 109c : offset left slope
