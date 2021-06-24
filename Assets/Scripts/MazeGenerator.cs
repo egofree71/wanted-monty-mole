@@ -36,7 +36,7 @@ public class MazeGenerator : MonoBehaviour
     else
     {
       // Store the maze for the next scene into a static class
-      Global.cells = maze.Cells;
+      Global.mazeTiles = maze.Cells;
       SceneManager.LoadScene("Main");
     }
 
@@ -46,7 +46,7 @@ public class MazeGenerator : MonoBehaviour
   {
     int[,] cells = maze.Cells;
     int rowsNumber = cells.GetLength(0);
-    int columnNumber = cells.GetLength(1);
+    int columnsNumber = cells.GetLength(1);
 
     Transform cell;
     // Destroy previous maze
@@ -57,7 +57,7 @@ public class MazeGenerator : MonoBehaviour
     for (int rowMaze = 0; rowMaze < rowsNumber; rowMaze++)
     {
       // Scan each column
-      for (int columnMaze = 0; columnMaze < columnNumber; columnMaze++)
+      for (int columnMaze = 0; columnMaze < columnsNumber; columnMaze++)
       {
         // Display a prefab on the screen depending on the cell type
         switch (cells[rowMaze, columnMaze])

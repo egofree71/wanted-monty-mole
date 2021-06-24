@@ -4,8 +4,10 @@
 /// </summary>
 public static class Global
 {
-  // the maze generated for the main scene
-  public static int[,] cells;
+  // the schematic maze generated for the main scene
+  public static int[,] mazeTiles;
+  // The graphical maze generated for the main scene
+  public static int[,] graphicalMazeTiles;
 
   public const int tileSize = 32;
 }

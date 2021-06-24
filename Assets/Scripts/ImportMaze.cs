@@ -28,13 +28,19 @@ public class ImportMaze : MonoBehaviour
     const int pixelsPerTile = 32;
 
     // If the maze scene has not been loaded
-    if (Global.cells == null)
+    if (Global.mazeTiles == null)
       return;
 
+    // Delete previous maze
+    GameObject[] mazeTiles = GameObject.FindGameObjectsWithTag("maze");
+
+    foreach (GameObject mazetile in mazeTiles)
+      Destroy(mazetile);
+
     // Get the generated maze of the previous scene
-    int[,] cells = Global.cells;
+    int[,] cells = Global.mazeTiles;
     // Store the maze's walls. Used in the second step to create ladders
-    byte[,] graphicalMaze;
+    int[,] graphicalMaze;
 
     int rows = 9;
     int columns = 40;
@@ -43,7 +49,7 @@ public class ImportMaze : MonoBehaviour
 
     // Skip first cell (Maze's exit)
     cells[0, 0] = 0;
-    graphicalMaze = new byte[destinationRows, destinationColumns];
+    graphicalMaze = new int[destinationRows, destinationColumns];
 
     // Container which contains all maze graphical cells
     GameObject maze = new GameObject("Maze");
@@ -139,6 +145,7 @@ public class ImportMaze : MonoBehaviour
         {
           Transform aLadder = Instantiate(ladder, maze.transform);
           aLadder.transform.localPosition = new Vector2(column * pixelsPerTile, -row * pixelsPerTile);
+          graphicalMaze[row, column] = 122;
         }
 
       }
@@ -146,11 +153,7 @@ public class ImportMaze : MonoBehaviour
       verticalSpaces = 0;
     }
 
+    Global.graphicalMazeTiles = graphicalMaze;
   }
 
-  // Update is called once per frame
-  void Update()
-  {
-
-  }
 }

@@ -6,7 +6,9 @@ using UnityEngine;
 using System.Collections.Generic;
 
 /// <summary>
-///  This class is used to import the binary map into the main scene
+///  This class is used to import the binary map into the main scene.
+///  Before running the script, in the editor some tiles should be deleted manually, 
+///  otherwise the editor will not detect the scene has beed modified and it will not save modifications
 /// </summary>
 public class MyTools
 {
@@ -86,10 +88,6 @@ public class MyTools
     {
       for (int column = 0; column < columns; column++)
       {
-        // Skip maze
-        //if (column >= 58 & column <= 137 && row >=16 && row<= 42)
-        //	continue;
-
         // Save the current value for the current row and column
         tileNumber = tilesArray[row, column];
 
@@ -109,6 +107,10 @@ public class MyTools
 
           // Create a prefab with the offset stored in the binary file and add it to the scene
           GameObject prefab = instantiatePrefab(tiles, tileNumber, row - rowOffset, column + columnOffset, backgrounds);
+
+          // If we are dealing with a maze tile, tag it
+          if (column >= 58 && column <= 137 && row >= 16 && row <= 42)
+            prefab.tag = "maze";
 
           // If we are dealing with a lever, tag the prefab
           foreach (LevelData level in levelList)
@@ -134,7 +136,7 @@ public class MyTools
         {
           // If it's not a space character
           if (tileNumber != 32)
-            Debug.Log("value:" + tileNumber);
+            Debug.Log("Invalid tile value:" + tileNumber);
         }
       }
 

@@ -18,6 +18,7 @@ TagManager:
   - lever_11
   - lever_12
   - lever_13
+  - maze
   layers:
   - Default
   - TransparentFX
