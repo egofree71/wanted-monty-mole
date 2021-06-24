@@ -45,7 +45,7 @@ public class TilesMap : MonoBehaviour
       }
     }
 
-    // If a new maze has not been generated
+    // If there is no new maze
     if (Global.mazeTiles == null)
       return;
 

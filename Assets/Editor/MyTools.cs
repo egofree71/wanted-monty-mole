@@ -8,7 +8,7 @@ using System.Collections.Generic;
 /// <summary>
 ///  This class is used to import the binary map into the main scene.
 ///  Before running the script, in the editor some tiles should be deleted manually, 
-///  otherwise the editor will not detect the scene has beed modified and it will not save modifications
+///  otherwise the editor will not detect the scene has been modified and it will not save modifications
 /// </summary>
 public class MyTools
 {
