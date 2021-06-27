@@ -29,8 +29,11 @@ public class LevelManager : MonoBehaviour
     int index = levelList.FindIndex(a => a.number == level);
 
     // Container which contains all objects
-    GameObject.Destroy(GameObject.Find("Objects"));
     GameObject objects = new GameObject("Objects");
+    
+    if (level != 0)
+      GameObject.Destroy(GameObject.Find("Objects"));
+
     InstantiatePrefabs(levelList[index].objects, objects);
   }
   // Load objects at the beginning
