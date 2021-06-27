@@ -565,7 +565,7 @@ public class Player : MonoBehaviour
       foreach (GameObject lever in levers)
         lever.GetComponent<LeverTile>().activate();
 
-      levelManager.level++;
+      levelManager.goNextLevel();
 
       Debug.Log(level + "," + xLeverPosition + "," + yLeverPosition);
     }

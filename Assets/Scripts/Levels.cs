@@ -6,18 +6,26 @@ using System.Collections.Generic;
 [System.Serializable]
 public class Levels
 {
+  public StartData start;
   public List<LevelData> list;
+}
+
+[System.Serializable]
+public class StartData
+{
+  public List<ObjectData> objects;
 }
 
 [System.Serializable]
 public class LevelData
 {
   public int number;
-  public Lever lever;
+  public ObjectData lever;
+  public List<ObjectData> objects;
 }
 
 [System.Serializable]
-public class Lever
+public class ObjectData
 {
   public int x;
   public int y;
