@@ -24,15 +24,17 @@ public class LevelManager : MonoBehaviour
   // Load objects for current level
   void LoadLevelObjects()
   {
+    if (level == 0)
+      return;
+
     // Get the level index in the json
     List<LevelData> levelList = levels.list;
     int index = levelList.FindIndex(a => a.number == level);
 
     // Container which contains all objects
     GameObject objects = new GameObject("Objects");
-    
-    if (level != 0)
-      GameObject.Destroy(GameObject.Find("Objects"));
+
+    GameObject.Destroy(GameObject.Find("Objects"));
 
     InstantiatePrefabs(levelList[index].objects, objects);
   }
