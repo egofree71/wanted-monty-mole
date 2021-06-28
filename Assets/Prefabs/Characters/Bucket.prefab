@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7757425976772814331}
   - component: {fileID: 771047513906647231}
   - component: {fileID: -7895363113934617465}
+  - component: {fileID: -8380583788291658017}
   m_Layer: 0
   m_Name: Bucket
   m_TagString: Untagged
@@ -109,3 +110,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 64, y: 48}
   m_EdgeRadius: 0
+--- !u!114 &-8380583788291658017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3052466345135634055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d335bafc40c92c42ad94896197048b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
