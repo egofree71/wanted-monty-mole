@@ -60,7 +60,7 @@ public class LevelManager : MonoBehaviour
       string type = objectData.type;
 
       // Add the prefab for the current object to the map
-      UnityEngine.Object prefab = AssetDatabase.LoadAssetAtPath("Assets/Prefabs/Characters/" + type + ".prefab", typeof(GameObject));
+      GameObject prefab = Resources.Load<GameObject>("Prefabs/Characters/" + type);
       GameObject childObject = GameObject.Instantiate(prefab, new Vector2(xPosition, yPosition), Quaternion.identity) as GameObject;
       childObject.transform.parent = parent.transform;
     }
