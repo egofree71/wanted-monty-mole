@@ -65,7 +65,7 @@ public class LevelManager : MonoBehaviour
       string type = objectData.type;
 
       // Select the prefab for the current object
-      GameObject prefab = new GameObject();
+      GameObject prefab = null;
 
       switch (type)
       {
