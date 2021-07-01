@@ -14,6 +14,11 @@ public class LevelManager : MonoBehaviour
   public int level;
   // Contains the levels objects
   public Levels levels;
+  // Prefabs for level's entities
+  public GameObject coal;
+  public GameObject box;
+  public GameObject bucket;
+  public GameObject scroll;
 
   public void goNextLevel()
   {
@@ -59,8 +64,30 @@ public class LevelManager : MonoBehaviour
       int yPosition = objectData.y;
       string type = objectData.type;
 
-      // Add the prefab for the current object to the map
-      GameObject prefab = Resources.Load<GameObject>("Prefabs/Characters/" + type);
+      // Select the prefab for the current object
+      GameObject prefab = new GameObject();
+
+      switch (type)
+      {
+
+        case "coal":
+          prefab = coal;
+          break;
+
+        case "box":
+          prefab = box;
+          break;
+
+        case "bucket":
+          prefab = bucket;
+          break;
+
+        case "scroll":
+          prefab = scroll;
+          break;
+      }
+
+      // Add the prefab to the map
       GameObject childObject = GameObject.Instantiate(prefab, new Vector2(xPosition, yPosition), Quaternion.identity) as GameObject;
       childObject.transform.parent = parent.transform;
     }
