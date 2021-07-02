@@ -19,6 +19,10 @@ public class GameManager : MonoBehaviour
   internal void IncreaseScore()
   {
     score++;
-    scoreUI.text = $"{score}";
+    // Display the score with three digits
+    int firstDigit = score % 10;
+    int secondDigit = score / 10 % 10;
+    int thirdDigit = score / 100 % 10;
+    scoreUI.SetText("<sprite={0}><sprite={1}><sprite={2}>", thirdDigit, secondDigit, firstDigit);
   }
 }
