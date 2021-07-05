@@ -41,7 +41,7 @@ public class Player : MonoBehaviour
   private enum horizontalDirection { Left, Right, None };
   private enum verticalDirection { Up, Down, None };
   private enum state { Idle, Falling, Jumping, ClimbingRightSlope, ClimbingLeftSlope };
-  public enum tileType { ConveyorUp = 94, ConveyorDown = 93, Acid = 95 }
+  public enum tileType { ConveyorUp = 94, ConveyorDown = 93, Acid = 95, TrapLeft = 91, TrapRight = 92 }
 
   // The current directions of the player
   horizontalDirection playerHorizontalDirection;
@@ -96,7 +96,7 @@ public class Player : MonoBehaviour
       Application.Quit();
     }
 
-    // Test if the player is hurt
+    // Test if the player is hurt by a background tile
     testPlayerIsHurt();
 
     playerAnim.SetInteger("xMove", 0);
@@ -496,10 +496,17 @@ public class Player : MonoBehaviour
   }
 
 
+  // Test if the player is hurt by a background tile
   void testPlayerIsHurt()
   {
-    // Test is there acid bath below the player
-    if (tilesMap.tiles[yPos + 1, xPos] == (int)tileType.Acid)
+    bool playerIsHurt = false;
+
+    int tileBelow = tilesMap.tiles[yPos + 1, xPos];
+    int tileUnderFeet = tilesMap.tiles[yPos, xPos];
+    
+    List<int> hurtingTiles = new List<int> { (int)tileType.Acid, (int)tileType.TrapLeft, (int)tileType.TrapRight };
+
+    if (hurtingTiles.Contains(tileBelow) || hurtingTiles.Contains(tileUnderFeet))
       decreaseHealth();
   }
 
