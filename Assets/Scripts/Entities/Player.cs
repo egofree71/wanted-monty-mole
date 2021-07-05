@@ -2,12 +2,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 /// <summary>
 ///  This class is used to modify the manage the player's movement
 /// </summary>
 public class Player : MonoBehaviour
 {
+  private int maxHealth = 100;
+
   [Header("Player position in the map according to tiles")]
   public int xPos;
   public int yPos;
@@ -18,6 +21,10 @@ public class Player : MonoBehaviour
     transform.position = new Vector2(xPos * 32 - 12, -yPos * 32);
   }
 
+  // player health
+  private int health;
+  // The object which manages the health bar
+  public HealthBar healthBar;
   // The gameObject which stores tiles maps
   private TilesMap tilesMap;
   // The gameobject Bridge manages the bridge's size
@@ -64,13 +71,17 @@ public class Player : MonoBehaviour
 
     playerAnim = (Animator)GetComponent(typeof(Animator));
     boxCollider = GetComponent<BoxCollider2D>();
-    // Get object's script
+    // Get objects scripts
+    healthBar = GameObject.Find("HealthBar").GetComponent<HealthBar>();
     tilesMap = GameObject.Find("TilesMap").GetComponent<TilesMap>();
     bridge = GameObject.Find("Bridge").GetComponent<MovingObject>();
     crusher = GameObject.Find("Crusher").GetComponent<MovingObject>();
     tilesMap = GameObject.Find("TilesMap").GetComponent<TilesMap>();
     levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
     playerState = state.Idle;
+
+    health = 60;
+    healthBar.setHealth(health);
   }
 
   // Update is called once per frame
@@ -541,6 +552,20 @@ public class Player : MonoBehaviour
       return true;
     else
       return false;
+  }
+
+  // Reset health and update health bar
+  public void resetHealth()
+  {
+    health = maxHealth;
+    healthBar.setHealth(health);
+  }
+
+  // Decrease health and update health bar
+  public void decreaseHealth()
+  {
+    health--;
+    healthBar.setHealth(health);
   }
 
   // Check if the player is crossing a lever
