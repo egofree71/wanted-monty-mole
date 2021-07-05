@@ -9,7 +9,10 @@ using UnityEngine.UI;
 /// </summary>
 public class Player : MonoBehaviour
 {
-  private int maxHealth = 100;
+  // The maximal health for the player
+  private float maxHealth = 100f;
+  // How much health is decreased each time
+  private float damageStep = 0.1f;
 
   [Header("Player position in the map according to tiles")]
   public int xPos;
@@ -22,7 +25,7 @@ public class Player : MonoBehaviour
   }
 
   // player health
-  private int health;
+  private float health;
   // The object which manages the health bar
   public HealthBar healthBar;
   // The gameObject which stores tiles maps
@@ -38,6 +41,7 @@ public class Player : MonoBehaviour
   private enum horizontalDirection { Left, Right, None };
   private enum verticalDirection { Up, Down, None };
   private enum state { Idle, Falling, Jumping, ClimbingRightSlope, ClimbingLeftSlope };
+  public enum tileType { ConveyorUp = 94, ConveyorDown = 93, Acid = 95 }
 
   // The current directions of the player
   horizontalDirection playerHorizontalDirection;
@@ -92,6 +96,9 @@ public class Player : MonoBehaviour
       Application.Quit();
     }
 
+    // Test if the player is hurt
+    testPlayerIsHurt();
+
     playerAnim.SetInteger("xMove", 0);
     playerAnim.SetBool("yMove", false);
     playerAnim.speed = 0.0f;
@@ -138,11 +145,11 @@ public class Player : MonoBehaviour
               playerVerticalDirection = verticalDirection.Down;
 
             // If the player is on a bucket conveyor going up
-            if (tilesMap.tiles[yPos, xPos] == 94)
+            if (tilesMap.tiles[yPos, xPos] == (int)tileType.ConveyorUp)
               playerVerticalDirection = verticalDirection.Up;
 
             // If the player is on a bucket conveyor going down
-            if (tilesMap.tiles[yPos, xPos] == 93)
+            if (tilesMap.tiles[yPos, xPos] == (int)tileType.ConveyorDown)
               playerVerticalDirection = verticalDirection.Down;
 
             // If the player wants to go left
@@ -488,6 +495,14 @@ public class Player : MonoBehaviour
     return false;
   }
 
+
+  void testPlayerIsHurt()
+  {
+    // Test is there acid bath below the player
+    if (tilesMap.tiles[yPos + 1, xPos] == (int)tileType.Acid)
+      decreaseHealth();
+  }
+
   // Test is there a slope tile left to the player
   bool isThereaSlopeToTheLeft()
   {
@@ -564,7 +579,7 @@ public class Player : MonoBehaviour
   // Decrease health and update health bar
   public void decreaseHealth()
   {
-    health--;
+    health -= damageStep;
     healthBar.setHealth(health);
   }
 
@@ -576,7 +591,7 @@ public class Player : MonoBehaviour
     // Get the level index in the json
     List<LevelData> levelList = levelManager.levels.list;
     int index = levelList.FindIndex(a => a.number == level);
-   
+
     int xLeverPosition = levelList[index].lever.x;
     int yLeverPosition = levelList[index].lever.y;
 
