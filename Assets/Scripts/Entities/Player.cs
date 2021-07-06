@@ -11,8 +11,9 @@ public class Player : MonoBehaviour
 {
   // The maximal health for the player
   private float maxHealth = 100f;
-  // How much health is decreased each time
-  private float damageStep = 0.05f;
+  // How much damage receives the player
+  private float damage = 0.05f;
+  private float bigDamage = 1f;
 
   [Header("Player position in the map according to tiles")]
   public int xPos;
@@ -41,7 +42,7 @@ public class Player : MonoBehaviour
   private enum horizontalDirection { Left, Right, None };
   private enum verticalDirection { Up, Down, None };
   private enum state { Idle, Jumping, ClimbingRightSlope, ClimbingLeftSlope };
-  public enum tileType { ConveyorUp = 94, ConveyorDown = 93, Acid = 95, TrapLeft = 91, TrapRight = 92 }
+  public enum tileType { ElectricGround = 108, ConveyorUp = 94, ConveyorDown = 93, Acid = 95, TrapLeft = 91, TrapRight = 92 }
 
   // The current directions of the player
   horizontalDirection playerHorizontalDirection;
@@ -84,6 +85,7 @@ public class Player : MonoBehaviour
     levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
     playerState = state.Idle;
 
+    // Set the health at the beginning
     health = 55;
     healthBar.setHealth(health);
   }
@@ -502,17 +504,39 @@ public class Player : MonoBehaviour
     // If the player is falling
     if (falling)
     {
-      decreaseHealth();
+      decreaseHealth(damage);
       return;
     }
 
     int tileBelow = tilesMap.tiles[yPos + 1, xPos];
-    int tileUnderFeet = tilesMap.tiles[yPos, xPos];
+    int tileUnderLeg = tilesMap.tiles[yPos, xPos];
     
     List<int> hurtingTiles = new List<int> { (int)tileType.Acid, (int)tileType.TrapLeft, (int)tileType.TrapRight };
 
-    if (hurtingTiles.Contains(tileBelow) || hurtingTiles.Contains(tileUnderFeet))
-      decreaseHealth();
+    // If the player crosses acid or traps
+    if (hurtingTiles.Contains(tileBelow) || hurtingTiles.Contains(tileUnderLeg))
+    {
+      decreaseHealth(damage);
+      return;
+    }
+
+    // If the player is above an electric ground
+    if (tileBelow == (int) tileType.ElectricGround)
+      decreaseHealth(bigDamage);
+  }
+
+  // Reset health and update health bar
+  public void resetHealth()
+  {
+    health = maxHealth;
+    healthBar.setHealth(health);
+  }
+
+  // Decrease health and update health bar
+  public void decreaseHealth(float damage)
+  {
+    health -= damage;
+    healthBar.setHealth(health);
   }
 
   // Test is there a slope tile left to the player
@@ -579,20 +603,6 @@ public class Player : MonoBehaviour
       return true;
     else
       return false;
-  }
-
-  // Reset health and update health bar
-  public void resetHealth()
-  {
-    health = maxHealth;
-    healthBar.setHealth(health);
-  }
-
-  // Decrease health and update health bar
-  public void decreaseHealth()
-  {
-    health -= damageStep;
-    healthBar.setHealth(health);
   }
 
   // Check if the player is crossing a lever
