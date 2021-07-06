@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
   // The maximal health for the player
   private float maxHealth = 100f;
   // How much health is decreased each time
-  private float damageStep = 0.1f;
+  private float damageStep = 0.05f;
 
   [Header("Player position in the map according to tiles")]
   public int xPos;
@@ -84,7 +84,7 @@ public class Player : MonoBehaviour
     levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
     playerState = state.Idle;
 
-    health = 60;
+    health = 55;
     healthBar.setHealth(health);
   }
 
