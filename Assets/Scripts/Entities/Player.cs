@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
   private float maxHealth = 100f;
   // How much damage receives the player
   private float damage = 0.05f;
-  private float bigDamage = 1f;
+  private float bigDamage = 0.7f;
 
   [Header("Player position in the map according to tiles")]
   public int xPos;
