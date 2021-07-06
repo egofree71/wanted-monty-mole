@@ -40,7 +40,7 @@ public class Player : MonoBehaviour
   private Animator playerAnim;
   private enum horizontalDirection { Left, Right, None };
   private enum verticalDirection { Up, Down, None };
-  private enum state { Idle, Falling, Jumping, ClimbingRightSlope, ClimbingLeftSlope };
+  private enum state { Idle, Jumping, ClimbingRightSlope, ClimbingLeftSlope };
   public enum tileType { ConveyorUp = 94, ConveyorDown = 93, Acid = 95, TrapLeft = 91, TrapRight = 92 }
 
   // The current directions of the player
@@ -496,10 +496,15 @@ public class Player : MonoBehaviour
   }
 
 
-  // Test if the player is hurt by a background tile
+  // Test if the player is hurt
   void testPlayerIsHurt()
   {
-    bool playerIsHurt = false;
+    // If the player is falling
+    if (falling)
+    {
+      decreaseHealth();
+      return;
+    }
 
     int tileBelow = tilesMap.tiles[yPos + 1, xPos];
     int tileUnderFeet = tilesMap.tiles[yPos, xPos];
