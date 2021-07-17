@@ -77,6 +77,11 @@ Characters around the player:
 
 8EE0 : Start
 C000 : Test joystick and put direction into $1002
+C0F4 : Test player direction (1004) :
+    if up(1)    -> move map up (c44b)
+    if down(2)  -> move map down (c474)
+	if left(4)  -> move map left (c3f9)
+	if right(8) -> move map right (c422)
 c4F0 : left slope
 c50D : right slope
 c5A4, CB9E : test collision when player is going to the left
