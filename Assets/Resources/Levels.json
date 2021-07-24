@@ -105,6 +105,26 @@
                     "x": 1444,
                     "y": -472,
                     "type": "shield"
+                },
+                {
+                    "x": 1676,
+                    "y": -460,
+                    "type": "spring_blue"
+                },
+                {
+                    "x": 1644,
+                    "y": -460,
+                    "type": "spring_grey"
+                },
+                {
+                    "x": 1740,
+                    "y": -460,
+                    "type": "spring_cyan"
+                },
+                {
+                    "x": 1708,
+                    "y": -460,
+                    "type": "spring_purple"
                 }
 
             ]
