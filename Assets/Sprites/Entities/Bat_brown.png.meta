@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: 898813ec9be755a418d53a3c6cf0ed9d
+guid: 61fd04e06cbd3a847b1efc97745cc3ef
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8647823593821616703
-    second: Bat_0
+      213: -6258385105115342600
+    second: Bat_brown_0
   - first:
-      213: 5681806813702538305
-    second: Bat_1
+      213: -5272498371120549493
+    second: Bat_brown_1
   - first:
-      213: 697682191857345388
-    second: Bat_2
+      213: 8988574137286174188
+    second: Bat_brown_2
   - first:
-      213: 6993031405965254486
-    second: Bat_3
+      213: -748986683825326637
+    second: Bat_brown_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -56,8 +56,8 @@ TextureImporter:
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 0
-  spritePivot: {x: 0.5, y: 0.5}
+  alignment: 6
+  spritePivot: {x: 0, y: 0}
   spritePixelsToUnits: 1
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
@@ -127,7 +127,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Bat_0
+      name: Bat_brown_0
       rect:
         serializedVersion: 2
         x: 0
@@ -141,14 +141,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f3abafd8dbd330870800000000000000
-      internalID: 8647823593821616703
+      spriteID: 8f8110eb7efb529a0800000000000000
+      internalID: -6258385105115342600
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bat_1
+      name: Bat_brown_1
       rect:
         serializedVersion: 2
         x: 80
@@ -162,14 +162,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 144422d8135d9de40800000000000000
-      internalID: 5681806813702538305
+      spriteID: b81b8869aa254d6b0800000000000000
+      internalID: -5272498371120549493
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bat_2
+      name: Bat_brown_2
       rect:
         serializedVersion: 2
         x: 160
@@ -183,14 +183,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c63e5cbc14aaea900800000000000000
-      internalID: 697682191857345388
+      spriteID: ce5a43aed84ddbc70800000000000000
+      internalID: 8988574137286174188
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bat_3
+      name: Bat_brown_3
       rect:
         serializedVersion: 2
         x: 240
@@ -204,8 +204,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 65f95b7530d3c0160800000000000000
-      internalID: 6993031405965254486
+      spriteID: 3d5f71154901b95f0800000000000000
+      internalID: -748986683825326637
       vertices: []
       indices: 
       edges: []
