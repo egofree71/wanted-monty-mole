@@ -57,9 +57,24 @@
                     "type": "coal"
                 },
                 {
-                    "x": 604,
-                    "y": -1244,
-                    "type": "shield"
+                    "x": 196,
+                    "y": -552,
+                    "type": "bat_cyan"
+                },
+                {
+                    "x": 640,
+                    "y": -1032,
+                    "type": "bat_brown"
+                },
+                {
+                    "x": 354,
+                    "y": -776,
+                    "type": "bat_purple"
+                },
+                {
+                    "x": 352,
+                    "y": -1032,
+                    "type": "bat_grey"
                 }
             ]
         },
