@@ -510,11 +510,12 @@ public class Player : MonoBehaviour
 
     int tileBelow = tilesMap.tiles[yPos + 1, xPos];
     int tileUnderLeg = tilesMap.tiles[yPos, xPos];
-    
+    int tileUnderHead = tilesMap.tiles[yPos - 1, xPos];
+
     List<int> hurtingTiles = new List<int> { (int)tileType.Acid, (int)tileType.TrapLeft, (int)tileType.TrapRight };
 
     // If the player crosses acid or traps
-    if (hurtingTiles.Contains(tileBelow) || hurtingTiles.Contains(tileUnderLeg))
+    if (hurtingTiles.Contains(tileBelow) || hurtingTiles.Contains(tileUnderLeg) || hurtingTiles.Contains(tileUnderHead))
     {
       decreaseHealth(damage);
       return;
