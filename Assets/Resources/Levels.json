@@ -57,6 +57,11 @@
                     "type": "coal"
                 },
                 {
+                    "x": 604,
+                    "y": -1244,
+                    "type": "shield"
+                },
+                {
                     "x": 196,
                     "y": -552,
                     "type": "bat_cyan"
