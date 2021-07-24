@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: dddeb2cacd6af79478f076dff15ece6e
+guid: fb297eb43ac726c4faa9118f51d968c9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 279919546456459192
-    second: Spring_0
+      213: 4678967500605136605
+    second: Spring_blue_0
   - first:
-      213: 4805325407093817913
-    second: Spring_1
+      213: -4985828990038707690
+    second: Spring_blue_1
   - first:
-      213: -6156498168698554787
-    second: Spring_2
+      213: -335268455106243641
+    second: Spring_blue_2
   - first:
-      213: -7753731661287566730
-    second: Spring_3
+      213: -3705159386199928405
+    second: Spring_blue_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -56,8 +56,8 @@ TextureImporter:
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 0
-  spritePivot: {x: 0.5, y: 0.5}
+  alignment: 6
+  spritePivot: {x: 0, y: 0}
   spritePixelsToUnits: 1
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
@@ -127,7 +127,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Spring_0
+      name: Spring_blue_0
       rect:
         serializedVersion: 2
         x: 0
@@ -141,14 +141,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8b7c93c285972e300800000000000000
-      internalID: 279919546456459192
+      spriteID: dde9a2dc6280fe040800000000000000
+      internalID: 4678967500605136605
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spring_1
+      name: Spring_blue_1
       rect:
         serializedVersion: 2
         x: 64
@@ -162,14 +162,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9328cff7ff1ffa240800000000000000
-      internalID: 4805325407093817913
+      spriteID: 612f5e913f6cecab0800000000000000
+      internalID: -4985828990038707690
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spring_2
+      name: Spring_blue_2
       rect:
         serializedVersion: 2
         x: 128
@@ -183,14 +183,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d56316ab889bf8aa0800000000000000
-      internalID: -6156498168698554787
+      spriteID: 7c39ffccd13e85bf0800000000000000
+      internalID: -335268455106243641
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spring_3
+      name: Spring_blue_3
       rect:
         serializedVersion: 2
         x: 192
@@ -204,8 +204,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 67251459226356490800000000000000
-      internalID: -7753731661287566730
+      spriteID: ba159554b21a49cc0800000000000000
+      internalID: -3705159386199928405
       vertices: []
       indices: 
       edges: []
