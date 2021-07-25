@@ -198,6 +198,29 @@
                     "x": 1340,
                     "y": -1408,
                     "type": "shield"
+                },
+                {
+                    "x": 1340,
+                    "y": -1544,
+                    "type": "bat_grey"
+                },
+                {
+                    "x": 1452,
+                    "y": -1544,
+                    "type": "bat_grey",
+                    "cycle_offset": 0.33
+                },
+                {
+                    "x": 1564,
+                    "y": -1544,
+                    "type": "bat_grey",
+                    "cycle_offset": 0.66
+                },
+                {
+                    "x": 1676,
+                    "y": -1544,
+                    "type": "bat_grey",
+                    "cycle_offset": 1
                 }
 
             ]
