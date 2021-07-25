@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.IO;
-using UnityEditor;
 using UnityEngine;
 
 public enum LeverType { Right, Left };
@@ -59,6 +58,7 @@ public class LevelManager : MonoBehaviour
     {
       int xPosition = objectData.x;
       int yPosition = objectData.y;
+      float animationOffset = objectData.cycle_offset;
       string type = objectData.type;
 
       GameObject prefab = null;
@@ -73,6 +73,14 @@ public class LevelManager : MonoBehaviour
 
       // Add the prefab to the map
       GameObject childObject = GameObject.Instantiate(prefab, new Vector2(xPosition, yPosition), Quaternion.identity) as GameObject;
+
+      // Set the animation offset
+      if (animationOffset != 0)
+      {
+        Animator animator = childObject.GetComponent<Animator>();
+        animator.SetFloat("offset", animationOffset);
+      }
+      
       childObject.transform.parent = parent.transform;
     }
   }

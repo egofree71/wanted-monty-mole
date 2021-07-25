@@ -30,4 +30,5 @@ public class ObjectData
   public int x;
   public int y;
   public string type;
+  public float cycle_offset;
 }

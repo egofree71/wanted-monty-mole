@@ -64,22 +64,25 @@
                 {
                     "x": 196,
                     "y": -552,
-                    "type": "bat_cyan"
+                    "type": "bat_cyan"  
                 },
                 {
                     "x": 640,
                     "y": -1032,
-                    "type": "bat_brown"
+                    "type": "bat_brown",
+                    "cycle_offset": 0.33
                 },
                 {
                     "x": 354,
                     "y": -776,
-                    "type": "bat_purple"
+                    "type": "bat_purple",
+                    "cycle_offset": 0.66
                 },
                 {
                     "x": 352,
                     "y": -1032,
-                    "type": "bat_grey"
+                    "type": "bat_grey",
+                    "cycle_offset": 1
                 }
             ]
         },
@@ -114,17 +117,20 @@
                 {
                     "x": 1644,
                     "y": -460,
-                    "type": "spring_grey"
+                    "type": "spring_grey",
+                    "cycle_offset": 0.33
                 },
                 {
                     "x": 1740,
                     "y": -460,
-                    "type": "spring_cyan"
+                    "type": "spring_cyan",
+                    "cycle_offset": 0.66
                 },
                 {
                     "x": 1708,
                     "y": -460,
-                    "type": "spring_purple"
+                    "type": "spring_purple",
+                    "cycle_offset": 1
                 }
 
             ]
