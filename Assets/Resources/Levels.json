@@ -338,6 +338,26 @@
                     "x": 5280,
                     "y": -1548,
                     "type": "shield"
+                },
+                {
+                    "x": 5128,
+                    "y": -1604,
+                    "type": "arrow_left"
+                },
+                {
+                    "x": 5128,
+                    "y": -1600,
+                    "type": "arrow_right"
+                },
+                {
+                    "x": 5768,
+                    "y": -1604,
+                    "type": "arrow_left"
+                },
+                {
+                    "x": 5768,
+                    "y": -1600,
+                    "type": "arrow_right"
                 }
 
             ]
