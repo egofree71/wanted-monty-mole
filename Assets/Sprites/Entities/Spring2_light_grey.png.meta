@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: 8cd3b21be94eed547a09ba58b782a74f
+guid: 18b461e5467210640a0936e513072f6b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5117604962756417091
-    second: Spring2_black_0
+      213: -4893961627892988002
+    second: Spring2_light_grey_0
   - first:
-      213: -8115404673287288804
-    second: Spring2_black_1
+      213: 7534066696157622914
+    second: Spring2_light_grey_1
   - first:
-      213: -3741959643692162118
-    second: Spring2_black_2
+      213: -7134604159699204681
+    second: Spring2_light_grey_2
   - first:
-      213: -6009984955234989117
-    second: Spring2_black_3
+      213: -6829877113190295994
+    second: Spring2_light_grey_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -56,8 +56,8 @@ TextureImporter:
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 0
-  spritePivot: {x: 0.5, y: 0.5}
+  alignment: 6
+  spritePivot: {x: 0, y: 0}
   spritePixelsToUnits: 1
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
@@ -127,7 +127,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Spring2_black_0
+      name: Spring2_light_grey_0
       rect:
         serializedVersion: 2
         x: 0
@@ -141,14 +141,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3465fd17992650740800000000000000
-      internalID: 5117604962756417091
+      spriteID: e97cb0924d7251cb0800000000000000
+      internalID: -4893961627892988002
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spring2_black_1
+      name: Spring2_light_grey_1
       rect:
         serializedVersion: 2
         x: 56
@@ -162,14 +162,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c188a28627a406f80800000000000000
-      internalID: -8115404673287288804
+      spriteID: 28273923eb16e8860800000000000000
+      internalID: 7534066696157622914
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spring2_black_2
+      name: Spring2_light_grey_2
       rect:
         serializedVersion: 2
         x: 112
@@ -183,14 +183,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ab3a1e1a783e11cc0800000000000000
-      internalID: -3741959643692162118
+      spriteID: 7b5ca18415bccfc90800000000000000
+      internalID: -7134604159699204681
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spring2_black_3
+      name: Spring2_light_grey_3
       rect:
         serializedVersion: 2
         x: 168
@@ -204,8 +204,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3cbc6c5868e389ca0800000000000000
-      internalID: -6009984955234989117
+      spriteID: 646d8b8a3f66731a0800000000000000
+      internalID: -6829877113190295994
       vertices: []
       indices: 
       edges: []

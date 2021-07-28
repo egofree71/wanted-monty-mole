@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4156443603386178917}
   - component: {fileID: 9065184940432174910}
   m_Layer: 0
-  m_Name: Star_black
+  m_Name: Star_light_grey
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -72,7 +72,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 88831459416950959, guid: 53b57eb9612abe24c8a8f1eb1f0e6cdd, type: 3}
+  m_Sprite: {fileID: 2570452074656111952, guid: b6db69e574afcd2498774882527922c1,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -93,7 +94,7 @@ Animator:
   m_GameObject: {fileID: 7729724421348385198}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f92b032ee8501b64594f80d007b98297, type: 2}
+  m_Controller: {fileID: 9100000, guid: 3bc95379b4fbd18468beac42b6b4caf8, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

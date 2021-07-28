@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Star_black
+  m_Name: Star_light_grey
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,15 +20,16 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 88831459416950959, guid: 53b57eb9612abe24c8a8f1eb1f0e6cdd, type: 3}
+      value: {fileID: 2570452074656111952, guid: b6db69e574afcd2498774882527922c1,
+        type: 3}
     - time: 0.083333336
-      value: {fileID: 538044730018049424, guid: 53b57eb9612abe24c8a8f1eb1f0e6cdd,
+      value: {fileID: 3676992488834812673, guid: b6db69e574afcd2498774882527922c1,
         type: 3}
     - time: 0.16666667
-      value: {fileID: 7346886877953267941, guid: 53b57eb9612abe24c8a8f1eb1f0e6cdd,
+      value: {fileID: 8390456822644958431, guid: b6db69e574afcd2498774882527922c1,
         type: 3}
     - time: 0.25
-      value: {fileID: -6107059370399927522, guid: 53b57eb9612abe24c8a8f1eb1f0e6cdd,
+      value: {fileID: 6790540833403257029, guid: b6db69e574afcd2498774882527922c1,
         type: 3}
     attribute: m_Sprite
     path: 
@@ -49,10 +50,10 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 88831459416950959, guid: 53b57eb9612abe24c8a8f1eb1f0e6cdd, type: 3}
-    - {fileID: 538044730018049424, guid: 53b57eb9612abe24c8a8f1eb1f0e6cdd, type: 3}
-    - {fileID: 7346886877953267941, guid: 53b57eb9612abe24c8a8f1eb1f0e6cdd, type: 3}
-    - {fileID: -6107059370399927522, guid: 53b57eb9612abe24c8a8f1eb1f0e6cdd, type: 3}
+    - {fileID: 2570452074656111952, guid: b6db69e574afcd2498774882527922c1, type: 3}
+    - {fileID: 3676992488834812673, guid: b6db69e574afcd2498774882527922c1, type: 3}
+    - {fileID: 8390456822644958431, guid: b6db69e574afcd2498774882527922c1, type: 3}
+    - {fileID: 6790540833403257029, guid: b6db69e574afcd2498774882527922c1, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

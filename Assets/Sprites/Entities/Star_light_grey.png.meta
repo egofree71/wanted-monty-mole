@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: 53b57eb9612abe24c8a8f1eb1f0e6cdd
+guid: b6db69e574afcd2498774882527922c1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 88831459416950959
-    second: Star_black_0
+      213: 2570452074656111952
+    second: Star_light_grey_0
   - first:
-      213: 538044730018049424
-    second: Star_black_1
+      213: 3676992488834812673
+    second: Star_light_grey_1
   - first:
-      213: 7346886877953267941
-    second: Star_black_2
+      213: 8390456822644958431
+    second: Star_light_grey_2
   - first:
-      213: -6107059370399927522
-    second: Star_black_3
+      213: 6790540833403257029
+    second: Star_light_grey_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -56,8 +56,8 @@ TextureImporter:
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 6
-  spritePivot: {x: 0, y: 0}
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 1
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
@@ -127,7 +127,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Star_black_0
+      name: Star_light_grey_0
       rect:
         serializedVersion: 2
         x: 0
@@ -141,14 +141,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fa84d6fddb79b3100800000000000000
-      internalID: 88831459416950959
+      spriteID: 05d1b060b841ca320800000000000000
+      internalID: 2570452074656111952
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Star_black_1
+      name: Star_light_grey_1
       rect:
         serializedVersion: 2
         x: 88
@@ -162,14 +162,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 09d2ffdc4d4877700800000000000000
-      internalID: 538044730018049424
+      spriteID: 10b47c2ef2d470330800000000000000
+      internalID: 3676992488834812673
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Star_black_2
+      name: Star_light_grey_2
       rect:
         serializedVersion: 2
         x: 176
@@ -183,14 +183,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5e81265a0b265f560800000000000000
-      internalID: 7346886877953267941
+      spriteID: fd461019604e07470800000000000000
+      internalID: 8390456822644958431
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Star_black_3
+      name: Star_light_grey_3
       rect:
         serializedVersion: 2
         x: 264
@@ -204,8 +204,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e137715fbdd5f3ba0800000000000000
-      internalID: -6107059370399927522
+      spriteID: 5c049cff8e8dc3e50800000000000000
+      internalID: 6790540833403257029
       vertices: []
       indices: 
       edges: []
