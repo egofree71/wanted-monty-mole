@@ -384,6 +384,26 @@
                     "x": 6836,
                     "y": -1520,
                     "type": "shield"
+                },
+                {
+                    "x": 6628,
+                    "y": -1384,
+                    "type": "candle_pink"
+                },
+                {
+                    "x": 7228,
+                    "y": -1384,
+                    "type": "candle_purple"
+                },
+                {
+                    "x": 7748,
+                    "y": -1384,
+                    "type": "candle_red"
+                },
+                {
+                    "x": 7932,
+                    "y": -1384,
+                    "type": "candle_pink"
                 }
 
             ]
