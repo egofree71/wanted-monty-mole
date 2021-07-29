@@ -548,6 +548,26 @@
                     "x": 6028,
                     "y": -520,
                     "type": "shield"
+                },
+                {
+                    "x": 6036,
+                    "y": -724,
+                    "type": "helmet_grey"
+                },
+                {
+                    "x": 6036,
+                    "y": -564,
+                    "type": "helmet_light_green"
+                },
+                {
+                    "x": 6036,
+                    "y": -404,
+                    "type": "helmet_blue"
+                },
+                {
+                    "x": 6036,
+                    "y": -244,
+                    "type": "helmet_light_grey"
                 }
 
             ]
