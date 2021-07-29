@@ -7,12 +7,23 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
   int score = 0;
+  bool bucketTaken = false;
+
   // Text object which displays the score
   public TextMeshProUGUI scoreUI;
 
   void Start()
   {
     scoreUI = GameObject.Find("Score").GetComponent<TextMeshProUGUI>();
+  }
+
+  // If the bucket is taken, increase score, and set the digger in motion
+  public void SetBucketIsTaken()
+  {
+    bucketTaken = true;
+    IncreaseScore();
+    Digger digger = GameObject.Find("Digger(Clone)").GetComponent<Digger>();
+    digger.Walk(199);
   }
 
   // Increase score by one and diplay it

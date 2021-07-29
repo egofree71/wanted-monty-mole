@@ -16,6 +16,6 @@ public class Bucket : MonoBehaviour
   private void OnTriggerEnter2D(Collider2D collision)
   {
     Destroy(gameObject);
-    gameManager.IncreaseScore();
+    gameManager.SetBucketIsTaken();
   }
 }
