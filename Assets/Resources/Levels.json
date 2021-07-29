@@ -256,17 +256,20 @@
                 {
                     "x": 3660,
                     "y": -1164,
-                    "type": "star_light_grey"
+                    "type": "star_light_grey",
+                    "cycle_offset": 0.33
                 },
                 {
                     "x": 2964,
                     "y": -1164,
-                    "type": "star_green"
+                    "type": "star_green",
+                    "cycle_offset": 0.66
                 },
                 {
                     "x": 2636,
                     "y": -1164,
-                    "type": "star_grey"
+                    "type": "star_grey",
+                    "cycle_offset": 1
                 }
             ]
         },
@@ -296,17 +299,20 @@
                 {
                     "x": 2436,
                     "y": -220,
-                    "type": "bird"
+                    "type": "bird",
+                    "cycle_offset": 0.33
                 },
                 {
                     "x": 3212,
                     "y": -220,
-                    "type": "bird"
+                    "type": "bird",
+                    "cycle_offset": 0.66
                 },
                 {
                     "x": 3092,
                     "y": -220,
-                    "type": "bird"
+                    "type": "bird",
+                    "cycle_offset": 1
                 },
                 {
                     "x": 1888,
@@ -393,17 +399,20 @@
                 {
                     "x": 7228,
                     "y": -1384,
-                    "type": "candle_purple"
+                    "type": "candle_purple",
+                    "cycle_offset": 0.33
                 },
                 {
                     "x": 7748,
                     "y": -1384,
-                    "type": "candle_red"
+                    "type": "candle_red",
+                    "cycle_offset": 0.66
                 },
                 {
                     "x": 7932,
                     "y": -1384,
-                    "type": "candle_pink"
+                    "type": "candle_pink",
+                    "cycle_offset": 1
                 }
 
             ]
@@ -439,17 +448,20 @@
                 {
                     "x": 6940,
                     "y": -1196,
-                    "type": "spring2_light_grey"
+                    "type": "spring2_light_grey",
+                    "cycle_offset": 0.33
                 },
                 {
                     "x": 7580,
                     "y": -1196,
-                    "type": "spring2_yellow"
+                    "type": "spring2_yellow",
+                    "cycle_offset": 0.66
                 },
                 {
                     "x": 7580,
                     "y": -1196,
-                    "type": "spring2_blue"
+                    "type": "spring2_blue",
+                    "cycle_offset": 1
                 }
 
             ]
@@ -485,17 +497,20 @@
                 {
                     "x": 5264,
                     "y": -824,
-                    "type": "insect_green"
+                    "type": "insect_green",
+                    "cycle_offset": 0.33
                 },
                 {
                     "x": 4840,
                     "y": -824,
-                    "type": "insect_light_green"
+                    "type": "insect_light_green",
+                    "cycle_offset": 0.66
                 },
                 {
                     "x": 4640,
                     "y": -824,
-                    "type": "insect_light_green"
+                    "type": "insect_light_green",
+                    "cycle_offset": 1
                 }
 
             ]
@@ -557,17 +572,20 @@
                 {
                     "x": 6036,
                     "y": -564,
-                    "type": "helmet_light_green"
+                    "type": "helmet_light_green",
+                    "cycle_offset": 0.33
                 },
                 {
                     "x": 6036,
                     "y": -404,
-                    "type": "helmet_blue"
+                    "type": "helmet_blue",
+                    "cycle_offset": 0.66
                 },
                 {
                     "x": 6036,
                     "y": -244,
-                    "type": "helmet_light_grey"
+                    "type": "helmet_light_grey",
+                    "cycle_offset": 1
                 }
 
             ]
@@ -603,12 +621,14 @@
                 {
                     "x": 7096,
                     "y": -424,
-                    "type": "spray"
+                    "type": "spray",
+                    "cycle_offset": 0.33
                 },
                 {
                     "x": 6584,
                     "y": -424,
-                    "type": "spray"
+                    "type": "spray",
+                    "cycle_offset": 0.66
                 },
                 {
                     "x": 7700,
