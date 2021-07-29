@@ -430,6 +430,26 @@
                     "x": 7104,
                     "y": -1084,
                     "type": "shield"
+                },
+                {
+                    "x": 6940,
+                    "y": -1196,
+                    "type": "spring2_grey"
+                },
+                {
+                    "x": 6940,
+                    "y": -1196,
+                    "type": "spring2_light_grey"
+                },
+                {
+                    "x": 7580,
+                    "y": -1196,
+                    "type": "spring2_yellow"
+                },
+                {
+                    "x": 7580,
+                    "y": -1196,
+                    "type": "spring2_blue"
                 }
 
             ]
