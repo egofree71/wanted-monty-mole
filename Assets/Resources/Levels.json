@@ -476,6 +476,26 @@
                     "x": 5208,
                     "y": -616,
                     "type": "shield"
+                },
+                {
+                    "x": 5360,
+                    "y": -824,
+                    "type": "insect_green"
+                },
+                {
+                    "x": 5264,
+                    "y": -824,
+                    "type": "insect_green"
+                },
+                {
+                    "x": 4840,
+                    "y": -824,
+                    "type": "insect_light_green"
+                },
+                {
+                    "x": 4640,
+                    "y": -824,
+                    "type": "insect_light_green"
                 }
 
             ]
