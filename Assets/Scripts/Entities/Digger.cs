@@ -38,7 +38,7 @@ public class Digger : MonoBehaviour
       transform.position = new Vector2(transform.position.x + moveStep, transform.position.y);
       currentDistance++;
 
-      // If the digger has walked the distance, stop walking
+      // If digger has reached the distance, stop walking
       if (currentDistance >= distance * moveStep)
       {
         walking = false;
