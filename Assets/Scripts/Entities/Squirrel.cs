@@ -45,6 +45,7 @@ public class Squirrel : MonoBehaviour
   private void ChangeDirection()
   {
     isMovingRight = !isMovingRight;
+    // Flip image
     gameObject.transform.Rotate(0, 180, 0);
   }
 }
