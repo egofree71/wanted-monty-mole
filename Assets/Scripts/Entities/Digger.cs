@@ -6,7 +6,7 @@ public class Digger : MonoBehaviour
 {
   // Is the digger walking
   bool walking = false;
-  float moveStep = 2.0f;
+  float moveDistance = 2.0f;
   // The distance to walk
   int distance = 0;
   // The current distance
@@ -35,11 +35,11 @@ public class Digger : MonoBehaviour
     // Move the digger to the right
     if (walking)
     {
-      transform.position = new Vector2(transform.position.x + moveStep, transform.position.y);
+      transform.position = new Vector2(transform.position.x + moveDistance, transform.position.y);
       currentDistance++;
 
       // If digger has reached the distance, stop walking
-      if (currentDistance >= distance * moveStep)
+      if (currentDistance >= distance * moveDistance)
       {
         walking = false;
         diggerAnim.speed = 0.0f;
