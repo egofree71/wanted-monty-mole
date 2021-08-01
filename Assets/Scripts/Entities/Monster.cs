@@ -42,7 +42,17 @@ public class Monster : MonoBehaviour
   // Get the position in the map according to tiles
   void getCurrentPosition()
   {
+    // Get component size
+    Vector3 size = GetComponent<SpriteRenderer>().bounds.size;
+    int width = (int) size.x;
+    int height = (int)size.y;
 
+    // Calculate tile position
+    int x = (int) transform.position.x;
+    int y = (int)transform.position.y;
+
+    xPos = (x + width / 3) / 32;
+    yPos = -y / 32;
   }
 
   void Update()
