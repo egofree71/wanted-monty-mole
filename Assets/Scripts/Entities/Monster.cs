@@ -25,6 +25,9 @@ public class Monster : MonoBehaviour
   int moveStep = 1;
   // The number of moves to travel a tile
   int maxMoveStep;
+  // Position in the map according to tiles
+  private int xPos;
+  private int yPos;
 
   void Start()
   {
@@ -33,6 +36,13 @@ public class Monster : MonoBehaviour
     counterChangeDirection = Random.Range(0, maxCounter);
     // Calculate the number of moves we need to travel a tile
     maxMoveStep = Global.tileSize / (int)moveDistance;
+    getCurrentPosition();
+  }
+
+  // Get the position in the map according to tiles
+  void getCurrentPosition()
+  {
+
   }
 
   void Update()
@@ -61,7 +71,7 @@ public class Monster : MonoBehaviour
     if (moveStep == maxMoveStep)
     {
       moveStep = 1;
-      counterChangeDirection++
+      counterChangeDirection++;
 
       // If it is time to change direction
       if (counterChangeDirection == maxCounter)
