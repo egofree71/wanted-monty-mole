@@ -81,7 +81,6 @@ public class Player : MonoBehaviour
     tilesMap = GameObject.Find("TilesMap").GetComponent<TilesMap>();
     bridge = GameObject.Find("Bridge").GetComponent<MovingObject>();
     crusher = GameObject.Find("Crusher").GetComponent<MovingObject>();
-    tilesMap = GameObject.Find("TilesMap").GetComponent<TilesMap>();
     levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
     playerState = state.Idle;
 
