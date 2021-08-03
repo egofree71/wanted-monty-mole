@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2359030757818862872}
   - component: {fileID: 8030178155418884562}
   - component: {fileID: 5984199296445385145}
+  - component: {fileID: -380366612707997516}
   m_Layer: 0
   m_Name: Star_green
   m_TagString: Untagged
@@ -103,3 +104,15 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-380366612707997516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9188984742996403067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d7e0d2b24892994fa9094eb50b41a1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
