@@ -20,7 +20,7 @@ public class Monster : MonoBehaviour
   // The distance between two moves
   float moveDistance = 2.0f;
   // The current move's step inside a tile
-  int moveStep = 1;
+  int moveStep = 0;
   // The number of tiles to travel
   int tilesToTravel;
   int tilesTraveled;
@@ -149,7 +149,7 @@ public class Monster : MonoBehaviour
     // If the monster has traveled a tile distance
     if (moveStep == maxMoveStep)
     {
-      moveStep = 1;
+      moveStep = 0;
 
       // Update position in the map
       if (direction == Left)
