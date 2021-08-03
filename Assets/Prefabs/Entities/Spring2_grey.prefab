@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7322480123592377017}
   - component: {fileID: 2616023074429168517}
   - component: {fileID: 3132879969634711207}
+  - component: {fileID: 725665817283559797}
   m_Layer: 0
   m_Name: Spring2_grey
   m_TagString: Untagged
@@ -103,3 +104,15 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &725665817283559797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476948859376799209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d7e0d2b24892994fa9094eb50b41a1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
