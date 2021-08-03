@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 1283790883566261475}
   - component: {fileID: 3607178292004655999}
   - component: {fileID: 4585449333075884392}
-  - component: {fileID: 2214698078769658188}
   m_Layer: 0
   m_Name: Bat_cyan
   m_TagString: Untagged
@@ -129,32 +128,6 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 40, y: 22}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 80, y: 44}
-    newSize: {x: 80, y: 44}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 80, y: 44}
-  m_EdgeRadius: 0
---- !u!61 &2214698078769658188
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3815155094447563966}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 40, y: 22}

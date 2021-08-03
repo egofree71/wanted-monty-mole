@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 4993709515784517548}
   - component: {fileID: 3285643566054944899}
   - component: {fileID: -4728021444336565412}
-  - component: {fileID: 6044248881909991310}
   m_Layer: 0
   m_Name: Bat_brown
   m_TagString: Untagged
@@ -129,32 +128,6 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 40, y: 22}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 80, y: 44}
-    newSize: {x: 80, y: 44}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 80, y: 44}
-  m_EdgeRadius: 0
---- !u!61 &6044248881909991310
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4292046800809683538}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 40, y: 22}

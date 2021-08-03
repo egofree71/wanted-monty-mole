@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 8719899418915464145}
   - component: {fileID: -3083890687273398092}
   - component: {fileID: 2773419031445863860}
-  - component: {fileID: -6119073034199106036}
   m_Layer: 0
   m_Name: Hazelnut
   m_TagString: Untagged
@@ -108,32 +107,6 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 56, y: 52}
-    newSize: {x: 56, y: 52}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 56, y: 52}
-  m_EdgeRadius: 0
---- !u!61 &-6119073034199106036
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 109861166451628721}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
