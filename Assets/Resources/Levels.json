@@ -62,25 +62,25 @@
                     "type": "shield"
                 },
                 {
-                    "x": 196,
-                    "y": -552,
+                    "x": 200,
+                    "y": -544,
                     "type": "bat_cyan"
                 },
                 {
-                    "x": 640,
-                    "y": -1032,
+                    "x": 648,
+                    "y": -1024,
                     "type": "bat_brown",
                     "cycle_offset": 0.33
                 },
                 {
-                    "x": 354,
-                    "y": -776,
+                    "x": 360,
+                    "y": -768,
                     "type": "bat_purple",
                     "cycle_offset": 0.66
                 },
                 {
-                    "x": 352,
-                    "y": -1032,
+                    "x": 360,
+                    "y": -1024,
                     "type": "bat_grey",
                     "cycle_offset": 1
                 }
