@@ -60,55 +60,19 @@ public class Monster : MonoBehaviour
     yPos = -y / 32;
   }
 
-  // Test is there a solid tile right to the monster
-  bool isThereaSolidRight()
-  {
-    if (tilesMap.tiles[yPos, xPos + 1] < 91)
-      return true;
-    else
-      return false;
-  }
-
-  // Test is there a solid tile left to the monster
-  bool isThereaSolidLeft()
-  {
-    if (tilesMap.tiles[yPos, xPos - 1] < 91)
-      return true;
-    else
-      return false;
-  }
-
-  // Test is there a solid tile above to the monster
-  bool isThereaSolidAbove()
-  {
-    if (tilesMap.tiles[yPos - 1, xPos] < 91)
-      return true;
-    else
-      return false;
-  }
-
-  // Test is there a solid tile below the monster
-  bool isThereaSolidDown()
-  {
-    if (tilesMap.tiles[yPos + 1, xPos] < 91)
-      return true;
-    else
-      return false;
-  }
-
   // Test if there is solid tile around the monster
   void testCollision()
   {
-    if (direction == Left && isThereaSolidLeft())
+    if (direction == Left && tilesMap.tiles[yPos, xPos - 1] < 91)
       direction = None;
 
-    if (direction == Right && isThereaSolidRight())
+    if (direction == Right && tilesMap.tiles[yPos, xPos + 1] < 91)
       direction = None;
 
-    if (direction == Up && isThereaSolidAbove())
+    if (direction == Up && tilesMap.tiles[yPos - 1, xPos] < 91)
       direction = None;
 
-    if (direction == Down && isThereaSolidDown())
+    if (direction == Down && tilesMap.tiles[yPos + 1, xPos] < 91)
       direction = None;
   }
 
