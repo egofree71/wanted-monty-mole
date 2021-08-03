@@ -628,8 +628,6 @@ public class Player : MonoBehaviour
         lever.GetComponent<LeverTile>().activate();
 
       levelManager.goNextLevel();
-
-      Debug.Log(level + "," + xLeverPosition + "," + yLeverPosition);
     }
   }
 }

@@ -7,6 +7,8 @@ using UnityEngine;
 /// </summary>
 public class Monster : MonoBehaviour
 {
+  // How much damage receives the player when he collides with a monster
+  private float damage = 0.05f;
   // Direction types
   const int Right = 0;
   const int Left = 1;
@@ -31,6 +33,7 @@ public class Monster : MonoBehaviour
   private int yPos;
   // The gameObject which stores tiles maps
   private TilesMap tilesMap;
+  private Player player;
 
   void Start()
   {
@@ -40,7 +43,10 @@ public class Monster : MonoBehaviour
     // Calculate the number of moves we need to travel a tile
     maxMoveStep = Global.tileSize / (int)moveDistance;
     tilesMap = GameObject.Find("TilesMap").GetComponent<TilesMap>();
+    player = GameObject.Find("Player").GetComponent<Player>();
+    // Get the current tile position
     getCurrentTilePosition();
+    // Test if there is a solid tile for the current direction
     testCollision();
   }
 
@@ -60,7 +66,7 @@ public class Monster : MonoBehaviour
     yPos = -y / 32;
   }
 
-  // Test if there is solid tile around the monster
+  // Test if there is a solid tile for the current direction
   void testCollision()
   {
     if (direction == Left && tilesMap.tiles[yPos, xPos - 1] < 91)
@@ -133,4 +139,11 @@ public class Monster : MonoBehaviour
     }
 
   }
+
+  // Decrease player health when it collides with a monster
+  private void OnTriggerStay2D(Collider2D collision)
+  {
+    player.decreaseHealth(damage);
+  }
+  
 }

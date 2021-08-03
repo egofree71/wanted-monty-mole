@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Gas : MonoBehaviour
 {
+  // How much damage receives the player when he collides with the gas
+  private float damage = 0.05f;
   // Is gas entity moving to the right ?
   bool isMovingRight = true;
   // The maximum distance
@@ -11,6 +13,12 @@ public class Gas : MonoBehaviour
   float moveDistance = 2.0f;
   // The current distance
   int currentDistance = 0;
+  private Player player;
+
+  private void Start()
+  {
+    player = GameObject.Find("Player").GetComponent<Player>();
+  }
 
   void Update()
   {
@@ -40,5 +48,11 @@ public class Gas : MonoBehaviour
         isMovingRight = !isMovingRight;
       }
     }
+  }
+
+  // Decrease player health when it collides with the gas
+  private void OnTriggerStay2D(Collider2D collision)
+  {
+    player.decreaseHealth(damage);
   }
 }

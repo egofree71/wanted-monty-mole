@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Hazelnut : MonoBehaviour
 {
+  // How much damage receives the player when he collides with the hazelnut
+  private float damage = 0.05f;
   // The maximum distance
   int maxDistance = 55;
   float yStart;
@@ -12,12 +14,14 @@ public class Hazelnut : MonoBehaviour
   int currentDistance = 0;
   // The game object which manages the squirrel
   GameObject squirrel;
+  private Player player;
 
   void Start()
   {
     // Store the vertical position
     yStart = transform.position.y;
     squirrel = GameObject.Find("Squirrel(Clone)");
+    player = GameObject.Find("Player").GetComponent<Player>();
   }
 
   // Update is called once per frame
@@ -35,5 +39,11 @@ public class Hazelnut : MonoBehaviour
       transform.position = new Vector2(squirrel.transform.position.x, yStart);
       currentDistance = 0;
     }
+  }
+
+  // Decrease player health when it collides with the hazelnut
+  private void OnTriggerStay2D(Collider2D collision)
+  {
+    player.decreaseHealth(damage);
   }
 }

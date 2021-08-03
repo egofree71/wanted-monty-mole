@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Squirrel : MonoBehaviour
 {
+  // How much damage receives the player when he collides with the squirrel
+  private float damage = 0.05f;
   // Is squirrel moving to the right ?
   bool isMovingRight = true;
   // The maximum distance
@@ -11,6 +13,12 @@ public class Squirrel : MonoBehaviour
   float moveDistance = 2.0f;
   // The current distance
   int currentDistance = 0;
+  private Player player;
+
+  private void Start()
+  {
+    player = GameObject.Find("Player").GetComponent<Player>();
+  }
 
   void Update()
   {  
@@ -47,5 +55,11 @@ public class Squirrel : MonoBehaviour
     isMovingRight = !isMovingRight;
     // Flip image
     gameObject.transform.Rotate(0, 180, 0);
+  }
+
+  // Decrease player health when it collides with the hazelnut
+  private void OnTriggerStay2D(Collider2D collision)
+  {
+    player.decreaseHealth(damage);
   }
 }

@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 247117259322922529}
   - component: {fileID: 8064863501953566525}
   - component: {fileID: 5611029945676109483}
+  - component: {fileID: -4234615676176311179}
+  - component: {fileID: 4602517335962231600}
   m_Layer: 0
   m_Name: Spring_blue
   m_TagString: Untagged
@@ -116,3 +118,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d7e0d2b24892994fa9094eb50b41a1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!61 &-4234615676176311179
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3827907407496874841}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 32, y: 24}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 64, y: 48}
+    newSize: {x: 64, y: 48}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 64, y: 48}
+  m_EdgeRadius: 0
+--- !u!61 &4602517335962231600
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3827907407496874841}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 32, y: 24}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 64, y: 48}
+    newSize: {x: 64, y: 48}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 64, y: 48}
+  m_EdgeRadius: 0
