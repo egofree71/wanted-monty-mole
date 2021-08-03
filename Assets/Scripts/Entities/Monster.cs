@@ -123,51 +123,50 @@ public class Monster : MonoBehaviour
       direction = Random.Range(0, 4);
       testCollision();
     }
-    else
+
+    moveStep++;
+
+    // Move  monster with the current direction
+    switch (direction)
     {
-      moveStep++;
+      case Left:
+        transform.position = new Vector2(transform.position.x - moveDistance, transform.position.y);
+        break;
 
-      // Move  monster with the current direction
-      switch (direction)
-      {
-        case Left:
-          transform.position = new Vector2(transform.position.x - moveDistance, transform.position.y);
-          break;
+      case Right:
+        transform.position = new Vector2(transform.position.x + moveDistance, transform.position.y);
+        break;
 
-        case Right:
-          transform.position = new Vector2(transform.position.x + moveDistance, transform.position.y);
-          break;
+      case Up:
+        transform.position = new Vector2(transform.position.x, transform.position.y + moveDistance);
+        break;
 
-        case Up:
-          transform.position = new Vector2(transform.position.x, transform.position.y + moveDistance);
-          break;
-
-        case Down:
-          transform.position = new Vector2(transform.position.x, transform.position.y - moveDistance);
-          break;
-      }
-
-      // If the monster has traveled a tile distance
-      if (moveStep == maxMoveStep)
-      {
-        moveStep = 1;
-
-        // Update position in the map
-        if (direction == Left)
-          xPos--;
-
-        if (direction == Right)
-          xPos++;
-
-        if (direction == Up)
-          yPos--;
-
-        if (direction == Down)
-          yPos++;
-
-        tilesTraveled++;
-        testCollision();
-      }
+      case Down:
+        transform.position = new Vector2(transform.position.x, transform.position.y - moveDistance);
+        break;
     }
+
+    // If the monster has traveled a tile distance
+    if (moveStep == maxMoveStep)
+    {
+      moveStep = 1;
+
+      // Update position in the map
+      if (direction == Left)
+        xPos--;
+
+      if (direction == Right)
+        xPos++;
+
+      if (direction == Up)
+        yPos--;
+
+      if (direction == Down)
+        yPos++;
+
+      tilesTraveled++;
+      testCollision();
+    }
+
   }
 }
