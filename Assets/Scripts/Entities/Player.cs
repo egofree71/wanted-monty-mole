@@ -9,6 +9,9 @@ using UnityEngine.UI;
 /// </summary>
 public class Player : MonoBehaviour
 {
+  // Is the player protected by a shield ?
+  bool isProtected;
+
   // The maximal health for the player
   private float maxHealth = 100f;
   // How much damage receives the player
@@ -535,6 +538,10 @@ public class Player : MonoBehaviour
   // Decrease health and update health bar
   public void decreaseHealth(float damage)
   {
+    // If the player is inside a shield, no damage
+    if (isProtected)
+      return;
+
     health -= damage;
     healthBar.setHealth(health);
   }
@@ -629,6 +636,12 @@ public class Player : MonoBehaviour
 
       levelManager.goNextLevel();
     }
+  }
+
+  // Set if the player is protected by a shield
+  public void setProtected(bool isProtected)
+  {
+    this.isProtected = isProtected;
   }
 }
 
