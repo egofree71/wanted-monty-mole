@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7895976554320702327}
   - component: {fileID: 8834062487797763281}
   - component: {fileID: 6058379948383732759}
+  - component: {fileID: 2766217104785421895}
   m_Layer: 0
   m_Name: Arrow_right
   m_TagString: Untagged
@@ -109,3 +110,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 48, y: 48}
   m_EdgeRadius: 0
+--- !u!114 &2766217104785421895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7462134458303544007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdaffd304a050734abca5da2deca3eec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  direction: 1
