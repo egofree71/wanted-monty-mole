@@ -102,3 +102,9 @@ CD4c : test collision with bridges
 1e93 : test collision with worms box. If true 1074 = 80, then goto 1ed5 -> fill up health bar.
 1ef8 : test collision with enemies. If true goto 23ee -> if more than 4 hits (3 level hard), goto 23fe (ldx #$1d) and goto 1eae -> decrease health bar.
 Player sprite 0 : 7f8(c0) -> 3000
+1d04 : move squirrel. 1145 -> distance. 108c -> direction.
+1da4 : move hazelnut. 1146 -> distance. 
+1f79 : randow walk for monsters. 1162-1165 -> directions. 0-> right. 1-> left. 2-> down. 3-> up.
+2450 : move gas. 1239 -> direction. 123a -> distance.
+26a9 : move trolley. 12f5 12f6 -> distance.
+2735 : move arrows. 1328 -> distance.
