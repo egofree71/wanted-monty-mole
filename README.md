@@ -1,10 +1,8 @@
 Remake of the c64 game Wanted : monty mole, made with Unity 2020.3.
 
-Alpha version. About 50 % is done. Missing :
+Alpha version. About 70 % is done. Missing :
 
  - Improving graphics
- - Monsters
- - Shields
  - Music
  - Intro
  - End
