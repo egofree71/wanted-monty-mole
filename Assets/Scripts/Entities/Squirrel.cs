@@ -9,7 +9,7 @@ public class Squirrel : MonoBehaviour
   // Is squirrel moving to the right ?
   bool isMovingRight = true;
   // The maximum distance
-  int maxDistance = 100;
+  int maxDistance = 400;
   float moveDistance = 2.0f;
   // The current distance
   int currentDistance = 0;
@@ -25,10 +25,10 @@ public class Squirrel : MonoBehaviour
     if (isMovingRight)
     {
       // If the squirrel has not reached the maximum distance, move to the right
-      if (currentDistance < maxDistance * moveDistance)
+      if (currentDistance < maxDistance)
       {
         transform.position = new Vector2(transform.position.x + moveDistance, transform.position.y);
-        currentDistance++;
+        currentDistance += (int)moveDistance;
       }
       else
       {
@@ -41,7 +41,7 @@ public class Squirrel : MonoBehaviour
       if (currentDistance > 0)
       {
         transform.position = new Vector2(transform.position.x - moveDistance, transform.position.y);
-        currentDistance--;
+        currentDistance -= (int)moveDistance; ;
       }
       else
       {

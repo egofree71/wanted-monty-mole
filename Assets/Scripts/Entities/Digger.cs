@@ -40,10 +40,10 @@ public class Digger : MonoBehaviour
     if (walking)
     {
       transform.position = new Vector2(transform.position.x + moveDistance, transform.position.y);
-      currentDistance++;
+      currentDistance += (int) moveDistance;
 
       // If digger has reached the distance, stop walking
-      if (currentDistance >= distance * moveDistance)
+      if (currentDistance >= distance)
       {
         walking = false;
         diggerAnim.speed = 0.0f;

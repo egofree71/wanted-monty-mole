@@ -9,7 +9,7 @@ public class Gas : MonoBehaviour
   // Is gas entity moving to the right ?
   bool isMovingRight = true;
   // The maximum distance
-  int maxDistance = 50;
+  int maxDistance = 200;
   float moveDistance = 2.0f;
   // The current distance
   int currentDistance = 0;
@@ -25,10 +25,10 @@ public class Gas : MonoBehaviour
     if (isMovingRight)
     {
       // If the gas has not reached the maximum distance, move to the right
-      if (currentDistance < maxDistance * moveDistance)
+      if (currentDistance < maxDistance)
       {
         transform.position = new Vector2(transform.position.x + moveDistance, transform.position.y);
-        currentDistance++;
+        currentDistance += (int)moveDistance;
       }
       else
       {
@@ -41,7 +41,7 @@ public class Gas : MonoBehaviour
       if (currentDistance > 0)
       {
         transform.position = new Vector2(transform.position.x - moveDistance, transform.position.y);
-        currentDistance--;
+        currentDistance -= (int)moveDistance;
       }
       else
       {

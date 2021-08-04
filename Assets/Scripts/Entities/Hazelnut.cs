@@ -7,7 +7,7 @@ public class Hazelnut : MonoBehaviour
   // How much damage receives the player when he collides with the hazelnut
   private float damage = 0.05f;
   // The maximum distance
-  int maxDistance = 55;
+  int maxDistance = 220;
   float yStart;
   float moveStep = 2.0f;
   // The current distance
@@ -28,10 +28,10 @@ public class Hazelnut : MonoBehaviour
   void Update()
   {
     // If the hazelnut has not reached the maximum distance, go down
-    if (currentDistance < maxDistance * moveStep)
+    if (currentDistance < maxDistance)
     {
       transform.position = new Vector2(transform.position.x, transform.position.y - moveStep);
-      currentDistance++;
+      currentDistance += (int) moveStep;
     }
     // Reset position
     else

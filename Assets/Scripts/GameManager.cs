@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
     bucketTaken = true;
     IncreaseScore();
     Digger digger = GameObject.Find("Digger(Clone)").GetComponent<Digger>();
-    digger.Walk(199);
+    digger.Walk(796);
   }
 
   // Increase score by one and diplay it
