@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4619199038012080126}
   - component: {fileID: 4168334818647618401}
   - component: {fileID: -6658076180919116285}
+  - component: {fileID: 7054035750098867286}
   m_Layer: 0
   m_Name: Trolley
   m_TagString: Untagged
@@ -130,3 +131,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 96, y: 36}
   m_EdgeRadius: 0
+--- !u!114 &7054035750098867286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7199833699937696282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b10bea3f6a93cb6449d6522f498e7981, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
