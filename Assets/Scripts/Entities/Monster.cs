@@ -35,6 +35,15 @@ public class Monster : MonoBehaviour
   private TilesMap tilesMap;
   private Player player;
 
+  public int XPos
+  {
+    get { return xPos; }
+  }
+  public int YPos
+  {
+    get { return yPos; }
+  }
+
   void Start()
   {
     // Get a direction and number of tiles to travel
