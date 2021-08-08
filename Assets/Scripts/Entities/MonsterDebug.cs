@@ -25,6 +25,7 @@ public class MonsterDebug : MonoBehaviour
     // Create a rectangle object
     rectangle = new GameObject("Rectangle");
     SpriteRenderer renderer = rectangle.AddComponent<SpriteRenderer>();
+    renderer.sortingOrder = 2;
     renderer.sprite = sprite;
     rectangle.transform.position = new Vector2(monster.XPos * 32, -monster.YPos * 32);
   }
