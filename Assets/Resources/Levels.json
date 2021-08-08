@@ -200,25 +200,25 @@
                     "type": "shield"
                 },
                 {
-                    "x": 1340,
-                    "y": -1544,
+                    "x": 1320,
+                    "y": -1536,
                     "type": "bat_grey"
                 },
                 {
-                    "x": 1452,
-                    "y": -1544,
+                    "x": 1448,
+                    "y": -1536,
                     "type": "bat_grey",
                     "cycle_offset": 0.33
                 },
                 {
-                    "x": 1564,
-                    "y": -1544,
+                    "x": 1544,
+                    "y": -1536,
                     "type": "bat_grey",
                     "cycle_offset": 0.66
                 },
                 {
-                    "x": 1676,
-                    "y": -1544,
+                    "x": 1672,
+                    "y": -1536,
                     "type": "bat_grey",
                     "cycle_offset": 1
                 }
