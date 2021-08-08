@@ -38,8 +38,11 @@ public class MonsterDebug : MonoBehaviour
 
   void Update()
   {
+    // If we are in the editor, calculate the tile position
+    if (!Application.isPlaying)
+      monster.getCurrentTilePosition();
+
     // Get the current tile position and display it
-    monster.getCurrentTilePosition();
     xPos = monster.XPos;
     yPos = monster.YPos;
     rectangle.transform.position = new Vector2(monster.XPos * 32, -monster.YPos * 32);
