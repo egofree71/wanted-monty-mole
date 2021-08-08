@@ -5,6 +5,7 @@ using UnityEngine;
 /// <summary>
 ///  This class is used to display the tile position of a monster with a rectangle
 /// </summary>
+[ExecuteInEditMode]
 public class MonsterDebug : MonoBehaviour
 {
   // The rectangle image
@@ -13,8 +14,10 @@ public class MonsterDebug : MonoBehaviour
   GameObject rectangle;
   // The monster script
   Monster monster;
+  public int xPos;
+  public int yPos;
 
-  void Start()
+  void Awake()
   {
     // Get the monster script
     monster = transform.GetComponent<Monster>();
@@ -26,9 +29,18 @@ public class MonsterDebug : MonoBehaviour
     rectangle.transform.position = new Vector2(monster.XPos * 32, -monster.YPos * 32);
   }
 
+  // Delete the rectangle when the monster is deleted
+  void OnDestroy()
+  {
+    GameObject.DestroyImmediate(rectangle);
+  }
+
   void Update()
   {
-    // Update the rectangle position with the monster tile position
+    // Get the current tile position and display it
+    monster.getCurrentTilePosition();
+    xPos = monster.XPos;
+    yPos = monster.YPos;
     rectangle.transform.position = new Vector2(monster.XPos * 32, -monster.YPos * 32);
   }
 }

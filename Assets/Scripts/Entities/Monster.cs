@@ -60,7 +60,7 @@ public class Monster : MonoBehaviour
   }
 
   // Get the position in the map according to tiles
-  void getCurrentTilePosition()
+  public void getCurrentTilePosition()
   {
     // Get component size
     Vector3 size = GetComponent<SpriteRenderer>().bounds.size;
