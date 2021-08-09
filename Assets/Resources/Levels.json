@@ -392,25 +392,25 @@
                     "type": "shield"
                 },
                 {
-                    "x": 6628,
-                    "y": -1384,
+                    "x": 6616,
+                    "y": -1382,
                     "type": "candle_pink"
                 },
                 {
-                    "x": 7228,
-                    "y": -1384,
+                    "x": 7224,
+                    "y": -1382,
                     "type": "candle_purple",
                     "cycle_offset": 0.33
                 },
                 {
-                    "x": 7748,
-                    "y": -1384,
+                    "x": 7736,
+                    "y": -1382,
                     "type": "candle_red",
                     "cycle_offset": 0.66
                 },
                 {
-                    "x": 7932,
-                    "y": -1384,
+                    "x": 7928,
+                    "y": -1382,
                     "type": "candle_pink",
                     "cycle_offset": 1
                 }
