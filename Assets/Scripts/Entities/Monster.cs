@@ -31,9 +31,22 @@ public class Monster : MonoBehaviour
   // Position in the map according to tiles
   private int xPos;
   private int yPos;
+  // Component size
+  private int width;
+  private int height;
+
   // The gameObject which stores tiles maps
   private TilesMap tilesMap;
   private Player player;
+
+  public int Width
+  {
+    get { return width; }
+  }
+  public int Height
+  {
+    get { return height; }
+  }
 
   public int XPos
   {
@@ -46,6 +59,7 @@ public class Monster : MonoBehaviour
 
   void Start()
   {
+    getSize();
     // Get a direction and number of tiles to travel
     direction = Random.Range(0, 4);
     tilesToTravel = Random.Range(0, maxTiles);
@@ -59,20 +73,27 @@ public class Monster : MonoBehaviour
     testCollision();
   }
 
+  // Get component size
+  public void getSize()
+  {
+    Vector3 size = GetComponent<SpriteRenderer>().bounds.size;
+    width = (int)size.x;
+    height = (int)size.y;
+  }
+
   // Get the position in the map according to tiles
   public void getCurrentTilePosition()
   {
-    // Get component size
-    Vector3 size = GetComponent<SpriteRenderer>().bounds.size;
-    int width = (int)size.x;
-    int height = (int)size.y;
-
     // Calculate tile position
     int x = (int)transform.position.x;
     int y = (int)transform.position.y;
 
-    xPos = (x + width / 3) / 32;
-    yPos = -y / 32;
+    int yOffset = height - Global.tileSize;
+    xPos = x + width / 2;
+    yPos = y + yOffset - height / 2;
+
+    xPos = xPos / 32;
+    yPos = -(yPos / 32);
   }
 
   // Test if there is a solid tile for the current direction
@@ -154,5 +175,5 @@ public class Monster : MonoBehaviour
   {
     player.decreaseHealth(damage);
   }
-  
+
 }
