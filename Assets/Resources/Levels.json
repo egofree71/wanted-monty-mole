@@ -441,25 +441,25 @@
                     "type": "shield"
                 },
                 {
-                    "x": 6940,
-                    "y": -1196,
+                    "x": 6932,
+                    "y": -1192,
                     "type": "spring2_grey"
                 },
                 {
-                    "x": 6940,
-                    "y": -1196,
+                    "x": 6932,
+                    "y": -1192,
                     "type": "spring2_light_grey",
                     "cycle_offset": 0.33
                 },
                 {
-                    "x": 7580,
-                    "y": -1196,
+                    "x": 7572,
+                    "y": -1192,
                     "type": "spring2_yellow",
                     "cycle_offset": 0.66
                 },
                 {
-                    "x": 7580,
-                    "y": -1196,
+                    "x": 7572,
+                    "y": -1192,
                     "type": "spring2_blue",
                     "cycle_offset": 1
                 }
