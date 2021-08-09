@@ -4,6 +4,7 @@ using UnityEngine;
 
 /// <summary>
 ///  This class is used to display the tile position of a monster with a rectangle
+///  Add the script to a monster entity and select the rectangle sprite to test
 /// </summary>
 [ExecuteInEditMode]
 public class MonsterDebug : MonoBehaviour
@@ -38,7 +39,6 @@ public class MonsterDebug : MonoBehaviour
   {
     if (!snapToTile)
       return;
-
 
     int xTile = monster.XPos * 32;
     int yTile = -monster.YPos * 32;
