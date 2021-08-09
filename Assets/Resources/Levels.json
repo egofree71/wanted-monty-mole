@@ -490,25 +490,25 @@
                     "type": "shield"
                 },
                 {
-                    "x": 5360,
-                    "y": -824,
+                    "x": 5348,
+                    "y": -812,
                     "type": "insect_green"
                 },
                 {
-                    "x": 5264,
-                    "y": -824,
+                    "x": 5252,
+                    "y": -812,
                     "type": "insect_green",
                     "cycle_offset": 0.33
                 },
                 {
-                    "x": 4840,
-                    "y": -824,
+                    "x": 4836,
+                    "y": -812,
                     "type": "insect_light_green",
                     "cycle_offset": 0.66
                 },
                 {
-                    "x": 4640,
-                    "y": -824,
+                    "x": 4644,
+                    "y": -812,
                     "type": "insect_light_green",
                     "cycle_offset": 1
                 }
