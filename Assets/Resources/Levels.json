@@ -249,25 +249,25 @@
                     "type": "shield"
                 },
                 {
-                    "x": 4076,
-                    "y": -1164,
+                    "x": 4068,
+                    "y": -1170,
                     "type": "star_blue"
                 },
                 {
-                    "x": 3660,
-                    "y": -1164,
+                    "x": 3652,
+                    "y": -1170,
                     "type": "star_light_grey",
                     "cycle_offset": 0.33
                 },
                 {
-                    "x": 2964,
-                    "y": -1164,
+                    "x": 2980,
+                    "y": -1170,
                     "type": "star_green",
                     "cycle_offset": 0.66
                 },
                 {
-                    "x": 2636,
-                    "y": -1164,
+                    "x": 2628,
+                    "y": -1170,
                     "type": "star_grey",
                     "cycle_offset": 1
                 }
