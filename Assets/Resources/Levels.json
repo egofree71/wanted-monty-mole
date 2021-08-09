@@ -565,25 +565,25 @@
                     "type": "shield"
                 },
                 {
-                    "x": 6036,
-                    "y": -724,
+                    "x": 6052,
+                    "y": -716,
                     "type": "helmet_grey"
                 },
                 {
-                    "x": 6036,
-                    "y": -564,
+                    "x": 6052,
+                    "y": -556,
                     "type": "helmet_light_green",
                     "cycle_offset": 0.33
                 },
                 {
-                    "x": 6036,
-                    "y": -404,
+                    "x": 6052,
+                    "y": -396,
                     "type": "helmet_blue",
                     "cycle_offset": 0.66
                 },
                 {
-                    "x": 6036,
-                    "y": -244,
+                    "x": 6052,
+                    "y": -236,
                     "type": "helmet_light_grey",
                     "cycle_offset": 1
                 }
