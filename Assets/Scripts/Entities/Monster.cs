@@ -84,10 +84,11 @@ public class Monster : MonoBehaviour
   // Get the position in the map according to tiles
   public void getCurrentTilePosition()
   {
-    // Calculate tile position
+    // Get current position
     int x = (int)transform.position.x;
     int y = (int)transform.position.y;
 
+    // Calculate center
     int yOffset = height - Global.tileSize;
     xPos = x + width / 2;
     yPos = y + yOffset - height / 2;

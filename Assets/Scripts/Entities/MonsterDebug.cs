@@ -16,11 +16,13 @@ public class MonsterDebug : MonoBehaviour
   Monster monster;
   public int xPos;
   public int yPos;
+  public bool snapToTile;
 
   void Awake()
   {
     // Get the monster script
     monster = transform.GetComponent<Monster>();
+    monster.getSize();
 
     // Create a rectangle object
     rectangle = new GameObject("Rectangle");
@@ -28,6 +30,29 @@ public class MonsterDebug : MonoBehaviour
     renderer.sortingOrder = 2;
     renderer.sprite = sprite;
     rectangle.transform.position = new Vector2(monster.XPos * 32, -monster.YPos * 32);
+  }
+
+
+  // If the snapToTile option is activated, move the monster to the center of the tile
+  void OnValidate()
+  {
+    if (!snapToTile)
+      return;
+
+
+    int xTile = monster.XPos * 32;
+    int yTile = -monster.YPos * 32;
+
+    // Get tile center
+    int xCenter = xTile + Global.tileSize / 2;
+    int yCenter = yTile - Global.tileSize / 2;
+
+    int yOffset = monster.Height - Global.tileSize;
+    int xMonster = xCenter - monster.Width / 2;
+    int yMonster = yCenter - yOffset + monster.Height / 2;
+
+    transform.position = new Vector2(xMonster, yMonster);
+    snapToTile = false;
   }
 
   // Delete the rectangle when the monster is deleted
@@ -38,6 +63,9 @@ public class MonsterDebug : MonoBehaviour
 
   void Update()
   {
+    if (snapToTile)
+      return;
+
     // If we are in the editor, calculate the tile position
     if (!Application.isPlaying)
       monster.getCurrentTilePosition();
