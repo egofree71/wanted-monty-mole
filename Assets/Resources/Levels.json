@@ -63,24 +63,24 @@
                 },
                 {
                     "x": 200,
-                    "y": -544,
+                    "y": -550,
                     "type": "bat_cyan"
                 },
                 {
                     "x": 648,
-                    "y": -1024,
+                    "y": -1030,
                     "type": "bat_brown",
                     "cycle_offset": 0.33
                 },
                 {
                     "x": 360,
-                    "y": -768,
+                    "y": -774,
                     "type": "bat_purple",
                     "cycle_offset": 0.66
                 },
                 {
                     "x": 360,
-                    "y": -1024,
+                    "y": -1030,
                     "type": "bat_grey",
                     "cycle_offset": 1
                 }
