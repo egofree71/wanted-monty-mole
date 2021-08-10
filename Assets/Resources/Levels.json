@@ -537,6 +537,26 @@
                     "x": 5656,
                     "y": -68,
                     "type": "shield"
+                },
+                {
+                    "x": 4984,
+                    "y": -46,
+                    "type": "field_grey"
+                },
+                {
+                    "x": 5352,
+                    "y": -30,
+                    "type": "field_light_grey"
+                },
+                {
+                    "x": 5480,
+                    "y": -190,
+                    "type": "field_light_blue"
+                },
+                {
+                    "x": 5648,
+                    "y": -190,
+                    "type": "field_light_blue"
                 }
 
             ]
