@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1885696960011876030}
   - component: {fileID: 4068345102285655738}
+  - component: {fileID: 2546056321542961429}
   m_Layer: 0
   m_Name: Field_light_blue
   m_TagString: Untagged
@@ -82,3 +83,15 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2546056321542961429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6620741388072158304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9516a5ff4bf8c0c4ba09ca5715ad113c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
