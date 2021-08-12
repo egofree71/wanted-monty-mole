@@ -12,9 +12,16 @@ public class Field : MonoBehaviour
   // The sprite pixels
   Color32[] spritePixels;
   Color32[] destPixels;
+  // Array length
+  int length;
   // Sprite size
   int width;
   int height;
+  // Counter used to set animation speed
+  int animationCounter;
+  // Counter used to pause animation when direction is changed
+  int pauseCounter;
+  // The maximum distance
   int maxDistance;
   // The current direction
   bool isDirectionDown = true;
@@ -33,8 +40,9 @@ public class Field : MonoBehaviour
     width = sprite.texture.width;
     height = sprite.texture.height;
     
-    maxDistance = height / 2;
+    maxDistance = height * width / 2;
     destPixels = new Color32[width * height];
+    length = width * height;
     // Create an empty texture
     Texture2D texture = new Texture2D(width, height);
 
@@ -52,32 +60,49 @@ public class Field : MonoBehaviour
     spriteRenderer.sprite = Sprite.Create(texture, sprite.rect, new Vector2(0f, 0.0f), 1.0f);
   }
 
+  void changeDirection()
+  {
+    isDirectionDown = !isDirectionDown;
+    animationCounter = 50;
+  }
 
   void Update()
   {
+    animationCounter--;
+
+    if (animationCounter > 0)
+      return;
+    else
+      animationCounter = 2;
+
     // Start with an empty background
     System.Array.Copy(clearPixels, destPixels, destPixels.Length);
 
     if (isDirectionDown)
     {
+      // If we have not reached the maximum distance, increase the distance
       if (currentDistance < maxDistance)
-        currentDistance++;
+        currentDistance += width * 2;
       else
         isDirectionDown = !isDirectionDown;
     }
     else
     {
+      // If we have not reached the minimum distance, decrease the distance
       if (currentDistance > 0)
-        currentDistance--;
+        currentDistance -= width * 2;
       else
-        isDirectionDown = !isDirectionDown;
+        changeDirection();
     }
 
-    for (int i = 0; i < width * currentDistance; i++)
+    // Copy the original sprite pixels to the destination
+    for (int i = 0; i < currentDistance; i++)
     {
       destPixels[i] = spritePixels[i];
+      destPixels[length - i - 1] = spritePixels[i];
     }
 
+    // Apply the new texture
     spriteRenderer.sprite.texture.SetPixels32(destPixels);
     spriteRenderer.sprite.texture.Apply();
   }
