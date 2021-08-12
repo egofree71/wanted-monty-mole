@@ -539,23 +539,23 @@
                     "type": "shield"
                 },
                 {
-                    "x": 4984,
-                    "y": -46,
+                    "x": 4952,
+                    "y": -88,
                     "type": "field_grey"
                 },
                 {
-                    "x": 5352,
-                    "y": -30,
+                    "x": 5304,
+                    "y": -72,
                     "type": "field_light_grey"
                 },
                 {
-                    "x": 5480,
-                    "y": -190,
+                    "x": 5432,
+                    "y": -232,
                     "type": "field_light_blue"
                 },
                 {
-                    "x": 5648,
-                    "y": -190,
+                    "x": 5592,
+                    "y": -232,
                     "type": "field_light_blue"
                 }
 
