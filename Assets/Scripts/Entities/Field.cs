@@ -73,7 +73,7 @@ public class Field : MonoBehaviour
     if (animationCounter > 0)
       return;
     else
-      animationCounter = 2;
+      animationCounter = 3;
 
     // Start with an empty background
     System.Array.Copy(clearPixels, destPixels, destPixels.Length);
@@ -82,7 +82,7 @@ public class Field : MonoBehaviour
     {
       // If we have not reached the maximum distance, increase the distance
       if (currentDistance < maxDistance)
-        currentDistance += width * 2;
+        currentDistance += width * 3;
       else
         isDirectionDown = !isDirectionDown;
     }
@@ -90,7 +90,7 @@ public class Field : MonoBehaviour
     {
       // If we have not reached the minimum distance, decrease the distance
       if (currentDistance > 0)
-        currentDistance -= width * 2;
+        currentDistance -= width * 3;
       else
         changeDirection();
     }
