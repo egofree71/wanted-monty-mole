@@ -62,8 +62,11 @@ public class Field : MonoBehaviour
     texture.SetPixels32(clearPixels);
     texture.Apply();
 
+    Sprite newSprite = Sprite.Create(texture, sprite.rect, new Vector2(0f, 0.0f), 1.0f);
+    newSprite.texture.filterMode = FilterMode.Point;
     // Start with an empty sprite
-    spriteRenderer.sprite = Sprite.Create(texture, sprite.rect, new Vector2(0f, 0.0f), 1.0f);
+    spriteRenderer.sprite = newSprite;
+
   }
 
   void changeDirection()
