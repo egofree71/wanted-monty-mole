@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Field : MonoBehaviour
 {
+  // How much damage receives the player
+  private float damage = 0.05f;
   SpriteRenderer spriteRenderer;
   // The field sprite
   Sprite sprite;
@@ -19,17 +21,21 @@ public class Field : MonoBehaviour
   int height;
   // Counter used to set animation speed
   int animationCounter;
-  // Counter used to pause animation when direction is changed
-  int pauseCounter;
   // The maximum distance
   int maxDistance;
   // The current direction
   bool isDirectionDown = true;
   // The current distance
   int currentDistance = 0;
+  private Player player;
+  // Is the field active (not empty)
+  bool isActive = true;
+
 
   void Start()
   {
+    // Get the Player script
+    player = GameObject.Find("Player").GetComponent<Player>();
     // Get the sprite renderer
     spriteRenderer = GetComponent<SpriteRenderer>();
     // Store the original sprite
@@ -64,6 +70,16 @@ public class Field : MonoBehaviour
   {
     isDirectionDown = !isDirectionDown;
     animationCounter = 50;
+    isActive = false;
+  }
+
+  // Reset the counter used to set animation speed
+  void resetAnimationCounter()
+  {
+    if (isActive == false)
+      isActive = true;
+
+    animationCounter = 3;
   }
 
   void Update()
@@ -73,7 +89,7 @@ public class Field : MonoBehaviour
     if (animationCounter > 0)
       return;
     else
-      animationCounter = 3;
+      resetAnimationCounter();
 
     // Start with an empty background
     System.Array.Copy(clearPixels, destPixels, destPixels.Length);
@@ -105,5 +121,12 @@ public class Field : MonoBehaviour
     // Apply the new texture
     spriteRenderer.sprite.texture.SetPixels32(destPixels);
     spriteRenderer.sprite.texture.Apply();
+  }
+
+  // If the player collides with an active field, decrease player health
+  private void OnTriggerStay2D(Collider2D collision)
+  {
+    if (isActive)
+      player.decreaseHealth(damage);
   }
 }
