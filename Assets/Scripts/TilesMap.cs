@@ -52,7 +52,7 @@ public class TilesMap : MonoBehaviour
     int[,] mazeCells = Global.graphicalMazeTiles;
 
     int rowsNumber = mazeCells.GetLength(0);
-    int columnsNumber = mazeCells.GetLength(1);
+    int columnsNumber = mazeCells.GetLength(1) - 1;
     int xMazeOffset = 58;
     int yMazeOffset = 16;
 
