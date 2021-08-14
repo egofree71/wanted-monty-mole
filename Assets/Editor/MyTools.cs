@@ -142,6 +142,25 @@ public class MyTools
 
     }
 
+    addTilesAroundMap(tiles, backgrounds);
+
+  }
+
+  // Add decorating tiles arround the map
+  private static void addTilesAroundMap(UnityEngine.Object[] tiles, GameObject backgrounds)
+  {
+    int rows = 56;
+    int columns = 256;
+
+    for (int row = -10; row < 0; row++)
+    {
+      for (int column = 0; column < columns; column++)
+      {
+        instantiatePrefab(tiles, 89, row, column, backgrounds);
+        instantiatePrefab(tiles, 89, row + rows + 5, column, backgrounds);
+      }
+    }
+
   }
 
   // Instantiate a prefab with for a given row and column
