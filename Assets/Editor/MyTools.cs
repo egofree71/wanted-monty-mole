@@ -151,13 +151,14 @@ public class MyTools
   {
     int rows = 56;
     int columns = 256;
+    int rowsNumber = 10;
 
-    for (int row = -10; row < 0; row++)
+    for (int row = -rowsNumber; row < 0; row++)
     {
       for (int column = 0; column < columns; column++)
       {
         instantiatePrefab(tiles, 89, row, column, backgrounds);
-        instantiatePrefab(tiles, 89, row + rows + 7, column, backgrounds);
+        instantiatePrefab(tiles, 89, row + rows + rowsNumber, column, backgrounds);
       }
     }
 
