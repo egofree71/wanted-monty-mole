@@ -179,6 +179,10 @@ public class Player : MonoBehaviour
             // If the player wants to go right
             if (rightArrow)
             {
+              // Stop if the player wants to exits the map
+              if (xPos > 254)
+                return;
+
               // If there is slope to the right, first go up
               if (isThereaSlopeToTheRight())
               {
@@ -222,6 +226,14 @@ public class Player : MonoBehaviour
           break;
 
         case state.Jumping:
+
+          // Stop if the player wants to exits the map
+          if (xPos > 254)
+          {
+            stopJump();
+            return;
+          }
+
           // If the player is going up, don't animate the player
           if (jumpDirection == horizontalDirection.None)
             animatePlayer = false;
@@ -524,7 +536,7 @@ public class Player : MonoBehaviour
     }
 
     // If the player is above an electric ground
-    if (tileBelow == (int) tileType.ElectricGround)
+    if (tileBelow == (int)tileType.ElectricGround)
       decreaseHealth(bigDamage);
   }
 
