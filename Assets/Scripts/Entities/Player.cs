@@ -179,7 +179,7 @@ public class Player : MonoBehaviour
             // If the player wants to go right
             if (rightArrow)
             {
-              // Stop if the player wants to exits the map
+              // Stop the player if he wants to exit the map
               if (xPos > 254)
                 return;
 
@@ -227,7 +227,7 @@ public class Player : MonoBehaviour
 
         case state.Jumping:
 
-          // Stop if the player wants to exits the map
+          // Stop the player if he wants to exit the map
           if (xPos > 254)
           {
             stopJump();
