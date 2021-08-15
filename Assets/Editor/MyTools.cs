@@ -142,26 +142,57 @@ public class MyTools
 
     }
 
-    addTilesAroundMap(tiles, backgrounds);
+    addTilesAroundMap(tiles, backgrounds, tilesArray);
 
   }
 
   // Add decorating tiles arround the map
-  private static void addTilesAroundMap(UnityEngine.Object[] tiles, GameObject backgrounds)
+  private static void addTilesAroundMap(UnityEngine.Object[] tiles, GameObject backgrounds, int[,] tilesArray)
   {
     int rows = 56;
     int columns = 256;
-    int rowsNumber = 10;
+    // Number of rows to add
+    int rowsToAdd = 10;
 
-    for (int row = -rowsNumber; row < 0; row++)
+    // Add 'earth' tiles above and below
+    for (int row = -rowsToAdd; row < 0; row++)
     {
       for (int column = 0; column < columns; column++)
       {
         instantiatePrefab(tiles, 89, row, column, backgrounds);
-        instantiatePrefab(tiles, 89, row + rows + rowsNumber, column, backgrounds);
+        instantiatePrefab(tiles, 89, row + rows + rowsToAdd, column, backgrounds);
       }
     }
 
+    // Number of columns to add
+    int columnsToAdd = 14;
+
+    // Add 'earth' tiles to the left and right
+    for (int row = -rowsToAdd; row < rows + rowsToAdd; row++)
+    {
+      for (int column = -columnsToAdd; column < 0; column++)
+      {
+        instantiatePrefab(tiles, 89, row, column, backgrounds);
+        instantiatePrefab(tiles, 89, row, column + columns + columnsToAdd + 2, backgrounds);
+      }
+    }
+
+    int tileToAdd;
+
+    // Take the first two columns and add them to the right of the map
+    for (int row = -rowsToAdd; row < rows + rowsToAdd; row++)
+    {
+      for (int column = columns; column < columns + 2; column++)
+      {
+        // If we are not inside the map use an 'earth' tile
+        if (row <= 1 || row >= rows - 1)
+          tileToAdd = 89;
+        else
+          tileToAdd = tilesArray[row + 1, column - columns];
+
+        instantiatePrefab(tiles, tileToAdd, row, column, backgrounds);
+      }
+    }
   }
 
   // Instantiate a prefab with for a given row and column
