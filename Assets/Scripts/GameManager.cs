@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -35,5 +36,35 @@ public class GameManager : MonoBehaviour
     int secondDigit = score / 10 % 10;
     int thirdDigit = score / 100 % 10;
     scoreUI.SetText("<sprite={0}><sprite={1}><sprite={2}>", thirdDigit, secondDigit, firstDigit);
+  }
+
+
+  // Start the game over process
+  internal void TriggerGameOver()
+  {
+    // Delete entities of the current level
+    GameObject.Destroy(GameObject.Find("Objects"));
+
+    Animator[] animatorsInTheScene = FindObjectsOfType(typeof(Animator)) as Animator[];
+
+    // Stop all animated tiles
+    foreach (Animator animatorItem in animatorsInTheScene)
+      animatorItem.enabled = false;
+
+    CrusherTile[] crusherTiles = FindObjectsOfType(typeof(CrusherTile)) as CrusherTile[];
+
+    // Stop crushers animation
+    foreach (CrusherTile crusherTile in crusherTiles)
+      crusherTile.enabled = false;
+
+    BridgeTile[] bridgeTiles = FindObjectsOfType(typeof(BridgeTile)) as BridgeTile[];
+
+    // Stop bridges animation
+    foreach (BridgeTile bridgeTile in bridgeTiles)
+      bridgeTile.enabled = false;
+
+    // Reload scene
+    Scene scene = SceneManager.GetActiveScene();
+    SceneManager.LoadScene(scene.name);
   }
 }

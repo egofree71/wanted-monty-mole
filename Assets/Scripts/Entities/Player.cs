@@ -40,6 +40,8 @@ public class Player : MonoBehaviour
   private MovingObject crusher;
   // The gameobject LevelManager manages the levels
   private LevelManager levelManager;
+  // The gameobject GameManager manages the game
+  private GameManager gameManager;
   // Animator component for the player
   private Animator playerAnim;
   private enum horizontalDirection { Left, Right, None };
@@ -85,6 +87,7 @@ public class Player : MonoBehaviour
     bridge = GameObject.Find("Bridge").GetComponent<MovingObject>();
     crusher = GameObject.Find("Crusher").GetComponent<MovingObject>();
     levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
+    gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     playerState = state.Idle;
 
     // Set the health at the beginning
@@ -556,6 +559,10 @@ public class Player : MonoBehaviour
 
     health -= damage;
     healthBar.setHealth(health);
+    
+    // If the player has no more health, start the game over process
+    if (health <= 0)
+      gameManager.TriggerGameOver();
   }
 
   // Test is there a slope tile left to the player
