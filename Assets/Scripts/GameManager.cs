@@ -42,6 +42,8 @@ public class GameManager : MonoBehaviour
   // Start the game over process
   internal void TriggerGameOver()
   {
+    Camera.main.backgroundColor = Color.red;
+
     // Delete entities of the current level
     GameObject.Destroy(GameObject.Find("Objects"));
 
