@@ -108,3 +108,4 @@ Player sprite 0 : 7f8(c0) -> 3000
 2450 : move gas. 1239 -> direction. 123a -> distance.
 26a9 : move trolley. 12f5 12f6 -> distance.
 2735 : move arrows. 1328 -> distance.
+$996E : game over.
