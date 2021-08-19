@@ -12,11 +12,12 @@ public class GameManager : MonoBehaviour
 
   // Text object which displays the score
   public TextMeshProUGUI scoreUI;
+  // The objects used for 'game over'
+  public GameObject playerTopLeft;
+  public GameObject playerTopRight;
+  public GameObject playerBottomLeft;
+  public GameObject playerBottomRight;
 
-  void Start()
-  {
-    scoreUI = GameObject.Find("Score").GetComponent<TextMeshProUGUI>();
-  }
 
   // If the bucket is taken, increase score, and set the digger in motion
   public void SetBucketIsTaken()
@@ -42,9 +43,13 @@ public class GameManager : MonoBehaviour
   // Start the game over process
   internal void TriggerGameOver()
   {
+    // Desactivate the player
+    GameObject player = GameObject.Find("Player");
+    player.SetActive(false);
     Camera.main.backgroundColor = Color.red;
 
     // Delete entities of the current level
+    GameObject objects = GameObject.Find("Objects");
     GameObject.Destroy(GameObject.Find("Objects"));
 
     Animator[] animatorsInTheScene = FindObjectsOfType(typeof(Animator)) as Animator[];
@@ -64,6 +69,30 @@ public class GameManager : MonoBehaviour
     // Stop bridges animation
     foreach (BridgeTile bridgeTile in bridgeTiles)
       bridgeTile.enabled = false;
+
+    StartCoroutine(ProcessGameOver(player));
+  }
+
+  // Display the game over sequence
+  IEnumerator ProcessGameOver(GameObject player)
+  {
+    // Get the current position of the player
+    int xPosition = (int)player.transform.position.x;
+    int yPosition = (int)player.transform.position.y;
+
+    // Get width and height for the left part of the dead player
+    Vector3 sizePlayerTopLeft = playerTopLeft.GetComponent<SpriteRenderer>().bounds.size;
+    int width = (int)sizePlayerTopLeft.x;
+    Vector3 sizePlayerBottomLeft = playerBottomLeft.GetComponent<SpriteRenderer>().bounds.size;
+    int height = (int)sizePlayerBottomLeft.y;
+
+    // Display dead player
+    GameObject newPlayerTopLeft = GameObject.Instantiate(playerTopLeft, new Vector2(xPosition, yPosition + height), Quaternion.identity);
+    GameObject newPlayerTopRight = GameObject.Instantiate(playerTopRight, new Vector2(xPosition + width, yPosition + height), Quaternion.identity);
+    GameObject newPlayerBottomLeft = GameObject.Instantiate(playerBottomLeft, new Vector2(xPosition, yPosition), Quaternion.identity);
+    GameObject newPlayerBottomRight = GameObject.Instantiate(playerBottomRight, new Vector2(xPosition + width, yPosition), Quaternion.identity);
+
+    yield return new WaitForSeconds(1f);
 
     // Reload scene
     Scene scene = SceneManager.GetActiveScene();
