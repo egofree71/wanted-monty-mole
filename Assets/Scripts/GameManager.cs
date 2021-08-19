@@ -73,7 +73,7 @@ public class GameManager : MonoBehaviour
     StartCoroutine(ProcessGameOver(player));
   }
 
-  // Display the game over sequence
+  // Display the game over sequence with a coroutine
   IEnumerator ProcessGameOver(GameObject player)
   {
     // Get the current position of the player
@@ -91,6 +91,27 @@ public class GameManager : MonoBehaviour
     GameObject newPlayerTopRight = GameObject.Instantiate(playerTopRight, new Vector2(xPosition + width, yPosition + height), Quaternion.identity);
     GameObject newPlayerBottomLeft = GameObject.Instantiate(playerBottomLeft, new Vector2(xPosition, yPosition), Quaternion.identity);
     GameObject newPlayerBottomRight = GameObject.Instantiate(playerBottomRight, new Vector2(xPosition + width, yPosition), Quaternion.identity);
+
+    // The distance to travel
+    float maxDistance = 250f;
+    // The current distance
+    float distance = 0;
+    // The distance between two moves
+    float moveDistance = 4.0f;
+
+    // Move the different parts of the dead player
+    while (distance < maxDistance)
+    {
+      newPlayerTopLeft.transform.position = new Vector2(newPlayerTopLeft.transform.position.x - moveDistance, newPlayerTopLeft.transform.position.y + moveDistance);
+      newPlayerTopRight.transform.position = new Vector2(newPlayerTopRight.transform.position.x + moveDistance, newPlayerTopRight.transform.position.y + moveDistance);
+      newPlayerBottomLeft.transform.position = new Vector2(newPlayerBottomLeft.transform.position.x - moveDistance, newPlayerBottomLeft.transform.position.y - moveDistance);
+      newPlayerBottomRight.transform.position = new Vector2(newPlayerBottomRight.transform.position.x + moveDistance, newPlayerBottomRight.transform.position.y - moveDistance);
+
+      distance += (int)moveDistance;
+      // Go to next frame
+      yield return null;
+    }
+
 
     yield return new WaitForSeconds(1f);
 
