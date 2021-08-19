@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.U2D;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -12,12 +14,13 @@ public class GameManager : MonoBehaviour
 
   // Text object which displays the score
   public TextMeshProUGUI scoreUI;
-  // The objects used for 'game over'
+  // The objects used for the 'game over' sequence
   public GameObject playerTopLeft;
   public GameObject playerTopRight;
   public GameObject playerBottomLeft;
   public GameObject playerBottomRight;
-
+  public GameObject graveBottom;
+  public GameObject graveTop;
 
   // If the bucket is taken, increase score, and set the digger in motion
   public void SetBucketIsTaken()
@@ -92,6 +95,8 @@ public class GameManager : MonoBehaviour
     GameObject newPlayerBottomLeft = GameObject.Instantiate(playerBottomLeft, new Vector2(xPosition, yPosition), Quaternion.identity);
     GameObject newPlayerBottomRight = GameObject.Instantiate(playerBottomRight, new Vector2(xPosition + width, yPosition), Quaternion.identity);
 
+    yield return null;
+
     // The distance to travel
     float maxDistance = 280f;
     // The current distance
@@ -107,13 +112,44 @@ public class GameManager : MonoBehaviour
       newPlayerBottomLeft.transform.position = new Vector2(newPlayerBottomLeft.transform.position.x - moveDistance, newPlayerBottomLeft.transform.position.y - moveDistance);
       newPlayerBottomRight.transform.position = new Vector2(newPlayerBottomRight.transform.position.x + moveDistance, newPlayerBottomRight.transform.position.y - moveDistance);
 
-      distance += (int)moveDistance;
+      distance += moveDistance;
       // Go to next frame
       yield return null;
     }
 
+    // Delete dead player
+    Destroy(newPlayerTopLeft);
+    Destroy(newPlayerTopRight);
+    Destroy(newPlayerBottomLeft);
+    Destroy(newPlayerBottomRight);
 
-    yield return new WaitForSeconds(1f);
+    // Get the black rectangle used in the HUD
+    RectTransform blackRect = GameObject.Find("BlackRectangle").GetComponent<RectTransform>();
+
+    // Get current view port
+    Camera camera = GameObject.Find("Main Camera").GetComponent<Camera>();
+    Vector2 screenOrigin = Camera.main.ScreenToWorldPoint(Vector2.zero);
+
+    // Get height of the bottom grave
+    Vector3 sizeGraveBottom = graveBottom.GetComponent<SpriteRenderer>().bounds.size;
+    int graveHeight = (int)sizeGraveBottom.y;
+
+    distance = 0;
+    maxDistance = yPosition - screenOrigin.y + graveHeight;
+    moveDistance = 8.0f;
+
+    // Display the bottom grave
+    GameObject newGraveBottom = GameObject.Instantiate(graveBottom, new Vector2(xPosition, screenOrigin.y - graveHeight), Quaternion.identity);
+
+    yield return null;
+
+    // Move the bottom grave to the center
+    while (distance < maxDistance)
+    {
+      newGraveBottom.transform.position = new Vector2(newGraveBottom.transform.position.x, newGraveBottom.transform.position.y + moveDistance);
+      distance += moveDistance;
+      yield return null;
+    }
 
     // Reload scene
     Scene scene = SceneManager.GetActiveScene();
