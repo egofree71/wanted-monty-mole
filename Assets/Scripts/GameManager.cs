@@ -93,7 +93,7 @@ public class GameManager : MonoBehaviour
     GameObject newPlayerBottomRight = GameObject.Instantiate(playerBottomRight, new Vector2(xPosition + width, yPosition), Quaternion.identity);
 
     // The distance to travel
-    float maxDistance = 250f;
+    float maxDistance = 280f;
     // The current distance
     float distance = 0;
     // The distance between two moves
