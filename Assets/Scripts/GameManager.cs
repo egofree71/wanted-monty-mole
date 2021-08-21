@@ -113,8 +113,8 @@ public class GameManager : MonoBehaviour
       newPlayerBottomRight.transform.position = new Vector2(newPlayerBottomRight.transform.position.x + moveDistance, newPlayerBottomRight.transform.position.y - moveDistance);
 
       distance += moveDistance;
-      // Go to next frame
-      yield return null;
+      // slow down move according to distance
+      yield return new WaitForSeconds(distance / 6000);
     }
 
     // Delete dead player
