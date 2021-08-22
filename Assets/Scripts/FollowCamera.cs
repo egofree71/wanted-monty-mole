@@ -8,6 +8,6 @@ public class FollowCamera : MonoBehaviour
   void LateUpdate()
   {
     // Follow player
-    this.transform.position = new Vector3(player.transform.position.x, player.transform.position.y + 100, -10);
+    this.transform.position = new Vector3(player.transform.position.x, player.transform.position.y + 122, -10);
   }
 }
