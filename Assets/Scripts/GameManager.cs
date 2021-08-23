@@ -22,6 +22,13 @@ public class GameManager : MonoBehaviour
   public GameObject graveBottom;
   public GameObject graveTop;
 
+  void Update()
+  {
+    // Quit the application when the escape key is pressed
+    if (Input.GetKey(KeyCode.Escape))
+      Application.Quit();
+  }
+
   // If the bucket is taken, increase score, and set the digger in motion
   public void SetBucketIsTaken()
   {
@@ -123,23 +130,23 @@ public class GameManager : MonoBehaviour
     Destroy(newPlayerBottomLeft);
     Destroy(newPlayerBottomRight);
 
-    // Get the black rectangle used in the HUD
-    RectTransform blackRect = GameObject.Find("BlackRectangle").GetComponent<RectTransform>();
+    // Height of the black rectangle displayed in the hud
+    int blackRectHeight = 180;
 
-    // Get current view port
-    Camera camera = GameObject.Find("Main Camera").GetComponent<Camera>();
-    Vector2 screenOrigin = Camera.main.ScreenToWorldPoint(Vector2.zero);
+    // Get screen size
+    PixelPerfectCamera camera = GameObject.Find("Main Camera").GetComponent<PixelPerfectCamera>();
+    int screenHeight = camera.refResolutionY - blackRectHeight;
 
     // Get height of the bottom grave
     Vector3 sizeGraveBottom = graveBottom.GetComponent<SpriteRenderer>().bounds.size;
-    int graveHeight = (int)sizeGraveBottom.y;
+    int bottomGraveHeight = (int)sizeGraveBottom.y;
 
     distance = 0;
-    maxDistance = yPosition - screenOrigin.y + graveHeight;
-    moveDistance = 8.0f;
+    maxDistance = screenHeight / 2 + bottomGraveHeight;
+    moveDistance = 10.0f;
 
     // Display the bottom grave
-    GameObject newGraveBottom = GameObject.Instantiate(graveBottom, new Vector2(xPosition, screenOrigin.y - graveHeight), Quaternion.identity);
+    GameObject newGraveBottom = GameObject.Instantiate(graveBottom, new Vector2(xPosition, yPosition - maxDistance), Quaternion.identity);
 
     yield return null;
 
@@ -147,6 +154,27 @@ public class GameManager : MonoBehaviour
     while (distance < maxDistance)
     {
       newGraveBottom.transform.position = new Vector2(newGraveBottom.transform.position.x, newGraveBottom.transform.position.y + moveDistance);
+      distance += moveDistance;
+      yield return null;
+    }
+
+    // Get height of the top grave
+    Vector3 sizeGraveTop = graveBottom.GetComponent<SpriteRenderer>().bounds.size;
+    int topGraveHeight = (int)sizeGraveTop.y;
+
+    distance = 0;
+    maxDistance = screenHeight / 2 - topGraveHeight;
+    moveDistance = 4.0f;
+
+    // Display the top grave
+    GameObject newGraveTop = GameObject.Instantiate(graveTop, new Vector2(xPosition, yPosition + maxDistance + topGraveHeight + 10), Quaternion.identity);
+
+    yield return null;
+
+    // Move the top grave to the center
+    while (distance < maxDistance)
+    {
+      newGraveTop.transform.position = new Vector2(newGraveTop.transform.position.x, newGraveTop.transform.position.y - moveDistance);
       distance += moveDistance;
       yield return null;
     }
