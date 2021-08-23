@@ -1,11 +1,8 @@
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.U2D;
-using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -184,7 +181,6 @@ public class GameManager : MonoBehaviour
         delay = delay / 12000;
 
       yield return new WaitForSeconds(delay);
-      //yield return null;
     }
 
     // Reload scene
