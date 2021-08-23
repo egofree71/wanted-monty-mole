@@ -164,7 +164,7 @@ public class GameManager : MonoBehaviour
 
     distance = 0;
     maxDistance = screenHeight / 2 - topGraveHeight;
-    moveDistance = 4.0f;
+    moveDistance = 6.0f;
 
     // Display the top grave
     GameObject newGraveTop = GameObject.Instantiate(graveTop, new Vector2(xPosition, yPosition + maxDistance + topGraveHeight + 10), Quaternion.identity);
@@ -176,7 +176,15 @@ public class GameManager : MonoBehaviour
     {
       newGraveTop.transform.position = new Vector2(newGraveTop.transform.position.x, newGraveTop.transform.position.y - moveDistance);
       distance += moveDistance;
-      yield return null;
+
+      // slow down move according to distance
+      float delay = maxDistance - distance;
+
+      if (delay > 0)
+        delay = delay / 12000;
+
+      yield return new WaitForSeconds(delay);
+      //yield return null;
     }
 
     // Reload scene
