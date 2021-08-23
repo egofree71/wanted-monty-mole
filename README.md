@@ -5,7 +5,6 @@ Alpha version. About 70 % is done. Missing :
  - Improving graphics
  - Music
  - Intro
- - Game over
  - End
 
 Use arrows keys to move and space key to jump.
