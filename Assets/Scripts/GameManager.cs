@@ -19,6 +19,14 @@ public class GameManager : MonoBehaviour
   public GameObject graveBottom;
   public GameObject graveTop;
 
+  private void Start()
+  {
+    // Set frame rate to 50
+    QualitySettings.vSyncCount = 0;
+    Application.targetFrameRate = 50;
+  }
+
+
   void Update()
   {
     // Quit the application when the escape key is pressed
