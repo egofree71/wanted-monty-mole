@@ -17,6 +17,8 @@ public class Player : MonoBehaviour
   // How much damage receives the player
   private float damage = 0.05f;
   private float bigDamage = 0.7f;
+  // The distance between two moves
+  float moveDistance = 4.0f;
 
   [Header("Player position in the map according to tiles")]
   public int xPos;
@@ -317,12 +319,12 @@ public class Player : MonoBehaviour
       {
         case horizontalDirection.Left:
           // Move the player to the left
-          transform.position = new Vector2(transform.position.x - 4.0f, transform.position.y);
+          transform.position = new Vector2(transform.position.x - moveDistance, transform.position.y);
           break;
 
         case horizontalDirection.Right:
           // Move the player to the right
-          transform.position = new Vector2(transform.position.x + 4.0f, transform.position.y);
+          transform.position = new Vector2(transform.position.x + moveDistance, transform.position.y);
           break;
       }
 
@@ -330,12 +332,12 @@ public class Player : MonoBehaviour
       {
         case verticalDirection.Up:
           // Move the player up
-          transform.position = new Vector2(transform.position.x, transform.position.y + 4.0f);
+          transform.position = new Vector2(transform.position.x, transform.position.y + moveDistance);
           break;
 
         case verticalDirection.Down:
           // Move the player down
-          transform.position = new Vector2(transform.position.x, transform.position.y - 4.0f);
+          transform.position = new Vector2(transform.position.x, transform.position.y - moveDistance);
           break;
       }
 

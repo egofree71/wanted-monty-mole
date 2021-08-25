@@ -10,7 +10,7 @@ public class Gas : MonoBehaviour
   bool isMovingRight = true;
   // The maximum distance
   int maxDistance = 200;
-  float moveDistance = 2.0f;
+  float moveDistance = 4.0f;
   // The current distance
   int currentDistance = 0;
   private Player player;

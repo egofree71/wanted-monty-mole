@@ -20,7 +20,7 @@ public class Monster : MonoBehaviour
   // The current direction
   int direction;
   // The distance between two moves
-  float moveDistance = 2.0f;
+  float moveDistance = 4.0f;
   // The current move's step inside a tile
   int moveStep = 0;
   // The number of tiles to travel
