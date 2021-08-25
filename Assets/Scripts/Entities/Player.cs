@@ -77,10 +77,6 @@ public class Player : MonoBehaviour
   // Use this for initialization
   void Awake()
   {
-    // Set frame rate to 50
-    QualitySettings.vSyncCount = 0;
-    Application.targetFrameRate = 50;
-
     playerAnim = (Animator)GetComponent(typeof(Animator));
     boxCollider = GetComponent<BoxCollider2D>();
     // Get objects scripts
