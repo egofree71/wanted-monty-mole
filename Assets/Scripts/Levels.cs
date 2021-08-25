@@ -7,6 +7,7 @@ using System.Collections.Generic;
 public class Levels
 {
   public StartData start;
+  public EndData end;
   public List<LevelData> list;
 }
 
@@ -14,6 +15,13 @@ public class Levels
 public class StartData
 {
   public List<ObjectData> objects;
+}
+
+[System.Serializable]
+public class EndData
+{
+  public int x;
+  public int y;
 }
 
 [System.Serializable]

@@ -350,8 +350,17 @@ public class Player : MonoBehaviour
         if (jumpStep == 5)
           stopJump();
 
+        // If we are moving horizontally
         if (playerHorizontalDirection != horizontalDirection.None)
-          checkLevers();
+        {
+          int level = levelManager.level;
+
+          // If we are on the last level, check end position
+          if (level == levelManager.levels.list.Count)
+            checkEndPosition();
+          else
+            checkLevers();
+        }
       }
     }
 
@@ -624,6 +633,21 @@ public class Player : MonoBehaviour
       return false;
   }
 
+  // If the player is reaching the end position, start the end sequence
+  void checkEndPosition()
+  {
+    EndData endPosition = levelManager.levels.end;
+
+    int xEndPosition = endPosition.x;
+    int yEndPosition = endPosition.y;
+
+    // If the player is on the end position
+    if (xPos == xEndPosition && yPos == yEndPosition)
+    {
+      Debug.Log("End position");
+    }
+  }
+
   // Check if the player is crossing a lever
   void checkLevers()
   {
@@ -631,6 +655,7 @@ public class Player : MonoBehaviour
 
     // Get the level index in the json
     List<LevelData> levelList = levelManager.levels.list;
+
     int index = levelList.FindIndex(a => a.number == level);
 
     int xLeverPosition = levelList[index].lever.x;
