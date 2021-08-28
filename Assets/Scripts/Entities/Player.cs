@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 /// <summary>
@@ -644,7 +645,8 @@ public class Player : MonoBehaviour
     // If the player is on the end position
     if (xPos == xEndPosition && yPos == yEndPosition)
     {
-      Debug.Log("End position");
+      Debug.Log("end");
+      SceneManager.LoadScene("End");
     }
   }
 
