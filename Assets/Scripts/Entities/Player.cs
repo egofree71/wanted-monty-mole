@@ -644,10 +644,7 @@ public class Player : MonoBehaviour
 
     // If the player is on the end position
     if (xPos == xEndPosition && yPos == yEndPosition)
-    {
-      Debug.Log("end");
       SceneManager.LoadScene("End");
-    }
   }
 
   // Check if the player is crossing a lever
