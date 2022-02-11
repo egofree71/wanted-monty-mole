@@ -33,6 +33,10 @@ public class IntroManager : MonoBehaviour
   // Update is called once per frame
   void Update()
   {
+    // Quit the application when the escape key is pressed
+    if (Input.GetKey(KeyCode.Escape))
+      Application.Quit();
+
     // Start playing if the player press the space key
     if (Input.GetKeyDown(KeyCode.Space))
       SceneManager.LoadScene("Main");  
