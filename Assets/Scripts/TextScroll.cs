@@ -31,6 +31,6 @@ public class TextScroll : MonoBehaviour
 
     yield return new WaitForSeconds(4f);
 
-    SceneManager.LoadScene("Main");
+    SceneManager.LoadScene("Intro");
   }
 }

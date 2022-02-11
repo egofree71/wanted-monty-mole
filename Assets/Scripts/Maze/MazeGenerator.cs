@@ -37,7 +37,7 @@ public class MazeGenerator : MonoBehaviour
     {
       // Store the maze for the next scene into a static class
       Global.mazeTiles = maze.Cells;
-      SceneManager.LoadScene("Main");
+      SceneManager.LoadScene("Intro");
     }
 
   }

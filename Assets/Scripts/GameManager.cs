@@ -192,7 +192,6 @@ public class GameManager : MonoBehaviour
     }
 
     // Reload scene
-    Scene scene = SceneManager.GetActiveScene();
-    SceneManager.LoadScene(scene.name);
+    SceneManager.LoadScene("Intro");
   }
 }
