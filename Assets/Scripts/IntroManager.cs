@@ -5,29 +5,61 @@ using UnityEngine.SceneManagement;
 
 public class IntroManager : MonoBehaviour
 {
-
   // The object used to display the logo
   public GameObject logo;
+  // The horizonal start position of the logo
+  float logoStartPositionX;
 
   void Start()
   {
+    // Store the original position of the logo
+    logoStartPositionX = logo.transform.position.x;
     StartCoroutine(MoveLogo());
   }
 
   // Move logo and mole
   IEnumerator MoveLogo()
   {
-    // Get logo width
-    Vector3 sizeLogo = logo.GetComponent<SpriteRenderer>().bounds.size;
-    int logoWidth = (int)sizeLogo.x;
+    // The distance between two moves
+    float moveDistance = 4.0f;
 
-    // Move logo to the center
-    while (logo.transform.position.x + logoWidth/2> 0)
+    while (true)
     {
-      logo.transform.Translate(Vector3.left);
+      // Get logo width
+      Vector3 sizeLogo = logo.GetComponent<SpriteRenderer>().bounds.size;
+      int logoWidth = (int)sizeLogo.x;
+      // The distance to travel
+      float maxDistance = logoStartPositionX + logoWidth / 2;
+      // The current distance
+      float distance = 0;
+
+      // Move logo to the center
+      while (distance < maxDistance)
+      {
+        logo.transform.position = new Vector2(logo.transform.position.x - moveDistance, logo.transform.position.y);
+        distance += moveDistance;
+        yield return new WaitForSeconds(0.01f);
+      }
+
+      yield return new WaitForSeconds(3);
+
+      maxDistance = logoStartPositionX + logoWidth;
+      distance = 0;
+
+      // Move logo to the left
+      while (distance < maxDistance)
+      {
+        logo.transform.position = new Vector2(logo.transform.position.x - moveDistance, logo.transform.position.y);
+        distance += moveDistance;
+        yield return new WaitForSeconds(0.01f);
+      }
+
+      yield return new WaitForSeconds(2);
+
+      // Reset horizontal position
+      logo.transform.position = new Vector2(logoStartPositionX, logo.transform.position.y);
       yield return null;
     }
-    
   }
 
   // Update is called once per frame
