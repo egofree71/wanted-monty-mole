@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class IntroManager : MonoBehaviour
 {
@@ -17,6 +18,9 @@ public class IntroManager : MonoBehaviour
   // Update is called once per frame
   void Update()
   {
-
+    // Start playing if the player press the space key
+    if (Input.GetKeyDown(KeyCode.Space))
+      SceneManager.LoadScene("Main");
+    
   }
 }
