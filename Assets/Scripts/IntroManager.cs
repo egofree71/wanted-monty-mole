@@ -15,6 +15,10 @@ public class IntroManager : MonoBehaviour
 
   void Start()
   {
+    // Set frame rate to 50
+    QualitySettings.vSyncCount = 0;
+    Application.targetFrameRate = 50;
+
     // Store the original position of the logo
     logoStartPositionX = logo.transform.position.x;
     moleStartPositionX = mole.transform.position.x;
@@ -44,7 +48,7 @@ public class IntroManager : MonoBehaviour
         logo.transform.position = new Vector2(logo.transform.position.x - moveDistance, logo.transform.position.y);
         mole.transform.position = new Vector2(mole.transform.position.x - moveDistance, mole.transform.position.y);
         distance += moveDistance;
-        yield return new WaitForSeconds(0.01f);
+        yield return null;
       }
 
       yield return new WaitForSeconds(3);
@@ -58,7 +62,7 @@ public class IntroManager : MonoBehaviour
         logo.transform.position = new Vector2(logo.transform.position.x - moveDistance, logo.transform.position.y);
         mole.transform.position = new Vector2(mole.transform.position.x - moveDistance, mole.transform.position.y);
         distance += moveDistance;
-        yield return new WaitForSeconds(0.01f);
+        yield return null;
       }
 
       yield return new WaitForSeconds(2);
@@ -79,6 +83,7 @@ public class IntroManager : MonoBehaviour
 
     // Start playing if the player press the space key
     if (Input.GetKeyDown(KeyCode.Space))
-      SceneManager.LoadScene("Main");  
+      SceneManager.LoadScene("Main");
+    
   }
 }
