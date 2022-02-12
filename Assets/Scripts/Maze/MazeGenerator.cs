@@ -21,6 +21,10 @@ public class MazeGenerator : MonoBehaviour
   // Use this for initialization
   void Start()
   {
+    // Set frame rate to 50
+    QualitySettings.vSyncCount = 0;
+    Application.targetFrameRate = 50;
+
     // Initialize a new maze
     maze = new Maze(9, 40);
   }
