@@ -5,15 +5,20 @@ using UnityEngine.SceneManagement;
 
 public class IntroManager : MonoBehaviour
 {
-  // The object used to display the logo
+  // The objects used to display logo and mole
   public GameObject logo;
-  // The horizonal start position of the logo
+  public GameObject mole;
+
+  // The horizonal start position of logo and mole
   float logoStartPositionX;
+  float moleStartPositionX;
 
   void Start()
   {
     // Store the original position of the logo
     logoStartPositionX = logo.transform.position.x;
+    moleStartPositionX = mole.transform.position.x;
+
     StartCoroutine(MoveLogo());
   }
 
@@ -33,10 +38,11 @@ public class IntroManager : MonoBehaviour
       // The current distance
       float distance = 0;
 
-      // Move logo to the center
+      // Move logo and mole to the center
       while (distance < maxDistance)
       {
         logo.transform.position = new Vector2(logo.transform.position.x - moveDistance, logo.transform.position.y);
+        mole.transform.position = new Vector2(mole.transform.position.x - moveDistance, mole.transform.position.y);
         distance += moveDistance;
         yield return new WaitForSeconds(0.01f);
       }
@@ -46,18 +52,20 @@ public class IntroManager : MonoBehaviour
       maxDistance = logoStartPositionX + logoWidth;
       distance = 0;
 
-      // Move logo to the left
+      // Move logo and mole to the left
       while (distance < maxDistance)
       {
         logo.transform.position = new Vector2(logo.transform.position.x - moveDistance, logo.transform.position.y);
+        mole.transform.position = new Vector2(mole.transform.position.x - moveDistance, mole.transform.position.y);
         distance += moveDistance;
         yield return new WaitForSeconds(0.01f);
       }
 
       yield return new WaitForSeconds(2);
 
-      // Reset horizontal position
+      // Reset horizontal positions
       logo.transform.position = new Vector2(logoStartPositionX, logo.transform.position.y);
+      mole.transform.position = new Vector2(moleStartPositionX, mole.transform.position.y);
       yield return null;
     }
   }
