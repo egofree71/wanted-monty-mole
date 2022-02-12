@@ -109,7 +109,7 @@ public class IntroManager : MonoBehaviour
     
   }
 
-  // Display the message at the screen's bottom
+  // Display the message at the screen's bottom (based on Ronny Soltveit's algorythm)
   void DisplayMessage()
   {
     scrollCounter++;
