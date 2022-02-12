@@ -369,7 +369,7 @@ PrefabInstance:
     - target: {fileID: 8157049812761932961, guid: 90fd1949eabdfc64e9cd49d6609a5810,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8157049812761932961, guid: 90fd1949eabdfc64e9cd49d6609a5810,
         type: 3}
@@ -486,6 +486,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   logo: {fileID: 903171219}
   mole: {fileID: 1059052368}
+  letter: {fileID: 7621895575295522139, guid: ce515d1689b5026479629c593ab44e28, type: 3}
+  message: 'MONTY MOLE WRITTTEN BY ANTONY CROWTHER    WE AT GREMLIN HAVE PRODUCED
+    THE MOST EXCITING PLATFORM GAME EVER  IT WAS WRITTEN OVER A THREE MONTH PERIOD 
+    AND WE HOPE IT WILL EXCITE YOU FOR EVEN LONGER BUT REMEMBER ITS NOT JUST A PLATFORM
+    GAME ITS AN ADVENTURE   '
+  letters:
+  - {fileID: 6415364154878637984, guid: 82910fd2106dec944a755648309043eb, type: 3}
+  - {fileID: -6833200996937029123, guid: 82910fd2106dec944a755648309043eb, type: 3}
+  - {fileID: 7419856738923729020, guid: 82910fd2106dec944a755648309043eb, type: 3}
+  - {fileID: 1283153978554903577, guid: 82910fd2106dec944a755648309043eb, type: 3}
+  - {fileID: -5917889936314827601, guid: 82910fd2106dec944a755648309043eb, type: 3}
+  - {fileID: 6679767048320444663, guid: 82910fd2106dec944a755648309043eb, type: 3}
+  - {fileID: 607211350256538812, guid: 82910fd2106dec944a755648309043eb, type: 3}
+  - {fileID: 8041285086960527039, guid: 82910fd2106dec944a755648309043eb, type: 3}
+  - {fileID: 3884555310111733234, guid: 82910fd2106dec944a755648309043eb, type: 3}
+  - {fileID: -4608056985380468527, guid: 82910fd2106dec944a755648309043eb, type: 3}
+  - {fileID: 7047752349889809556, guid: 82910fd2106dec944a755648309043eb, type: 3}
+  - {fileID: -6614301110554921326, guid: 82910fd2106dec944a755648309043eb, type: 3}
+  - {fileID: -5084151660231116851, guid: 82910fd2106dec944a755648309043eb, type: 3}
+  - {fileID: 4512077204509919370, guid: 82910fd2106dec944a755648309043eb, type: 3}
+  - {fileID: 6406705919213387724, guid: 82910fd2106dec944a755648309043eb, type: 3}
+  - {fileID: 3776951618107531547, guid: 82910fd2106dec944a755648309043eb, type: 3}
+  - {fileID: 2909015189045279583, guid: 82910fd2106dec944a755648309043eb, type: 3}
+  - {fileID: -3711725763753631149, guid: 82910fd2106dec944a755648309043eb, type: 3}
+  - {fileID: 2672812381609788677, guid: 82910fd2106dec944a755648309043eb, type: 3}
+  - {fileID: -3447847416711305250, guid: 82910fd2106dec944a755648309043eb, type: 3}
+  - {fileID: 1226888500420811404, guid: 82910fd2106dec944a755648309043eb, type: 3}
+  - {fileID: 2308285032721707726, guid: 82910fd2106dec944a755648309043eb, type: 3}
+  - {fileID: -9032311683379716051, guid: 82910fd2106dec944a755648309043eb, type: 3}
+  - {fileID: 1191489626264244032, guid: 82910fd2106dec944a755648309043eb, type: 3}
+  - {fileID: 4691894430883568989, guid: 82910fd2106dec944a755648309043eb, type: 3}
 --- !u!1001 &1331408160
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -656,7 +687,7 @@ PrefabInstance:
     - target: {fileID: 1209365640064782435, guid: 9f1455aee2c5edf44982d489ad81fd8e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 33.4
+      value: 36
       objectReference: {fileID: 0}
     - target: {fileID: 1209365640064782435, guid: 9f1455aee2c5edf44982d489ad81fd8e,
         type: 3}
@@ -1255,7 +1286,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &2016144163 stripped
 RectTransform:

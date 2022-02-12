@@ -9,6 +9,20 @@ public class IntroManager : MonoBehaviour
   public GameObject logo;
   public GameObject mole;
 
+  // A single letter of the message
+  public GameObject letter;
+  // The message to display at the bottom
+  [TextArea(3, 10)]
+  public string message;
+  // The message splitted in a char array
+  char[] messageLetters;
+  // Sprites used to display letters
+  public Sprite[] letters;
+  // The letter index of the message
+  int letterIndex = 0;
+  // Used to know when create a new letter
+  int scrollCounter = 0;
+
   // The horizonal start position of logo and mole
   float logoStartPositionX;
   float moleStartPositionX;
@@ -33,6 +47,8 @@ public class IntroManager : MonoBehaviour
     // Get logo width
     sizeLogo = logo.GetComponent<SpriteRenderer>().bounds.size;
     logoWidth = (int)sizeLogo.x;
+
+    messageLetters = message.ToCharArray();
 
     StartCoroutine(MoveLogo());
   }
@@ -82,6 +98,7 @@ public class IntroManager : MonoBehaviour
   // Update is called once per frame
   void Update()
   {
+    DisplayMessage();
     // Quit the application when the escape key is pressed
     if (Input.GetKey(KeyCode.Escape))
       Application.Quit();
@@ -90,5 +107,35 @@ public class IntroManager : MonoBehaviour
     if (Input.GetKeyDown(KeyCode.Space))
       SceneManager.LoadScene("Main");
     
+  }
+
+  // Display the message at the screen's bottom
+  void DisplayMessage()
+  {
+    scrollCounter++;
+
+    // If it's time to display a new letter of the message
+    if (scrollCounter >= 8)
+    {
+      // Get the letter to display
+      int currentChar = messageLetters[letterIndex] - 65;
+
+      // Skip the space character
+      if (currentChar >= 0)
+      { 
+        // Display a new letter and set its sprite
+        GameObject newLetter = Instantiate(letter, new Vector3(700f, -472f, 0f), Quaternion.identity);
+        newLetter.GetComponent<SpriteRenderer>().sprite = letters[currentChar];
+      }
+
+      scrollCounter = 0;
+
+      // If we have not yet reached the end, go the next letter
+      if (letterIndex < message.Length - 1)
+        letterIndex++;
+      else
+        letterIndex = 0;
+
+    }
   }
 }
