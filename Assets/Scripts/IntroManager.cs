@@ -13,6 +13,13 @@ public class IntroManager : MonoBehaviour
   float logoStartPositionX;
   float moleStartPositionX;
 
+  // Logo's width
+  Vector3 sizeLogo;
+  int logoWidth;
+
+  // The distance between two moves
+  float moveDistance = 4.0f;
+
   void Start()
   {
     // Set frame rate to 50
@@ -23,20 +30,18 @@ public class IntroManager : MonoBehaviour
     logoStartPositionX = logo.transform.position.x;
     moleStartPositionX = mole.transform.position.x;
 
+    // Get logo width
+    sizeLogo = logo.GetComponent<SpriteRenderer>().bounds.size;
+    logoWidth = (int)sizeLogo.x;
+
     StartCoroutine(MoveLogo());
   }
 
   // Move logo and mole
   IEnumerator MoveLogo()
   {
-    // The distance between two moves
-    float moveDistance = 4.0f;
-
     while (true)
     {
-      // Get logo width
-      Vector3 sizeLogo = logo.GetComponent<SpriteRenderer>().bounds.size;
-      int logoWidth = (int)sizeLogo.x;
       // The distance to travel
       float maxDistance = logoStartPositionX + logoWidth / 2;
       // The current distance
