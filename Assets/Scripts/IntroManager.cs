@@ -23,14 +23,21 @@ public class IntroManager : MonoBehaviour
   // Used to know when create a new letter
   int scrollCounter = 0;
 
-  // The horizonal start position of logo and mole
+  // Horizontal start positions of moving objects;
   float logoStartPositionX;
   float moleStartPositionX;
+  float letterStartPositionX;
+
+  // Letter's width
+  Vector3 sizeLetter;
+  int letterWidth;
 
   // Logo's width
   Vector3 sizeLogo;
   int logoWidth;
-
+  // Top right's position of the screen
+  Vector2 topRightPosition;
+  
   // The distance between two moves
   float moveDistance = 4.0f;
 
@@ -49,6 +56,14 @@ public class IntroManager : MonoBehaviour
     logoWidth = (int)sizeLogo.x;
 
     messageLetters = message.ToCharArray();
+
+
+    // Get letter size
+    sizeLetter = letter.GetComponent<SpriteRenderer>().bounds.size;
+    letterWidth = (int)sizeLetter.x;
+    // Calculate the start position of the letter
+    topRightPosition = Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height));
+    letterStartPositionX = topRightPosition.x + letterWidth;
 
     StartCoroutine(MoveLogo());
   }
@@ -109,7 +124,7 @@ public class IntroManager : MonoBehaviour
     
   }
 
-  // Display the message at the screen's bottom (based on Ronny Soltveit's algorythm)
+  // Display the message at the screen's bottom
   void DisplayMessage()
   {
     scrollCounter++;
@@ -124,7 +139,7 @@ public class IntroManager : MonoBehaviour
       if (currentChar >= 0)
       { 
         // Display a new letter and set its sprite
-        GameObject newLetter = Instantiate(letter, new Vector3(700f, -472f, 0f), Quaternion.identity);
+        GameObject newLetter = Instantiate(letter, new Vector3(letterStartPositionX, -472f, 0f), Quaternion.identity);
         newLetter.GetComponent<SpriteRenderer>().sprite = letters[currentChar];
       }
 

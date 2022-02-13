@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Letter : MonoBehaviour
 {
-  // Bottom left's Position of the screen
+  // Bottom left's position of the screen
   Vector2 bottomLeftPosition;
   // The distance between two moves
   float moveDistance = 4.0f;
