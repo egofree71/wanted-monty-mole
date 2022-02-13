@@ -5,7 +5,7 @@ public class Letter : MonoBehaviour
   // Bottom left's position of the screen
   Vector2 bottomLeftPosition;
   // The distance between two moves
-  float moveDistance = 4.0f;
+  public float moveDistance;
 
   // Letter's size
   Vector3 sizeLetter;

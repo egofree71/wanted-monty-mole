@@ -40,6 +40,8 @@ public class IntroManager : MonoBehaviour
   
   // The distance between two moves
   float moveDistance = 4.0f;
+  // Number of steps needed to move a character entirely
+  int numberOfSteps;
 
   void Start()
   {
@@ -57,10 +59,14 @@ public class IntroManager : MonoBehaviour
 
     messageLetters = message.ToCharArray();
 
-
     // Get letter size
     sizeLetter = letter.GetComponent<SpriteRenderer>().bounds.size;
     letterWidth = (int)sizeLetter.x;
+
+    // Calculate number of steps
+    int moveDistance = (int) letter.GetComponent<Letter>().moveDistance;
+    numberOfSteps = letterWidth / moveDistance;
+
     // Calculate the start position of the letter
     topRightPosition = Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height));
     letterStartPositionX = topRightPosition.x + letterWidth;
@@ -73,6 +79,8 @@ public class IntroManager : MonoBehaviour
   {
     while (true)
     {
+      yield return new WaitForSeconds(2);
+
       // The distance to travel
       float maxDistance = logoStartPositionX + logoWidth / 2;
       // The current distance
@@ -101,8 +109,6 @@ public class IntroManager : MonoBehaviour
         yield return null;
       }
 
-      yield return new WaitForSeconds(2);
-
       // Reset horizontal positions
       logo.transform.position = new Vector2(logoStartPositionX, logo.transform.position.y);
       mole.transform.position = new Vector2(moleStartPositionX, mole.transform.position.y);
@@ -121,7 +127,6 @@ public class IntroManager : MonoBehaviour
     // Start playing if the player press the space key
     if (Input.GetKeyDown(KeyCode.Space))
       SceneManager.LoadScene("Main");
-    
   }
 
   // Display the message at the screen's bottom
@@ -130,7 +135,7 @@ public class IntroManager : MonoBehaviour
     scrollCounter++;
 
     // If it's time to display a new letter of the message
-    if (scrollCounter >= 8)
+    if (scrollCounter >= numberOfSteps)
     {
       // Get the letter to display
       int currentChar = messageLetters[letterIndex] - 65;
