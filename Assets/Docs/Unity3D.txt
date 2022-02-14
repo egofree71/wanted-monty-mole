@@ -6,6 +6,8 @@ For sprites, no filter and Pixels per unit :
 Sprites -> filter Mode -> Point (no filter)
 					 Pixels Per Unit -> 1
 
+In the game tab, set the resolution to 1024x768
+
 Collisions:
 
 With RigidBody2D
