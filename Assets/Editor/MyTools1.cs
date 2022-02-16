@@ -1,16 +1,16 @@
-﻿using System.IO;
-using System;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
-using System.Collections.Generic;
 
 /// <summary>
 ///  This class is used to import the binary map into the main scene.
 ///  Before running the script, in the editor some tiles should be deleted manually, 
 ///  otherwise the editor will not detect the scene has been modified and it will not save modifications
 /// </summary>
-public class MyTools
+public partial class MyTools
 {
   private const int pixelsPerTile = 32;
 
@@ -21,10 +21,13 @@ public class MyTools
     EditorSceneManager.OpenScene("Assets/Scenes/Maze.unity");
     EditorApplication.isPlaying = true;
   }
+
   // Import the map into the main scene
   [MenuItem("MyTools/Import map")]
-  public static void importMap()
+  public static void ImportMap()
   {
+    EditorSceneManager.OpenScene("Assets/Scenes/Main.unity");
+
     int rows = 56;
     int columns = 256;
     // The list of tiles used in the map

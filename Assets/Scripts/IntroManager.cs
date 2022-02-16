@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+///  This class is used to manage the intro
+/// </summary>
 public class IntroManager : MonoBehaviour
 {
   // The objects used to display logo and mole
