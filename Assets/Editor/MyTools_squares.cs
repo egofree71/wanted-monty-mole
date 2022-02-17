@@ -24,6 +24,11 @@ public partial class MyTools
     Vector2 bottomLeftPosition = Camera.main.ScreenToWorldPoint(Vector2.zero);
     int startPositionX = (int)bottomLeftPosition.x;
 
+    // Use logo's vertical position for the first row
+    GameObject logo = GameObject.Find("Logo");
+    float logoHeight = logo.GetComponent<SpriteRenderer>().sprite.bounds.size.y;
+    float startPositionY = logo.transform.position.y + logoHeight;
+
     // Add rows made of squares
     for (int column = 0; column < 40; column++)
     {
@@ -31,11 +36,11 @@ public partial class MyTools
 
       // Add first row
       positionX = (column * pixelsPerTile) + startPositionX;
-      Vector2 position = new Vector2(positionX, 300f);
+      Vector2 position = new Vector2(positionX, startPositionY);
       instantiateSquare(square, 0, column, position, container);
 
       // Add second row
-      position = new Vector2(positionX, 300f - 23 * pixelsPerTile);
+      position = new Vector2(positionX, startPositionY - 21 * pixelsPerTile);
       instantiateSquare(square, 25, column, position, container);
     }
   }
