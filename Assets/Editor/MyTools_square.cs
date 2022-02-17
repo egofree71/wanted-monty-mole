@@ -20,13 +20,17 @@ public partial class MyTools
     // Load the square prefab
     UnityEngine.Object square = AssetDatabase.LoadAssetAtPath("Assets/Prefabs/Square.prefab", typeof(GameObject));
 
+    // Get the left position of the camera
+    Vector2 bottomLeftPosition = Camera.main.ScreenToWorldPoint(Vector2.zero);
+    int startPositionX = (int)bottomLeftPosition.x;
+
     // Add rows made of squares
     for (int column = 0; column < 40; column++)
     {
       int positionX;
 
       // Add first row
-      positionX = (column * pixelsPerTile) - 650;
+      positionX = (column * pixelsPerTile) + startPositionX;
       Vector2 position = new Vector2(positionX, 300f);
       instantiateSquare(square, 0, column, position, container);
 
