@@ -12,6 +12,9 @@ public class IntroManager : MonoBehaviour
   public GameObject logo;
   public GameObject mole;
 
+  // Store the sprite renderers of squares into an array
+  private SpriteRenderer[,] squares = new SpriteRenderer[22, 40];
+
   // A single letter of the message
   public GameObject letter;
   // The message to display at the bottom
@@ -48,6 +51,9 @@ public class IntroManager : MonoBehaviour
 
   void Start()
   {
+    // Load squares into an array
+    LoadSquares();
+
     // Set frame rate to 50
     QualitySettings.vSyncCount = 0;
     Application.targetFrameRate = 50;
@@ -75,6 +81,22 @@ public class IntroManager : MonoBehaviour
     letterStartPositionX = topRightPosition.x + letterWidth;
 
     StartCoroutine(MoveLogo());
+  }
+
+  // Load squares into an array
+  private void LoadSquares()
+  {
+    // Get all squares objects in the Squares container
+    GameObject squaresContainer = GameObject.Find("Squares");
+
+    // Store the sprite renderers of squares into a multi-dimensional array
+    foreach (Transform square in squaresContainer.transform)
+    {
+      Square squareScript = square.GetComponent<Square>();
+      int row = squareScript.row;
+      int column = squareScript.column;
+      squares[row, column] = square.gameObject.GetComponent<SpriteRenderer>();
+    }
   }
 
   // Move logo and mole
