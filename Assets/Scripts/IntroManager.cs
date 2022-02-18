@@ -14,6 +14,19 @@ public class IntroManager : MonoBehaviour
 
   // Store the sprite renderers of squares into an array
   private SpriteRenderer[,] squares = new SpriteRenderer[22, 40];
+  // The current row and column for the black rectangle
+  int column;
+  int row;
+  int previousColumn;
+  int previousRow;
+  // Colors used for animation
+  List<Color> colors = new List<Color>() { Color.black, Color.blue, Color.green, Color.magenta, Color.red};
+  // The current color
+  Color color;
+  // The index of the current color
+  int colorIndex;
+  // The step in the color animation
+  int colorStep;
 
   // A single letter of the message
   public GameObject letter;
@@ -97,6 +110,59 @@ public class IntroManager : MonoBehaviour
       int column = squareScript.column;
       squares[row, column] = square.gameObject.GetComponent<SpriteRenderer>();
     }
+
+    // Use first color for the animation
+    color = colors[0];
+  }
+
+  // Process color animation for squares
+  private void ShiftColors()
+  {
+    // Change color of the current square
+    squares[row, column].color = color;
+
+    colorStep++;
+
+    // If it's time to change color
+    if (colorStep == 120)
+    {
+      colorStep = 0;
+      colorIndex++;
+
+      // Reset color index if we have reached the last color
+      if (colorIndex == colors.Count)
+        colorIndex = 0;
+
+      color = colors[colorIndex];
+    }
+
+    // Process first row
+    if (column < 39 && row == 0)
+    {
+      column++;
+      return;
+    }
+
+    // Process second column
+    if (column == 39 && row < 21)
+    {
+      row++;
+      return;
+    }
+
+    // Process second row
+    if (column > 0 && row == 21)
+    {
+      column--;
+      return;
+    }
+
+    // Process first column
+    if (column == 0 && row > 0)
+    {
+      row--;
+      return;
+    }
   }
 
   // Move logo and mole
@@ -145,6 +211,7 @@ public class IntroManager : MonoBehaviour
   void Update()
   {
     DisplayMessage();
+    ShiftColors();
     // Quit the application when the escape key is pressed
     if (Input.GetKey(KeyCode.Escape))
       Application.Quit();
