@@ -54,7 +54,9 @@ public partial class MyTools
       }
     }
 
-    const int thirdColumnPosition = 39;
+    const int secondColumnPosition = 13;
+    const int thirdColumnPosition = 26;
+    const int fourthColumnPosition = 39;
     int numberOfRows = thirdRowPosition - 1;
 
     // Add columns
@@ -64,9 +66,19 @@ public partial class MyTools
       Vector2 position = new Vector2(startPositionX, startPositionY - row * pixelsPerTile);
       instantiateSquare(square, row, 0, position, container);
 
-      // Add third column
-      position = new Vector2(startPositionX + thirdColumnPosition * pixelsPerTile, startPositionY - row * pixelsPerTile);
-      instantiateSquare(square, row, thirdColumnPosition, position, container);
+      // Add second and third row
+      if (row > 0 && row <= 2)
+      {
+        position = new Vector2(startPositionX + secondColumnPosition * pixelsPerTile, startPositionY - row * pixelsPerTile);
+        instantiateSquare(square, row, secondColumnPosition, position, container);
+
+        position = new Vector2(startPositionX + thirdColumnPosition * pixelsPerTile, startPositionY - row * pixelsPerTile);
+        instantiateSquare(square, row, thirdColumnPosition, position, container);
+      }
+
+      // Add fourth column
+      position = new Vector2(startPositionX + fourthColumnPosition * pixelsPerTile, startPositionY - row * pixelsPerTile);
+      instantiateSquare(square, row, fourthColumnPosition, position, container);
     }
   }
 
