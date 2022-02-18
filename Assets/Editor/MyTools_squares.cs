@@ -29,28 +29,45 @@ public partial class MyTools
     float logoHeight = logo.GetComponent<SpriteRenderer>().sprite.bounds.size.y;
     float startPositionY = logo.transform.position.y + logoHeight;
 
+    const int secondRowPosition = 3;
+    const int thirdRowPosition = 21;
+
     // Add rows made of squares
-    for (int column = 0; column < 40; column++)
+    for (int column = 0; column <= 39; column++)
     {
       int positionX;
 
       // Add first row
-      positionX = (column * pixelsPerTile) + startPositionX;
+      positionX = column * pixelsPerTile + startPositionX;
       Vector2 position = new Vector2(positionX, startPositionY);
       instantiateSquare(square, 0, column, position, container);
 
       // Add second row
-      position = new Vector2(positionX, startPositionY - 21 * pixelsPerTile);
-      instantiateSquare(square, 25, column, position, container);
+      position = new Vector2(positionX, startPositionY - thirdRowPosition * pixelsPerTile);
+      instantiateSquare(square, 21, column, position, container);
 
       // Add third row
       if (column > 12 && column <= 26)
       { 
-        position = new Vector2(positionX, startPositionY - 3 * pixelsPerTile);
+        position = new Vector2(positionX, startPositionY - secondRowPosition * pixelsPerTile);
         instantiateSquare(square, 3, column, position, container);
       }
     }
 
+    const int thirdColumnPosition = 39;
+    int numberOfRows = thirdRowPosition - 1;
+
+    // Add columns
+    for (int row = 1; row <= numberOfRows; row++)
+    {
+      // Add first column
+      Vector2 position = new Vector2(startPositionX, startPositionY - row * pixelsPerTile);
+      instantiateSquare(square, row, 0, position, container);
+
+      // Add third column
+      position = new Vector2(startPositionX + thirdColumnPosition * pixelsPerTile, startPositionY - row * pixelsPerTile);
+      instantiateSquare(square, row, thirdColumnPosition, position, container);
+    }
   }
 
   // Instantiate a square object for a given row and column
