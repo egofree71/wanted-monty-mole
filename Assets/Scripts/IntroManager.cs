@@ -17,10 +17,10 @@ public class IntroManager : MonoBehaviour
   // The current row and column for the black rectangle
   int column;
   int row;
-  int previousColumn;
+  int previousColumn = -1;
   int previousRow;
   // Colors used for animation
-  List<Color> colors = new List<Color>() { Color.black, Color.blue, Color.green, Color.magenta, Color.red};
+  List<Color> colors = new List<Color>() {Color.blue, Color.green, Color.magenta, Color.red, Color.black };
   // The current color
   Color color;
   // The index of the current color
@@ -93,6 +93,7 @@ public class IntroManager : MonoBehaviour
     topRightPosition = Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height));
     letterStartPositionX = topRightPosition.x + letterWidth;
 
+    InvokeRepeating("ShiftColors", 0, 0.05f);
     StartCoroutine(MoveLogo());
   }
 
@@ -111,34 +112,32 @@ public class IntroManager : MonoBehaviour
       squares[row, column] = square.gameObject.GetComponent<SpriteRenderer>();
     }
 
-    // Use first color for the animation
-    color = colors[0];
   }
 
   // Process color animation for squares
   private void ShiftColors()
   {
     // Change color of the current square
-    squares[row, column].color = color;
-
-    colorStep++;
+    squares[row, column].color = Color.black;
 
     // If it's time to change color
-    if (colorStep == 120)
+    if (row == 0 && column == 1)
     {
-      colorStep = 0;
+      color = colors[colorIndex];
       colorIndex++;
 
       // Reset color index if we have reached the last color
       if (colorIndex == colors.Count)
         colorIndex = 0;
-
-      color = colors[colorIndex];
     }
 
     // Process first row
     if (column < 39 && row == 0)
     {
+      if (previousColumn != -1)
+        squares[previousRow, previousColumn].color = color;
+      previousColumn = column;
+      previousRow = row;
       column++;
       return;
     }
@@ -146,6 +145,9 @@ public class IntroManager : MonoBehaviour
     // Process second column
     if (column == 39 && row < 21)
     {
+      squares[previousRow, previousColumn].color = color;
+      previousColumn = column;
+      previousRow = row;
       row++;
       return;
     }
@@ -153,6 +155,9 @@ public class IntroManager : MonoBehaviour
     // Process second row
     if (column > 0 && row == 21)
     {
+      squares[previousRow, previousColumn].color = color;
+      previousColumn = column;
+      previousRow = row;
       column--;
       return;
     }
@@ -160,6 +165,9 @@ public class IntroManager : MonoBehaviour
     // Process first column
     if (column == 0 && row > 0)
     {
+      squares[previousRow, previousColumn].color = color;
+      previousColumn = column;
+      previousRow = row;
       row--;
       return;
     }
@@ -211,7 +219,7 @@ public class IntroManager : MonoBehaviour
   void Update()
   {
     DisplayMessage();
-    ShiftColors();
+
     // Quit the application when the escape key is pressed
     if (Input.GetKey(KeyCode.Escape))
       Application.Quit();
