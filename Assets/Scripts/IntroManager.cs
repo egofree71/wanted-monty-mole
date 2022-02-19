@@ -20,7 +20,7 @@ public class IntroManager : MonoBehaviour
   int previousColumn = -1;
   int previousRow;
   // Colors used for animation
-  List<Color> colors = new List<Color>() {Color.blue, Color.green, Color.magenta, Color.red, Color.black };
+  List<Color> colors = new List<Color>() { Color.blue, Color.cyan, Color.yellow, Color.green, Color.magenta, Color.red, Color.white, Color.black, Color.gray };
   // The current color
   Color color;
   // The index of the current color
