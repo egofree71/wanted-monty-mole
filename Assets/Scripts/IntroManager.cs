@@ -14,11 +14,18 @@ public class IntroManager : MonoBehaviour
 
   // Store the sprite renderers of squares into an array
   private SpriteRenderer[,] squares = new SpriteRenderer[22, 40];
-  // The current row and column for the black rectangle
-  int column;
+  // The current row and column for the current square
+  int column = 13;
   int row;
+  // The current row and column for the previous square
   int previousColumn = -1;
   int previousRow;
+  // In the "small rectangle", current row and column for the current square
+  int columnSmall = 13;
+  int rowSmall;
+  // In the "small rectangle", current row and column for the previous square
+  int previousColumnSmall = -1;
+  int previousRowSmall;
   // Colors used for animation
   List<Color> colors = new List<Color>() { Color.blue, Color.cyan, Color.yellow, Color.green, Color.magenta, Color.red, Color.white, Color.black, Color.gray };
   // The current color
@@ -56,7 +63,7 @@ public class IntroManager : MonoBehaviour
   int logoWidth;
   // Top right's position of the screen
   Vector2 topRightPosition;
-  
+
   // The distance between two moves
   float moveDistance = 4.0f;
   // Number of steps needed to move a character entirely
@@ -86,14 +93,15 @@ public class IntroManager : MonoBehaviour
     letterWidth = (int)sizeLetter.x;
 
     // Calculate number of steps
-    int moveDistance = (int) letter.GetComponent<Letter>().moveDistance;
+    int moveDistance = (int)letter.GetComponent<Letter>().moveDistance;
     numberOfSteps = letterWidth / moveDistance;
 
     // Calculate the start position of the letter
     topRightPosition = Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height));
     letterStartPositionX = topRightPosition.x + letterWidth;
 
-    InvokeRepeating("ShiftColors", 0, 0.05f);
+    InvokeRepeating("ShiftColorsForBigRectangle", 0, 0.03f);
+    InvokeRepeating("ShiftColorsForSmallRectangle", 0, 0.03f);
     StartCoroutine(MoveLogo());
   }
 
@@ -114,8 +122,55 @@ public class IntroManager : MonoBehaviour
 
   }
 
-  // Process color animation for squares
-  private void ShiftColors()
+  // Process color animation for "small rectangle"
+  private void ShiftColorsForSmallRectangle()
+  {
+    // Change color of the current square
+    squares[rowSmall, columnSmall].color = Color.black;
+
+    // Process first row
+    if (columnSmall < 26 && rowSmall == 0)
+    {
+      if (previousColumnSmall != -1)
+        squares[previousRowSmall, previousColumnSmall].color = color;
+      previousColumnSmall = columnSmall;
+      previousRowSmall = rowSmall;
+      columnSmall++;
+      return;
+    }
+
+    // Process second column
+    if (columnSmall == 26 && rowSmall < 3)
+    {
+      squares[previousRowSmall, previousColumnSmall].color = color;
+      previousColumnSmall = columnSmall;
+      previousRowSmall = rowSmall;
+      rowSmall++;
+      return;
+    }
+
+    // Process second row
+    if (columnSmall > 13 && rowSmall == 3)
+    {
+      squares[previousRowSmall, previousColumnSmall].color = color;
+      previousColumnSmall = columnSmall;
+      previousRowSmall = rowSmall;
+      columnSmall--;
+      return;
+    }
+
+    // Process first column
+    if (columnSmall == 13 && rowSmall > 0)
+    {
+      squares[previousRowSmall, previousColumnSmall].color = color;
+      previousColumnSmall = columnSmall;
+      previousRowSmall = rowSmall;
+      rowSmall--;
+    }
+  }
+
+  // Process color animation for "big rectangle"
+  private void ShiftColorsForBigRectangle()
   {
     // Change color of the current square
     squares[row, column].color = Color.black;
@@ -169,7 +224,6 @@ public class IntroManager : MonoBehaviour
       previousColumn = column;
       previousRow = row;
       row--;
-      return;
     }
   }
 
@@ -242,7 +296,7 @@ public class IntroManager : MonoBehaviour
 
       // Skip the space character
       if (currentChar >= 0)
-      { 
+      {
         // Display a new letter and set its sprite
         GameObject newLetter = Instantiate(letter, new Vector2(letterStartPositionX, -472f), Quaternion.identity);
         newLetter.GetComponent<SpriteRenderer>().sprite = letters[currentChar];
