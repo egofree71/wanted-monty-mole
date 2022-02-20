@@ -30,7 +30,7 @@ public partial class MyTools
     float startPositionY = logo.transform.position.y + logoHeight;
 
     const int secondRowPosition = 3;
-    const int thirdRowPosition = 21;
+    const int thirdRowPosition = 19;
 
     // Add rows made of squares
     for (int column = 0; column <= 39; column++)
