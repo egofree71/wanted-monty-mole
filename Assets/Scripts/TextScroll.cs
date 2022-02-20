@@ -33,4 +33,16 @@ public class TextScroll : MonoBehaviour
 
     SceneManager.LoadScene("Intro");
   }
+
+  // Update is called once per frame
+  void Update()
+  {
+    // Quit the application when the escape key is pressed
+    if (Input.GetKey(KeyCode.Escape))
+      Application.Quit();
+
+    // Load the inro when the space key is pressed
+    if (Input.GetKeyDown(KeyCode.Space))
+      SceneManager.LoadScene("Intro");
+  }
 }
