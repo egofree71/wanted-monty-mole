@@ -127,14 +127,19 @@ public class Player : MonoBehaviour
           }
           else
           {
+            // Get gamepad input
+            float horizontalInput = Input.GetAxis("Horizontal");
+            float verticalInput = Input.GetAxis("Vertical");
+            bool fire = Input.GetButton("Fire1");
+
             // Save the key pressed
-            if (Input.GetKey(KeyCode.LeftArrow))
+            if (Input.GetKey(KeyCode.LeftArrow) || horizontalInput == -1)
               leftArrow = true;
-            else if (Input.GetKey(KeyCode.RightArrow))
+            else if (Input.GetKey(KeyCode.RightArrow) || horizontalInput == 1)
               rightArrow = true;
-            else if (Input.GetKey(KeyCode.UpArrow))
+            else if (Input.GetKey(KeyCode.UpArrow) || verticalInput == 1)
               upArrow = true;
-            else if (Input.GetKey(KeyCode.DownArrow))
+            else if (Input.GetKey(KeyCode.DownArrow) || verticalInput == -1)
               downArrow = true;
 
             // If the player wants to go up
@@ -197,7 +202,7 @@ public class Player : MonoBehaviour
               }
             }
 
-            if (Input.GetKey(KeyCode.Space))
+            if (Input.GetKey(KeyCode.Space) || fire)
             {
               // Start a jump
               jumpDirection = horizontalDirection.None;
