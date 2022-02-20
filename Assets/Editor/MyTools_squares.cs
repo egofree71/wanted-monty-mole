@@ -31,9 +31,10 @@ public partial class MyTools
 
     const int secondRowPosition = 3;
     const int thirdRowPosition = 19;
+    const int fourthColumnPosition = 39;
 
     // Add rows made of squares
-    for (int column = 0; column <= 39; column++)
+    for (int column = 0; column <= fourthColumnPosition; column++)
     {
       int positionX;
 
@@ -50,13 +51,12 @@ public partial class MyTools
       if (column > 12 && column <= 26)
       { 
         position = new Vector2(positionX, startPositionY - secondRowPosition * pixelsPerTile);
-        instantiateSquare(square, 3, column, position, container);
+        instantiateSquare(square, secondRowPosition, column, position, container);
       }
     }
 
     const int secondColumnPosition = 13;
     const int thirdColumnPosition = 26;
-    const int fourthColumnPosition = 39;
     int numberOfRows = thirdRowPosition - 1;
 
     // Add columns
@@ -88,7 +88,7 @@ public partial class MyTools
     // Create a new square object
     GameObject newSquare = GameObject.Instantiate(square, position, Quaternion.identity) as GameObject;
     // Set the color
-    newSquare.GetComponent<SpriteRenderer>().color = new Color(1, 0, 0, 1);
+    newSquare.GetComponent<SpriteRenderer>().color = Color.red;
     // Set row and column
     Square squareScript = newSquare.GetComponent<Square>();
     squareScript.row = row;
