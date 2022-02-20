@@ -44,7 +44,7 @@ public partial class MyTools
 
       // Add second row
       position = new Vector2(positionX, startPositionY - thirdRowPosition * pixelsPerTile);
-      instantiateSquare(square, 21, column, position, container);
+      instantiateSquare(square, thirdRowPosition, column, position, container);
 
       // Add third row
       if (column > 12 && column <= 26)
