@@ -46,7 +46,7 @@ Introduction :
 90BD : color animation
 
 ee,ef : horizontal and vertical positions of the cursor in the small rectangle
-f0, f1 : horizontal and vertical positions of the cursor in the big rectangle
+f0,f1 : horizontal and vertical positions of the cursor in the big rectangle
 
 First line of color map : d9b9
 
