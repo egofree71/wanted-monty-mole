@@ -41,8 +41,11 @@ public class TextScroll : MonoBehaviour
     if (Input.GetKey(KeyCode.Escape))
       Application.Quit();
 
+    // True if one the gamepad button is pressed
+    bool fire = Input.GetButton("Fire1") || Input.GetButton("Fire2") || Input.GetButton("Fire3");
+
     // Load the intro when the space key or button is pressed
-    if (Input.GetKeyDown(KeyCode.Space) || Input.GetButton("Fire1"))
+    if (Input.GetKeyDown(KeyCode.Space) || fire)
       SceneManager.LoadScene("Intro");
   }
 }

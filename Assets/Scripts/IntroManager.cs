@@ -283,8 +283,11 @@ public class IntroManager : MonoBehaviour
     if (Input.GetKey(KeyCode.Escape))
       Application.Quit();
 
+    // True if one the gamepad button is pressed
+    bool fire = Input.GetButton("Fire1") || Input.GetButton("Fire2") || Input.GetButton("Fire3");
+  
     // Start playing if the player presses the space key or the gamepad button
-    if (Input.GetKeyDown(KeyCode.Space) || Input.GetButton("Fire1"))
+    if (Input.GetKeyDown(KeyCode.Space) || fire)
       SceneManager.LoadScene("Main");
   }
 

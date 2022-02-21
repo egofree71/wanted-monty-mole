@@ -130,7 +130,8 @@ public class Player : MonoBehaviour
             // Get gamepad input
             float horizontalInput = Input.GetAxis("Horizontal");
             float verticalInput = Input.GetAxis("Vertical");
-            bool fire = Input.GetButton("Fire1");
+            // True if one the gamepad button is pressed
+            bool fire = Input.GetButton("Fire1") || Input.GetButton("Fire2") || Input.GetButton("Fire3");
 
             // Save the key pressed
             if (Input.GetKey(KeyCode.LeftArrow) || horizontalInput == -1)
