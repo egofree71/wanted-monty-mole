@@ -41,8 +41,8 @@ public class TextScroll : MonoBehaviour
     if (Input.GetKey(KeyCode.Escape))
       Application.Quit();
 
-    // Load the inro when the space key is pressed
-    if (Input.GetKeyDown(KeyCode.Space))
+    // Load the intro when the space key or button is pressed
+    if (Input.GetKeyDown(KeyCode.Space) || Input.GetButton("Fire1"))
       SceneManager.LoadScene("Intro");
   }
 }
