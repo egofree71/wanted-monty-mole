@@ -14366,6 +14366,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 439bee981aa74b045ab6a33d6c3e25d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  squareBlue: {fileID: 21300000, guid: d12ef4df290ae104183edfd4e0c4cf94, type: 3}
+  squareCyan: {fileID: 21300000, guid: 511caccf4030d424baef2e5240d25b7a, type: 3}
+  squareYellow: {fileID: 21300000, guid: cfc9074920e8cde4bbbae91b131ed46c, type: 3}
+  squareGreen: {fileID: 21300000, guid: acc5302d827ab3f4ab7acc96e7d9a071, type: 3}
+  squareMagenta: {fileID: 21300000, guid: ea46ac03dddc1b44d8953582a14999f1, type: 3}
+  squareRed: {fileID: 21300000, guid: 281384bc915ea82488398368b7a25944, type: 3}
+  squareWhite: {fileID: 21300000, guid: e813a609e8ac4174295d1263dd6e88a9, type: 3}
+  squareBlack: {fileID: 21300000, guid: 8dc74c180a7c5294181a24790bcfb60a, type: 3}
+  squareGray: {fileID: 21300000, guid: 419a1a3745e2542448bde38574e4cf96, type: 3}
   logo: {fileID: 903171219}
   mole: {fileID: 1059052368}
   letter: {fileID: 7621895575295522139, guid: ce515d1689b5026479629c593ab44e28, type: 3}

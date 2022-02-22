@@ -8,6 +8,17 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class IntroManager : MonoBehaviour
 {
+  // Sprites used in squares
+  public Sprite squareBlue;
+  public Sprite squareCyan;
+  public Sprite squareYellow;
+  public Sprite squareGreen;
+  public Sprite squareMagenta;
+  public Sprite squareRed;
+  public Sprite squareWhite;
+  public Sprite squareBlack;
+  public Sprite squareGray;
+
   // The objects used to display logo and mole
   public GameObject logo;
   public GameObject mole;
@@ -33,7 +44,7 @@ public class IntroManager : MonoBehaviour
   // The current color
   Color color;
   // The index of the current color
-  int colorIndex;
+  int colorIndex = 1;
   // The step in the color animation
   int colorStep;
 
@@ -101,7 +112,7 @@ public class IntroManager : MonoBehaviour
     // Calculate the start position of the letter
     topRightPosition = Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height));
     letterStartPositionX = topRightPosition.x + letterWidth;
-
+    
     // Invoke the methods which process color animation
     InvokeRepeating("ShiftColorsForSmallRectangle", 0, 0.03f);
     // Speed is a little bit faster, so black cursors for big and small rectangles are synchronized
@@ -125,19 +136,54 @@ public class IntroManager : MonoBehaviour
       squares[row, column] = square.gameObject.GetComponent<SpriteRenderer>();
     }
 
+    // Select first color
+    color = colors[0];
+  }
+
+  // Get the sprite according to a color
+  private Sprite GetSpriteForColor(Color color)
+  {
+    if (color == Color.blue)
+      return squareBlue;
+
+    if (color == Color.cyan)
+      return squareCyan;
+
+    if (color == Color.yellow)
+      return squareYellow;
+
+    if (color == Color.green)
+      return squareGreen;
+
+    if (color == Color.magenta)
+      return squareMagenta;
+
+    if (color == Color.red)
+      return squareRed;
+
+    if (color == Color.white)
+      return squareWhite;
+
+    if (color == Color.black)
+      return squareBlack;
+
+    if (color == Color.gray)
+      return squareGray;
+
+    return null;
   }
 
   // Process color animation for "small rectangle"
   private void ShiftColorsForSmallRectangle()
   {
     // Change color of the current square
-    squares[rowSmall, columnSmall].color = Color.black;
+    squares[rowSmall, columnSmall].sprite = squareBlack;
 
     // Process first row
     if (columnSmall < 26 && rowSmall == 0)
     {
       if (previousColumnSmall != -1)
-        squares[previousRowSmall, previousColumnSmall].color = color;
+        squares[previousRowSmall, previousColumnSmall].sprite = GetSpriteForColor(color);
       previousColumnSmall = columnSmall;
       previousRowSmall = rowSmall;
       columnSmall++;
@@ -147,7 +193,7 @@ public class IntroManager : MonoBehaviour
     // Process second column
     if (columnSmall == 26 && rowSmall < 3)
     {
-      squares[previousRowSmall, previousColumnSmall].color = color;
+      squares[previousRowSmall, previousColumnSmall].sprite = GetSpriteForColor(color);
       previousColumnSmall = columnSmall;
       previousRowSmall = rowSmall;
       rowSmall++;
@@ -157,7 +203,7 @@ public class IntroManager : MonoBehaviour
     // Process second row
     if (columnSmall > 13 && rowSmall == 3)
     {
-      squares[previousRowSmall, previousColumnSmall].color = color;
+      squares[previousRowSmall, previousColumnSmall].sprite = GetSpriteForColor(color);
       previousColumnSmall = columnSmall;
       previousRowSmall = rowSmall;
       columnSmall--;
@@ -167,7 +213,7 @@ public class IntroManager : MonoBehaviour
     // Process first column
     if (columnSmall == 13 && rowSmall > 0)
     {
-      squares[previousRowSmall, previousColumnSmall].color = color;
+      squares[previousRowSmall, previousColumnSmall].sprite = GetSpriteForColor(color);
       previousColumnSmall = columnSmall;
       previousRowSmall = rowSmall;
       rowSmall--;
@@ -178,7 +224,7 @@ public class IntroManager : MonoBehaviour
   private void ShiftColorsForBigRectangle()
   {
     // Change color of the current square
-    squares[row, column].color = Color.black;
+    squares[row, column].sprite = squareBlack;
 
     // If it's time to change color
     if (row == 0 && column == 1)
@@ -195,7 +241,7 @@ public class IntroManager : MonoBehaviour
     if (column < 39 && row == 0)
     {
       if (previousColumn != -1)
-        squares[previousRow, previousColumn].color = color;
+        squares[previousRow, previousColumn].sprite = GetSpriteForColor(color);
       previousColumn = column;
       previousRow = row;
       column++;
@@ -205,7 +251,7 @@ public class IntroManager : MonoBehaviour
     // Process second column
     if (column == 39 && row < thirdRowPosition)
     {
-      squares[previousRow, previousColumn].color = color;
+      squares[previousRow, previousColumn].sprite = GetSpriteForColor(color);
       previousColumn = column;
       previousRow = row;
       row++;
@@ -215,7 +261,7 @@ public class IntroManager : MonoBehaviour
     // Process second row
     if (column > 0 && row == thirdRowPosition)
     {
-      squares[previousRow, previousColumn].color = color;
+      squares[previousRow, previousColumn].sprite = GetSpriteForColor(color);
       previousColumn = column;
       previousRow = row;
       column--;
@@ -225,7 +271,7 @@ public class IntroManager : MonoBehaviour
     // Process first column
     if (column == 0 && row > 0)
     {
-      squares[previousRow, previousColumn].color = color;
+      squares[previousRow, previousColumn].sprite = GetSpriteForColor(color);
       previousColumn = column;
       previousRow = row;
       row--;
