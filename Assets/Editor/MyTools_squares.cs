@@ -20,18 +20,18 @@ public partial class MyTools
     // Load the square prefab
     UnityEngine.Object square = AssetDatabase.LoadAssetAtPath("Assets/Prefabs/Square.prefab", typeof(GameObject));
 
-    // Get the left position of the camera
-    Vector2 bottomLeftPosition = Camera.main.ScreenToWorldPoint(Vector2.zero);
-    int startPositionX = (int)bottomLeftPosition.x;
+    const int secondRowPosition = 3;
+    const int thirdRowPosition = 19;
+    const int fourthColumnPosition = 39;
+
+    // Calculate the horizontal position of the first cell, in order the row to be centered
+    int rowWidth = (fourthColumnPosition + 1) * pixelsPerTile;
+    int startPositionX = -rowWidth / 2;
 
     // Use logo's vertical position for first row
     GameObject logo = GameObject.Find("Logo");
     float logoHeight = logo.GetComponent<SpriteRenderer>().sprite.bounds.size.y;
     float startPositionY = logo.transform.position.y + logoHeight;
-
-    const int secondRowPosition = 3;
-    const int thirdRowPosition = 19;
-    const int fourthColumnPosition = 39;
 
     // Add rows made of squares
     for (int column = 0; column <= fourthColumnPosition; column++)
@@ -87,8 +87,6 @@ public partial class MyTools
   {
     // Create a new square object
     GameObject newSquare = GameObject.Instantiate(square, position, Quaternion.identity) as GameObject;
-    // Set the color
-    newSquare.GetComponent<SpriteRenderer>().color = Color.red;
     // Set row and column
     Square squareScript = newSquare.GetComponent<Square>();
     squareScript.row = row;
