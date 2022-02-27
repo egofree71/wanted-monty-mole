@@ -6,6 +6,8 @@ public class Letter : MonoBehaviour
   Vector2 bottomLeftPosition;
   // The distance between two moves
   public float moveDistance;
+  // The color gradient used to fade text
+  public Gradient colorGradient;
 
   // Letter's size
   Vector3 sizeLetter;
@@ -22,10 +24,18 @@ public class Letter : MonoBehaviour
 
   void Update()
   {
+
     // If the letter has not reached the left border, move it
     if (transform.position.x > bottomLeftPosition.x - letterWidth)
+    {
       transform.position = new Vector2(transform.position.x - moveDistance, transform.position.y);
+      // Set the color for the current position
+      Vector3 viewPortPosition = Camera.main.WorldToViewportPoint(transform.position);
+      GetComponent<SpriteRenderer>().color = colorGradient.Evaluate(viewPortPosition.x);
+    }
     else
+    {
       Destroy(gameObject);
+    }
   }
 }

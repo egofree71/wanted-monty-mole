@@ -148,12 +148,12 @@ PrefabInstance:
     - target: {fileID: 2853699321601307404, guid: cc2e49065d1977640b004d8b6ee817f9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -400
+      value: -460
       objectReference: {fileID: 0}
     - target: {fileID: 2853699321601307404, guid: cc2e49065d1977640b004d8b6ee817f9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -210.59998
+      value: -199
       objectReference: {fileID: 0}
     - target: {fileID: 2853699321601307404, guid: cc2e49065d1977640b004d8b6ee817f9,
         type: 3}
@@ -1325,6 +1325,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1754045460114916567, guid: e1978fae32abf5e42aaa27f55497aa64,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1754045460114916567, guid: e1978fae32abf5e42aaa27f55497aa64,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1754045460114916567, guid: e1978fae32abf5e42aaa27f55497aa64,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -1366,7 +1376,7 @@ PrefabInstance:
     - target: {fileID: 1754045460114916567, guid: e1978fae32abf5e42aaa27f55497aa64,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -514.2
+      value: -522
       objectReference: {fileID: 0}
     - target: {fileID: 1754045460114916567, guid: e1978fae32abf5e42aaa27f55497aa64,
         type: 3}
@@ -7387,6 +7397,35 @@ MonoBehaviour:
   squareGray: {fileID: 21300000, guid: 419a1a3745e2542448bde38574e4cf96, type: 3}
   logo: {fileID: 903171219}
   mole: {fileID: 1059052368}
+  gradient:
+    serializedVersion: 2
+    key0: {r: 0.25490198, g: 0.25490198, b: 0.8235294, a: 1}
+    key1: {r: 1, g: 1, b: 1, a: 1}
+    key2: {r: 1, g: 1, b: 1, a: 0}
+    key3: {r: 0.25490198, g: 0.25490198, b: 0.8235294, a: 0}
+    key4: {r: 1, g: 1, b: 1, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 9830
+    ctime2: 55705
+    ctime3: 65535
+    ctime4: 65535
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 4
+    m_NumAlphaKeys: 2
   letter: {fileID: 7621895575295522139, guid: ce515d1689b5026479629c593ab44e28, type: 3}
   message: 'MONTY MOLE WRITTTEN BY ANTONY CROWTHER    WE AT GREMLIN HAVE PRODUCED
     THE MOST EXCITING PLATFORM GAME EVER  IT WAS WRITTEN OVER A THREE MONTH PERIOD 
@@ -8439,6 +8478,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1754045460114916567, guid: e1978fae32abf5e42aaa27f55497aa64,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1754045460114916567, guid: e1978fae32abf5e42aaa27f55497aa64,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.3
       objectReference: {fileID: 0}
     - target: {fileID: 1754045460114916567, guid: e1978fae32abf5e42aaa27f55497aa64,
         type: 3}
@@ -11560,12 +11609,12 @@ PrefabInstance:
     - target: {fileID: 1209365640064782435, guid: 9f1455aee2c5edf44982d489ad81fd8e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -400
+      value: -450
       objectReference: {fileID: 0}
     - target: {fileID: 1209365640064782435, guid: 9f1455aee2c5edf44982d489ad81fd8e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 25
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 1209365640064782435, guid: 9f1455aee2c5edf44982d489ad81fd8e,
         type: 3}
@@ -12315,12 +12364,12 @@ PrefabInstance:
     - target: {fileID: 743676385173166451, guid: de04daee43e4f034198f88a92004f53f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -400
+      value: -456
       objectReference: {fileID: 0}
     - target: {fileID: 743676385173166451, guid: de04daee43e4f034198f88a92004f53f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -92
+      value: -86
       objectReference: {fileID: 0}
     - target: {fileID: 743676385173166451, guid: de04daee43e4f034198f88a92004f53f,
         type: 3}
@@ -13468,6 +13517,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1754045460114916567, guid: e1978fae32abf5e42aaa27f55497aa64,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1754045460114916567, guid: e1978fae32abf5e42aaa27f55497aa64,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1754045460114916567, guid: e1978fae32abf5e42aaa27f55497aa64,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -13509,7 +13568,7 @@ PrefabInstance:
     - target: {fileID: 1754045460114916567, guid: e1978fae32abf5e42aaa27f55497aa64,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -610.4
+      value: -618
       objectReference: {fileID: 0}
     - target: {fileID: 1754045460114916567, guid: e1978fae32abf5e42aaa27f55497aa64,
         type: 3}

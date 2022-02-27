@@ -352,7 +352,7 @@ public class IntroManager : MonoBehaviour
       if (currentChar >= 0)
       {
         // Display a new letter and set its sprite
-        GameObject newLetter = Instantiate(letter, new Vector2(letterStartPositionX, -440f), Quaternion.identity);
+        GameObject newLetter = Instantiate(letter, new Vector2(letterStartPositionX, -460f), Quaternion.identity);
         newLetter.GetComponent<SpriteRenderer>().sprite = letters[currentChar];
       }
 
