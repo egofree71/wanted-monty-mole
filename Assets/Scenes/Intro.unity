@@ -1400,6 +1400,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4096593522080465450, guid: e1978fae32abf5e42aaa27f55497aa64,
         type: 3}
+      propertyPath: m_fontSize
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 4096593522080465450, guid: e1978fae32abf5e42aaa27f55497aa64,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: c5e6c800994a9954289d7b78f02a5fbf,
+        type: 2}
+    - target: {fileID: 4096593522080465450, guid: e1978fae32abf5e42aaa27f55497aa64,
+        type: 3}
       propertyPath: m_fontColor.b
       value: 1
       objectReference: {fileID: 0}
@@ -1410,10 +1421,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4096593522080465450, guid: e1978fae32abf5e42aaa27f55497aa64,
         type: 3}
+      propertyPath: m_fontSizeBase
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 4096593522080465450, guid: e1978fae32abf5e42aaa27f55497aa64,
+        type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: -2485118754488952035, guid: 09766b110468a9d4eba92a03dbe91ac3,
+      objectReference: {fileID: -3469896848559935917, guid: c5e6c800994a9954289d7b78f02a5fbf,
         type: 2}
+    - target: {fileID: 4096593522080465450, guid: e1978fae32abf5e42aaa27f55497aa64,
+        type: 3}
+      propertyPath: m_characterSpacing
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 4096593522080465450, guid: e1978fae32abf5e42aaa27f55497aa64,
         type: 3}
       propertyPath: m_fontColor32.rgba
@@ -7397,35 +7418,6 @@ MonoBehaviour:
   squareGray: {fileID: 21300000, guid: 419a1a3745e2542448bde38574e4cf96, type: 3}
   logo: {fileID: 903171219}
   mole: {fileID: 1059052368}
-  gradient:
-    serializedVersion: 2
-    key0: {r: 0.25490198, g: 0.25490198, b: 0.8235294, a: 1}
-    key1: {r: 1, g: 1, b: 1, a: 1}
-    key2: {r: 1, g: 1, b: 1, a: 0}
-    key3: {r: 0.25490198, g: 0.25490198, b: 0.8235294, a: 0}
-    key4: {r: 1, g: 1, b: 1, a: 0}
-    key5: {r: 0, g: 0, b: 0, a: 0}
-    key6: {r: 0, g: 0, b: 0, a: 0}
-    key7: {r: 0, g: 0, b: 0, a: 0}
-    ctime0: 0
-    ctime1: 9830
-    ctime2: 55705
-    ctime3: 65535
-    ctime4: 65535
-    ctime5: 0
-    ctime6: 0
-    ctime7: 0
-    atime0: 0
-    atime1: 65535
-    atime2: 0
-    atime3: 0
-    atime4: 0
-    atime5: 0
-    atime6: 0
-    atime7: 0
-    m_Mode: 0
-    m_NumColorKeys: 4
-    m_NumAlphaKeys: 2
   letter: {fileID: 7621895575295522139, guid: ce515d1689b5026479629c593ab44e28, type: 3}
   message: 'MONTY MOLE WRITTTEN BY ANTONY CROWTHER    WE AT GREMLIN HAVE PRODUCED
     THE MOST EXCITING PLATFORM GAME EVER  IT WAS WRITTEN OVER A THREE MONTH PERIOD 
@@ -8556,9 +8548,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4096593522080465450, guid: e1978fae32abf5e42aaa27f55497aa64,
         type: 3}
-      propertyPath: m_margin.z
-      value: -468.9386
+      propertyPath: m_fontSize
+      value: 24
       objectReference: {fileID: 0}
+    - target: {fileID: 4096593522080465450, guid: e1978fae32abf5e42aaa27f55497aa64,
+        type: 3}
+      propertyPath: m_margin.z
+      value: -408.75748
+      objectReference: {fileID: 0}
+    - target: {fileID: 4096593522080465450, guid: e1978fae32abf5e42aaa27f55497aa64,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: c5e6c800994a9954289d7b78f02a5fbf,
+        type: 2}
     - target: {fileID: 4096593522080465450, guid: e1978fae32abf5e42aaa27f55497aa64,
         type: 3}
       propertyPath: m_fontColor.r
@@ -8566,10 +8569,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4096593522080465450, guid: e1978fae32abf5e42aaa27f55497aa64,
         type: 3}
+      propertyPath: m_fontSizeBase
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 4096593522080465450, guid: e1978fae32abf5e42aaa27f55497aa64,
+        type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: -2485118754488952035, guid: 09766b110468a9d4eba92a03dbe91ac3,
+      objectReference: {fileID: -3469896848559935917, guid: c5e6c800994a9954289d7b78f02a5fbf,
         type: 2}
+    - target: {fileID: 4096593522080465450, guid: e1978fae32abf5e42aaa27f55497aa64,
+        type: 3}
+      propertyPath: m_characterSpacing
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 4096593522080465450, guid: e1978fae32abf5e42aaa27f55497aa64,
         type: 3}
       propertyPath: m_fontColor32.rgba
@@ -13592,9 +13605,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4096593522080465450, guid: e1978fae32abf5e42aaa27f55497aa64,
         type: 3}
+      propertyPath: m_fontSize
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 4096593522080465450, guid: e1978fae32abf5e42aaa27f55497aa64,
+        type: 3}
       propertyPath: m_margin.z
       value: -33.4021
       objectReference: {fileID: 0}
+    - target: {fileID: 4096593522080465450, guid: e1978fae32abf5e42aaa27f55497aa64,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: c5e6c800994a9954289d7b78f02a5fbf,
+        type: 2}
     - target: {fileID: 4096593522080465450, guid: e1978fae32abf5e42aaa27f55497aa64,
         type: 3}
       propertyPath: m_fontColor.r
@@ -13602,10 +13626,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4096593522080465450, guid: e1978fae32abf5e42aaa27f55497aa64,
         type: 3}
+      propertyPath: m_fontSizeBase
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 4096593522080465450, guid: e1978fae32abf5e42aaa27f55497aa64,
+        type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: -2485118754488952035, guid: 09766b110468a9d4eba92a03dbe91ac3,
+      objectReference: {fileID: -3469896848559935917, guid: c5e6c800994a9954289d7b78f02a5fbf,
         type: 2}
+    - target: {fileID: 4096593522080465450, guid: e1978fae32abf5e42aaa27f55497aa64,
+        type: 3}
+      propertyPath: m_characterSpacing
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 4096593522080465450, guid: e1978fae32abf5e42aaa27f55497aa64,
         type: 3}
       propertyPath: m_fontColor32.rgba
