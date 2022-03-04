@@ -7,7 +7,9 @@ public class TextGradient : MonoBehaviour
   // The color gradient used in the text
   public Gradient gradient;
 
-
+  /// <summary>
+  ///  Class used to set a gradient texture to a text
+  /// </summary>
   void Start()
   {
     // Get text size

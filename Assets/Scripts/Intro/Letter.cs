@@ -1,5 +1,9 @@
 using UnityEngine;
 
+/// <summary>
+///  Class used to move a letter across the screen
+/// </summary>
+/// 
 public class Letter : MonoBehaviour
 {
   // Bottom left's position of the screen
