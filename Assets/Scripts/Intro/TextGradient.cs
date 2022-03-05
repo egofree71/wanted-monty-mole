@@ -2,21 +2,34 @@ using System.IO;
 using TMPro;
 using UnityEngine;
 
+/// <summary>
+///  Class used to set a gradient texture on a text
+/// </summary>
+[ExecuteInEditMode]
 public class TextGradient : MonoBehaviour
 {
   // The color gradient used in the text
   public Gradient gradient;
 
-  /// <summary>
-  ///  Class used to set a gradient texture to a text
-  /// </summary>
+  void OnValidate()
+  {
+    // Update texture in the editor
+    setGradient();
+  }
+
   void Start()
+  {
+    // Update texture at runtime
+    setGradient();
+  }
+
+  void setGradient()
   {
     // Get text size
     TMP_Text textComponent = GetComponent<TMP_Text>();
     textComponent.ForceMeshUpdate();
     Vector2 size = textComponent.GetRenderedValues(false);
-    int width = (int) size.x;
+    int width = (int)size.x;
     int height = (int)size.y;
 
     Texture2D texture = new Texture2D(width, height, TextureFormat.ARGB32, false);
@@ -34,7 +47,5 @@ public class TextGradient : MonoBehaviour
 
     // Set the texture for the text
     textComponent.fontSharedMaterial.SetTexture(ShaderUtilities.ID_FaceTex, texture);
-
   }
-
 }
