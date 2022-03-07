@@ -46,6 +46,6 @@ public class TextGradient : MonoBehaviour
     texture.Apply();
 
     // Set the texture for the text
-    textComponent.fontSharedMaterial.SetTexture(ShaderUtilities.ID_FaceTex, texture);
+    textComponent.fontMaterial.SetTexture(ShaderUtilities.ID_FaceTex, texture);
   }
 }
