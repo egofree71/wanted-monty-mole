@@ -1407,7 +1407,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: c5e6c800994a9954289d7b78f02a5fbf,
+      objectReference: {fileID: 11400000, guid: 23d6f7525ec65ce4ea801e05439549f6,
         type: 2}
     - target: {fileID: 4096593522080465450, guid: e1978fae32abf5e42aaa27f55497aa64,
         type: 3}
@@ -1428,7 +1428,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: -3469896848559935917, guid: c5e6c800994a9954289d7b78f02a5fbf,
+      objectReference: {fileID: -1955443711719579737, guid: 23d6f7525ec65ce4ea801e05439549f6,
         type: 2}
     - target: {fileID: 4096593522080465450, guid: e1978fae32abf5e42aaa27f55497aa64,
         type: 3}
@@ -8560,7 +8560,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: c5e6c800994a9954289d7b78f02a5fbf,
+      objectReference: {fileID: 11400000, guid: 23d6f7525ec65ce4ea801e05439549f6,
         type: 2}
     - target: {fileID: 4096593522080465450, guid: e1978fae32abf5e42aaa27f55497aa64,
         type: 3}
@@ -8576,7 +8576,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: -3469896848559935917, guid: c5e6c800994a9954289d7b78f02a5fbf,
+      objectReference: {fileID: -1955443711719579737, guid: 23d6f7525ec65ce4ea801e05439549f6,
         type: 2}
     - target: {fileID: 4096593522080465450, guid: e1978fae32abf5e42aaa27f55497aa64,
         type: 3}
@@ -13617,7 +13617,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: c5e6c800994a9954289d7b78f02a5fbf,
+      objectReference: {fileID: 11400000, guid: 23d6f7525ec65ce4ea801e05439549f6,
         type: 2}
     - target: {fileID: 4096593522080465450, guid: e1978fae32abf5e42aaa27f55497aa64,
         type: 3}
@@ -13633,7 +13633,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: -3469896848559935917, guid: c5e6c800994a9954289d7b78f02a5fbf,
+      objectReference: {fileID: -1955443711719579737, guid: 23d6f7525ec65ce4ea801e05439549f6,
         type: 2}
     - target: {fileID: 4096593522080465450, guid: e1978fae32abf5e42aaa27f55497aa64,
         type: 3}
