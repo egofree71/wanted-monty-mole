@@ -45,28 +45,17 @@ public class IntroManager : MonoBehaviour
   Color color;
   // The index of the current color
   int colorIndex = 1;
-  // The step in the color animation
-  int colorStep;
 
   // Horizontal start positions of moving objects;
   float logoStartPositionX;
   float moleStartPositionX;
-  float letterStartPositionX;
-
-  // Letter's width
-  Vector3 sizeLetter;
-  int letterWidth;
 
   // Logo's width
   Vector3 sizeLogo;
   int logoWidth;
-  // Top right's position of the screen
-  Vector2 topRightPosition;
 
   // The distance between two moves
   float moveDistance = 4.0f;
-  // Number of steps needed to move a character entirely
-  int numberOfSteps;
 
   void Start()
   {
