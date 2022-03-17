@@ -6,7 +6,7 @@ public class ScrollingText : MonoBehaviour
   // The color gradient used in the text
   public Gradient gradient;
   TMP_Text textComponent;
-  public float scrollY = 0.5f;
+  public float scrollY;
   // The distance between two moves
   public float moveDistance;
   // The current distamce
@@ -56,11 +56,17 @@ public class ScrollingText : MonoBehaviour
 
   void Update()
   {
+    // Increase the distance till we have not reached the end
     if (distance < maxDistance)
       distance += 4f;
     else
       distance = 0;
 
+    // Scroll text
     rectTransform.anchoredPosition = new Vector2(startPositionX - distance, startPositionY);
+
+    // Scroll color gradient
+    float offsetY = Mathf.Repeat(Time.time * scrollY, 1);
+    textComponent.fontMaterial.SetTextureOffset(ShaderUtilities.ID_FaceTex, new Vector2(0, offsetY));
   }
 }
