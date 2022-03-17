@@ -21,10 +21,8 @@ public class ScrollingText : MonoBehaviour
   // The text component rect transform
   RectTransform rectTransform;
 
-
   void Start()
   {
-
     // Get text size
     textComponent = GetComponent<TMP_Text>();
     width = textComponent.preferredWidth;
@@ -58,14 +56,14 @@ public class ScrollingText : MonoBehaviour
   {
     // Increase the distance till we have not reached the end
     if (distance < maxDistance)
-      distance += 4f;
+      distance += moveDistance;
     else
       distance = 0;
 
     // Scroll text
     rectTransform.anchoredPosition = new Vector2(startPositionX - distance, startPositionY);
 
-    // Scroll color gradient
+    // Shift color gradient
     float offsetY = Mathf.Repeat(Time.time * scrollY, 1);
     textComponent.fontMaterial.SetTextureOffset(ShaderUtilities.ID_FaceTex, new Vector2(0, offsetY));
   }
