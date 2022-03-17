@@ -48,20 +48,6 @@ public class IntroManager : MonoBehaviour
   // The step in the color animation
   int colorStep;
 
-  // A single letter of the message
-  public GameObject letter;
-  // The message to display at the bottom
-  [TextArea(3, 10)]
-  public string message;
-  // The message splitted in a char array
-  char[] messageLetters;
-  // Sprites used to display letters
-  public Sprite[] letters;
-  // The letter index of the message
-  int letterIndex = 0;
-  // Used to know when create a new letter
-  int scrollCounter = 0;
-
   // Horizontal start positions of moving objects;
   float logoStartPositionX;
   float moleStartPositionX;
@@ -98,20 +84,6 @@ public class IntroManager : MonoBehaviour
     // Get logo width
     sizeLogo = logo.GetComponent<SpriteRenderer>().bounds.size;
     logoWidth = (int)sizeLogo.x;
-
-    messageLetters = message.ToCharArray();
-
-    // Get letter size
-    sizeLetter = letter.GetComponent<SpriteRenderer>().bounds.size;
-    letterWidth = (int)sizeLetter.x;
-
-    // Calculate number of steps
-    int moveDistance = (int)letter.GetComponent<Letter>().moveDistance;
-    numberOfSteps = letterWidth / moveDistance;
-
-    // Calculate the start position of the letter
-    topRightPosition = Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height));
-    letterStartPositionX = topRightPosition.x + letterWidth;
     
     // Invoke the methods which process color animation
     InvokeRepeating("ShiftColorsForSmallRectangle", 0, 0.03f);
@@ -323,8 +295,6 @@ public class IntroManager : MonoBehaviour
   // Update is called once per frame
   void Update()
   {
-    DisplayMessage();
-
     // Quit the application when the escape key is pressed
     if (Input.GetKey(KeyCode.Escape))
       Application.Quit();
@@ -337,33 +307,4 @@ public class IntroManager : MonoBehaviour
       SceneManager.LoadScene("Main");
   }
 
-  // Display the message at the screen's bottom
-  void DisplayMessage()
-  {
-    scrollCounter++;
-
-    // If it's time to display a new letter of the message
-    if (scrollCounter >= numberOfSteps)
-    {
-      // Get the letter to display
-      int currentChar = messageLetters[letterIndex] - 65;
-
-      // Skip the space character
-      if (currentChar >= 0)
-      {
-        // Display a new letter and set its sprite
-        GameObject newLetter = Instantiate(letter, new Vector2(letterStartPositionX, -460f), Quaternion.identity);
-        newLetter.GetComponent<SpriteRenderer>().sprite = letters[currentChar];
-      }
-
-      scrollCounter = 0;
-
-      // If we have not yet reached the end, go the next letter
-      if (letterIndex < message.Length - 1)
-        letterIndex++;
-      else
-        letterIndex = 0;
-
-    }
-  }
 }

@@ -10,6 +10,7 @@ public class TextGradient : MonoBehaviour
 {
   // The color gradient used in the text
   public Gradient gradient;
+  TMP_Text textComponent;
 
   void OnValidate()
   {
@@ -26,7 +27,7 @@ public class TextGradient : MonoBehaviour
   void setGradient()
   {
     // Get text size
-    TMP_Text textComponent = GetComponent<TMP_Text>();
+    textComponent = GetComponent<TMP_Text>();
     textComponent.ForceMeshUpdate();
     Vector2 size = textComponent.GetRenderedValues(false);
     int width = (int)size.x;
