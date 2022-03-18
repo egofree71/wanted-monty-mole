@@ -23,6 +23,10 @@ public class IntroManager : MonoBehaviour
   public GameObject logo;
   public GameObject mole;
 
+  // The scrolling text object and script
+  public GameObject scrollingTextObject;
+  ScrollingText scrollingText;
+
   // Store the sprite renderers of squares into an array
   private SpriteRenderer[,] squares = new SpriteRenderer[22, 40];
   // Vertical position of the third row
@@ -59,6 +63,8 @@ public class IntroManager : MonoBehaviour
 
   void Start()
   {
+    scrollingText = scrollingTextObject.GetComponent<ScrollingText>();
+
     // Load squares into an array
     LoadSquares();
 
@@ -190,6 +196,9 @@ public class IntroManager : MonoBehaviour
     // If it's time to change color
     if (row == 0 && column == 1)
     {
+      // Change the color gradient of the scrolling text
+      scrollingText.updateTexture();
+
       color = colors[colorIndex];
       colorIndex++;
 
