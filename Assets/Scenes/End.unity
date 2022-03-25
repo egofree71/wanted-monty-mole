@@ -527,7 +527,11 @@ MonoBehaviour:
 
 
 
-    THE END .... OR IS IT!'
+    THE END .... OR IS IT!
+
+
+    PRESS SPACE OR FIRE TO START
+    AGAIN'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 09766b110468a9d4eba92a03dbe91ac3, type: 2}
   m_sharedMaterial: {fileID: -2485118754488952035, guid: 09766b110468a9d4eba92a03dbe91ac3,

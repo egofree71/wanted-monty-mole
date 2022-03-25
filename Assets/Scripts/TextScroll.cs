@@ -26,12 +26,8 @@ public class TextScroll : MonoBehaviour
     {
       endMessage.transform.Translate(Vector3.up);
       distance++;
-      yield return new WaitForSeconds(0.025f);
+      yield return new WaitForSeconds(0.035f);
     }
-
-    yield return new WaitForSeconds(4f);
-
-    SceneManager.LoadScene("Intro");
   }
 
   // Update is called once per frame
